@@ -1,0 +1,52 @@
+Uploading file (webdev private): adin_expression_sheet.png (size: 4235553 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/adin_expression_sheet_4cf82657.png
+Uploading file (webdev private): adry_expression_sheet.png (size: 4201855 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/adry_expression_sheet_fe98de3a.png
+Uploading file (webdev private): anton_expression_sheet.png (size: 4469988 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/anton_expression_sheet_78c1bb27.png
+Uploading file (webdev private): beni_expression_sheet.png (size: 3029430 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/beni_expression_sheet_5bf6ae2e.png
+Uploading file (webdev private): erica_expression_sheet.png (size: 4257792 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/erica_expression_sheet_80a332b6.png
+Uploading file (webdev private): gaspar_expression_sheet.png (size: 4201706 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/gaspar_expression_sheet_563293c2.png
+Uploading file (webdev private): hiller_expression_sheet.png (size: 4037708 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/hiller_expression_sheet_7be0518d.png
+Uploading file (webdev private): kurt_expression_sheet.png (size: 3637422 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/kurt_expression_sheet_5ca03a49.png
+Uploading file (webdev private): marcus_doyle_expression_sheet.png (size: 3764903 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/marcus_doyle_expression_sheet_a06b43fb.png
+Uploading file (webdev private): nick_expression_sheet.png (size: 4330964 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/nick_expression_sheet_ff7ab402.png
+Uploading file (webdev private): ozzie_expression_sheet.png (size: 5206635 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/ozzie_expression_sheet_8877aafb.png
+Uploading file (webdev private): vivienne_expression_sheet.png (size: 4612337 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/vivienne_expression_sheet_681ae408.png
+
+========== Upload Summary ==========
+[SUCCESS] adin_expression_sheet.png -> /manus-storage/adin_expression_sheet_4cf82657.png
+[SUCCESS] adry_expression_sheet.png -> /manus-storage/adry_expression_sheet_fe98de3a.png
+[SUCCESS] anton_expression_sheet.png -> /manus-storage/anton_expression_sheet_78c1bb27.png
+[SUCCESS] beni_expression_sheet.png -> /manus-storage/beni_expression_sheet_5bf6ae2e.png
+[SUCCESS] erica_expression_sheet.png -> /manus-storage/erica_expression_sheet_80a332b6.png
+[SUCCESS] gaspar_expression_sheet.png -> /manus-storage/gaspar_expression_sheet_563293c2.png
+[SUCCESS] hiller_expression_sheet.png -> /manus-storage/hiller_expression_sheet_7be0518d.png
+[SUCCESS] kurt_expression_sheet.png -> /manus-storage/kurt_expression_sheet_5ca03a49.png
+[SUCCESS] marcus_doyle_expression_sheet.png -> /manus-storage/marcus_doyle_expression_sheet_a06b43fb.png
+[SUCCESS] nick_expression_sheet.png -> /manus-storage/nick_expression_sheet_ff7ab402.png
+[SUCCESS] ozzie_expression_sheet.png -> /manus-storage/ozzie_expression_sheet_8877aafb.png
+[SUCCESS] vivienne_expression_sheet.png -> /manus-storage/vivienne_expression_sheet_681ae408.png
+=====================================
+Total: 12, Success: 12, Failed: 0

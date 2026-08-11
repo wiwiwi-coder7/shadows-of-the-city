@@ -1,0 +1,200 @@
+Uploading file (webdev private): scene_01_gaspars_cafe_planning.png (size: 5800982 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_01_gaspars_cafe_planning_12500421.png
+Uploading file (webdev private): scene_01_guildhall_vault.png (size: 4658102 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_01_guildhall_vault_9a226220.png
+Uploading file (webdev private): scene_01_hill_residence_approach.png (size: 5078900 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_01_hill_residence_approach_e3858f56.png
+Uploading file (webdev private): scene_01_nicks_apartment.png (size: 5862825 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_01_nicks_apartment_5bf86b6d.png
+Uploading file (webdev private): scene_01_nicks_apartment_board.png (size: 4990421 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_01_nicks_apartment_board_ea293178.png
+Uploading file (webdev private): scene_01_nicks_apartment_deduction.png (size: 4960972 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_01_nicks_apartment_deduction_7ea39655.png
+Uploading file (webdev private): scene_01_nicks_apartment_final_memory.png (size: 4606360 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_01_nicks_apartment_final_memory_86c28e4c.png
+Uploading file (webdev private): scene_01_nicks_apartment_first_face.png (size: 5347987 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_01_nicks_apartment_first_face_4221606c.png
+Uploading file (webdev private): scene_01_renner_tenement.png (size: 4815234 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_01_renner_tenement_cabc94b2.png
+Uploading file (webdev private): scene_01_safehouse_adins_decision.png (size: 5152703 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_01_safehouse_adins_decision_41e3a4c0.png
+Uploading file (webdev private): scene_01a_iron_door_nightmare.png (size: 5026803 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_01a_iron_door_nightmare_9cca695a.png
+Uploading file (webdev private): scene_01a_memory_wipe_room.png (size: 4695883 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_01a_memory_wipe_room_ad6899ee.png
+Uploading file (webdev private): scene_01a_weapon_room_nightmare.png (size: 4328476 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_01a_weapon_room_nightmare_629885de.png
+Uploading file (webdev private): scene_01a_woman_face_nightmare.png (size: 4817147 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_01a_woman_face_nightmare_49fabd01.png
+Uploading file (webdev private): scene_02_beni_study_confrontation.png (size: 4720052 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_02_beni_study_confrontation_38fc6a97.png
+Uploading file (webdev private): scene_02_erica_dressmakers_shop.png (size: 4874471 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_02_erica_dressmakers_shop_13f6374f.png
+Uploading file (webdev private): scene_02_falsified_report.png (size: 4657550 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_02_falsified_report_4f64a234.png
+Uploading file (webdev private): scene_02_garden_pavilion_anton.png (size: 5729045 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_02_garden_pavilion_anton_afe3a305.png
+Uploading file (webdev private): scene_02_gaspars_cafe.png (size: 5022459 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_02_gaspars_cafe_e90381ff.png
+Uploading file (webdev private): scene_02_precinct_memo.png (size: 4779816 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_02_precinct_memo_d4876484.png
+Uploading file (webdev private): scene_02_renner_revisited.png (size: 5837561 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_02_renner_revisited_456a790f.png
+Uploading file (webdev private): scene_02_rooftop_telling.png (size: 5406202 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_02_rooftop_telling_3e75ff50.png
+Uploading file (webdev private): scene_02_shared_threat.png (size: 5308548 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_02_shared_threat_f306db7e.png
+Uploading file (webdev private): scene_02_warehouse_trap.png (size: 4923893 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_02_warehouse_trap_212ea369.png
+Uploading file (webdev private): scene_03_doyles_office.png (size: 4786649 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_03_doyles_office_888351dd.png
+Uploading file (webdev private): scene_03_draeger_shipping_exterior.png (size: 5608456 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_03_draeger_shipping_exterior_6a944907.png
+Uploading file (webdev private): scene_03_erica_print_shop.png (size: 4875173 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_03_erica_print_shop_546c4369.png
+Uploading file (webdev private): scene_03_first_full_flashback.png (size: 4726773 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_03_first_full_flashback_a0ed708e.png
+Uploading file (webdev private): scene_03_fog_terrace_fall.png (size: 4517293 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_03_fog_terrace_fall_526d50f3.png
+Uploading file (webdev private): scene_03_gaspars_cafe_cases.png (size: 5010346 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_03_gaspars_cafe_cases_a3757c40.png
+Uploading file (webdev private): scene_03_police_precinct.png (size: 4763877 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_03_police_precinct_bec111fd.png
+Uploading file (webdev private): scene_03_rear_landing.png (size: 4696364 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_03_rear_landing_48b51dba.png
+Uploading file (webdev private): scene_03_rooftop_reckoning.png (size: 5127344 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_03_rooftop_reckoning_f347302a.png
+Uploading file (webdev private): scene_03_warehouse_aftermath.png (size: 4314006 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_03_warehouse_aftermath_4965b95f.png
+Uploading file (webdev private): scene_04_alley_ambush.png (size: 4889946 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_04_alley_ambush_59a31624.png
+Uploading file (webdev private): scene_04_anton_garden_intelligence.png (size: 5960497 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_04_anton_garden_intelligence_8f100f32.png
+Uploading file (webdev private): scene_04_draeger_office.png (size: 5042800 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_04_draeger_office_bccfd885.png
+Uploading file (webdev private): scene_04_grief_comfort.png (size: 4645456 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_04_grief_comfort_cac761a8.png
+Uploading file (webdev private): scene_04_harbor_overlook_epilogue.png (size: 5078081 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_04_harbor_overlook_epilogue_17c28853.png
+Uploading file (webdev private): scene_04_harbor_warehouse.png (size: 4960879 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_04_harbor_warehouse_c2afbb64.png
+Uploading file (webdev private): scene_04_kurts_files.png (size: 4940271 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_04_kurts_files_d2dc5aeb.png
+Uploading file (webdev private): scene_04_rusted_anchor_tavern.png (size: 5119690 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_04_rusted_anchor_tavern_835fcef7.png
+Uploading file (webdev private): scene_04_vivienne_in_vault.png (size: 5002606 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_04_vivienne_in_vault_e749e2e5.png
+Uploading file (webdev private): scene_05_beni_glimpsed.png (size: 5126551 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_05_beni_glimpsed_b835222c.png
+Uploading file (webdev private): scene_05_carriage_interlude.png (size: 4951879 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_05_carriage_interlude_038734e1.png
+Uploading file (webdev private): scene_05_hillers_exam_room.png (size: 5535282 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_05_hillers_exam_room_705f36e2.png
+Uploading file (webdev private): scene_05_precinct_closure.png (size: 5329164 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_05_precinct_closure_e286d083.png
+Uploading file (webdev private): scene_05_safehouse_aftermath.png (size: 4804480 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_05_safehouse_aftermath_622f8585.png
+Uploading file (webdev private): scene_06_depot_confrontation.png (size: 4858698 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/scene_06_depot_confrontation_ad194cb2.png
+
+========== Upload Summary ==========
+[SUCCESS] scene_01_gaspars_cafe_planning.png -> /manus-storage/scene_01_gaspars_cafe_planning_12500421.png
+[SUCCESS] scene_01_guildhall_vault.png -> /manus-storage/scene_01_guildhall_vault_9a226220.png
+[SUCCESS] scene_01_hill_residence_approach.png -> /manus-storage/scene_01_hill_residence_approach_e3858f56.png
+[SUCCESS] scene_01_nicks_apartment.png -> /manus-storage/scene_01_nicks_apartment_5bf86b6d.png
+[SUCCESS] scene_01_nicks_apartment_board.png -> /manus-storage/scene_01_nicks_apartment_board_ea293178.png
+[SUCCESS] scene_01_nicks_apartment_deduction.png -> /manus-storage/scene_01_nicks_apartment_deduction_7ea39655.png
+[SUCCESS] scene_01_nicks_apartment_final_memory.png -> /manus-storage/scene_01_nicks_apartment_final_memory_86c28e4c.png
+[SUCCESS] scene_01_nicks_apartment_first_face.png -> /manus-storage/scene_01_nicks_apartment_first_face_4221606c.png
+[SUCCESS] scene_01_renner_tenement.png -> /manus-storage/scene_01_renner_tenement_cabc94b2.png
+[SUCCESS] scene_01_safehouse_adins_decision.png -> /manus-storage/scene_01_safehouse_adins_decision_41e3a4c0.png
+[SUCCESS] scene_01a_iron_door_nightmare.png -> /manus-storage/scene_01a_iron_door_nightmare_9cca695a.png
+[SUCCESS] scene_01a_memory_wipe_room.png -> /manus-storage/scene_01a_memory_wipe_room_ad6899ee.png
+[SUCCESS] scene_01a_weapon_room_nightmare.png -> /manus-storage/scene_01a_weapon_room_nightmare_629885de.png
+[SUCCESS] scene_01a_woman_face_nightmare.png -> /manus-storage/scene_01a_woman_face_nightmare_49fabd01.png
+[SUCCESS] scene_02_beni_study_confrontation.png -> /manus-storage/scene_02_beni_study_confrontation_38fc6a97.png
+[SUCCESS] scene_02_erica_dressmakers_shop.png -> /manus-storage/scene_02_erica_dressmakers_shop_13f6374f.png
+[SUCCESS] scene_02_falsified_report.png -> /manus-storage/scene_02_falsified_report_4f64a234.png
+[SUCCESS] scene_02_garden_pavilion_anton.png -> /manus-storage/scene_02_garden_pavilion_anton_afe3a305.png
+[SUCCESS] scene_02_gaspars_cafe.png -> /manus-storage/scene_02_gaspars_cafe_e90381ff.png
+[SUCCESS] scene_02_precinct_memo.png -> /manus-storage/scene_02_precinct_memo_d4876484.png
+[SUCCESS] scene_02_renner_revisited.png -> /manus-storage/scene_02_renner_revisited_456a790f.png
+[SUCCESS] scene_02_rooftop_telling.png -> /manus-storage/scene_02_rooftop_telling_3e75ff50.png
+[SUCCESS] scene_02_shared_threat.png -> /manus-storage/scene_02_shared_threat_f306db7e.png
+[SUCCESS] scene_02_warehouse_trap.png -> /manus-storage/scene_02_warehouse_trap_212ea369.png
+[SUCCESS] scene_03_doyles_office.png -> /manus-storage/scene_03_doyles_office_888351dd.png
+[SUCCESS] scene_03_draeger_shipping_exterior.png -> /manus-storage/scene_03_draeger_shipping_exterior_6a944907.png
+[SUCCESS] scene_03_erica_print_shop.png -> /manus-storage/scene_03_erica_print_shop_546c4369.png
+[SUCCESS] scene_03_first_full_flashback.png -> /manus-storage/scene_03_first_full_flashback_a0ed708e.png
+[SUCCESS] scene_03_fog_terrace_fall.png -> /manus-storage/scene_03_fog_terrace_fall_526d50f3.png
+[SUCCESS] scene_03_gaspars_cafe_cases.png -> /manus-storage/scene_03_gaspars_cafe_cases_a3757c40.png
+[SUCCESS] scene_03_police_precinct.png -> /manus-storage/scene_03_police_precinct_bec111fd.png
+[SUCCESS] scene_03_rear_landing.png -> /manus-storage/scene_03_rear_landing_48b51dba.png
+[SUCCESS] scene_03_rooftop_reckoning.png -> /manus-storage/scene_03_rooftop_reckoning_f347302a.png
+[SUCCESS] scene_03_warehouse_aftermath.png -> /manus-storage/scene_03_warehouse_aftermath_4965b95f.png
+[SUCCESS] scene_04_alley_ambush.png -> /manus-storage/scene_04_alley_ambush_59a31624.png
+[SUCCESS] scene_04_anton_garden_intelligence.png -> /manus-storage/scene_04_anton_garden_intelligence_8f100f32.png
+[SUCCESS] scene_04_draeger_office.png -> /manus-storage/scene_04_draeger_office_bccfd885.png
+[SUCCESS] scene_04_grief_comfort.png -> /manus-storage/scene_04_grief_comfort_cac761a8.png
+[SUCCESS] scene_04_harbor_overlook_epilogue.png -> /manus-storage/scene_04_harbor_overlook_epilogue_17c28853.png
+[SUCCESS] scene_04_harbor_warehouse.png -> /manus-storage/scene_04_harbor_warehouse_c2afbb64.png
+[SUCCESS] scene_04_kurts_files.png -> /manus-storage/scene_04_kurts_files_d2dc5aeb.png
+[SUCCESS] scene_04_rusted_anchor_tavern.png -> /manus-storage/scene_04_rusted_anchor_tavern_835fcef7.png
+[SUCCESS] scene_04_vivienne_in_vault.png -> /manus-storage/scene_04_vivienne_in_vault_e749e2e5.png
+[SUCCESS] scene_05_beni_glimpsed.png -> /manus-storage/scene_05_beni_glimpsed_b835222c.png
+[SUCCESS] scene_05_carriage_interlude.png -> /manus-storage/scene_05_carriage_interlude_038734e1.png
+[SUCCESS] scene_05_hillers_exam_room.png -> /manus-storage/scene_05_hillers_exam_room_705f36e2.png
+[SUCCESS] scene_05_precinct_closure.png -> /manus-storage/scene_05_precinct_closure_e286d083.png
+[SUCCESS] scene_05_safehouse_aftermath.png -> /manus-storage/scene_05_safehouse_aftermath_622f8585.png
+[SUCCESS] scene_06_depot_confrontation.png -> /manus-storage/scene_06_depot_confrontation_ad194cb2.png
+=====================================
+Total: 49, Success: 49, Failed: 0
