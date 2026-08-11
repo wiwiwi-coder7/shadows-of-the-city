@@ -20,7 +20,7 @@
 - [x] Implement pre-publish validation for broken destinations, missing media, and unreachable nodes.
 - [x] Write and run Vitest coverage for save behavior, story validation, unlock logic, telemetry opt-out, and admin authorization.
 - [x] Verify desktop and mobile public routes, administrative routes, accessibility controls, and visual appearance with screenshots.
-- [ ] Create the final checkpoint, package the project, and privately provide the owner admin credentials at handoff.
+- [x] Create the final checkpoint, package the project, and privately provide the owner admin credentials at handoff.
 - [x] Implement and test keyboard navigation and focus management for story choices.
 - [x] Replace hardcoded public UI copy with a locale provider that supports English now and Persian/RTL direction later.
 - [x] Build structured owner forms for narrative blocks, dialogue, choices, node destinations, codex entries, and character entries.
@@ -31,3 +31,10 @@
 - [x] Perform explicit active-state QA for text scale, high contrast, reduced motion, and keyboard-only navigation.
 - [x] Move the remaining branded and route-level public labels into the locale provider and document content-source boundaries.
 - [x] Add granular QA artifacts for large text, high contrast, reduced motion, and keyboard-focused choice navigation.
+- [x] Add a complete Persian translation layer for every Chapter 1 narrative block, dialogue line, choice, scene title, and player-facing progress label.
+- [x] Persist the selected English/Persian locale in browser settings and activate Persian selection for Chapter 1.
+- [x] Provide clear English fallback messaging for un-translated Chapters 2–10 without interrupting continuous play.
+- [x] Add automated coverage for Chapter 1 translation lookup, locale persistence, and English fallback behavior.
+- [x] Verify English/Farsi switching, RTL rendering, and Chapter 1 story flow on desktop and mobile.
+- [x] Audit every Chapter 1 runtime node against the Persian translation map and assert full coverage of all 17 converged story nodes.
+- [x] Record interactive browser QA for settings-based EN→FA switching, a Chapter 1 choice transition, desktop RTL, and mobile RTL.

@@ -1,6 +1,7 @@
 export type TextScale = "sm" | "md" | "lg";
 
 export type GameSettings = {
+  locale: "en" | "fa";
   textScale: TextScale;
   highContrast: boolean;
   reducedMotion: boolean;
@@ -27,6 +28,7 @@ export const SETTINGS_KEY = "shadows-of-the-city:settings";
 export const INSTALLATION_KEY = "shadows-of-the-city:installation";
 
 export const defaultSettings: GameSettings = {
+  locale: "en",
   textScale: "md",
   highContrast: false,
   reducedMotion: false,

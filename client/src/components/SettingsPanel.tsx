@@ -26,7 +26,7 @@ function Volume({ label, value, onChange }: { label: string; value: number; onCh
 export function SettingsPanel({ settings, onChange, onResetSave }: Props) {
   const [showResetConfirm, setShowResetConfirm] = useState(false);
   const update = <K extends keyof GameSettings>(key: K, value: GameSettings[K]) => onChange({ ...settings, [key]: value });
-  const { t } = useLocale();
+  const { locale, setLocale, t } = useLocale();
 
   return <div className="settings-card">
     <div className="settings-title"><SettingsIcon /><div><p className="eyebrow">{t("playerSettings")}</p><h1>{t("setAtmosphere")}</h1></div></div>
@@ -49,8 +49,8 @@ export function SettingsPanel({ settings, onChange, onResetSave }: Props) {
     </section>
     <section className="settings-section">
       <div className="settings-section__heading"><Languages size={16} /><span>{t("language")}</span></div>
-      <div className="locale-status"><span>English</span><b>{t("active")}</b></div>
-      <div className="locale-status is-coming"><span>فارسی / Persian</span><small>{t("persianStatus")}</small></div>
+      <button type="button" className={`locale-status locale-choice ${locale === "en" ? "is-active" : ""}`} onClick={() => { setLocale("en"); update("locale", "en"); }}><span>English</span><b>{locale === "en" ? t("active") : ""}</b></button>
+      <button type="button" className={`locale-status locale-choice ${locale === "fa" ? "is-active" : ""}`} onClick={() => { setLocale("fa"); update("locale", "fa"); }}><span>فارسی / Persian</span><small>{locale === "fa" ? t("active") : t("persianStatus")}</small></button>
     </section>
     <section className="settings-section">
       <div className="settings-section__heading"><MonitorUp size={16} /><span>{t("privacy")}</span></div>
