@@ -2,3 +2,5 @@
 .volume-row span { display:flex; justify-content:space-between; color:#e2dbce; font:400 13px 'Libre Baskerville'; }
 .volume-row b { color:var(--brass); font:500 10px 'DM Mono'; }
 .volume-row input { width:100%; accent-color:var(--brass); }
+.locale-choice { width:100%; border:0; background:transparent; text-align:left; cursor:pointer; }
+.locale-choice.is-active { color:var(--brass); }
