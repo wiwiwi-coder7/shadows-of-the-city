@@ -1,0 +1,33 @@
+# Project TODO
+
+- [x] Define typed story-node, choice, flag, unlock, locale, scene-media, and local-save models for all ten chapters.
+- [x] Import the existing 49 approved scene images into durable web asset storage and map them to stable scene IDs.
+- [x] Create the continuous 10-chapter English story dataset, including authored choices, convergences, flags, unlock events, and no chapter-gate screens.
+- [x] Build the cinematic dark-noir landing screen with New Game, Continue, settings access, codex, and character album entry points.
+- [x] Build the responsive story player with full-bleed 16:9 scene art, narration, dialogue nameplates, choice controls, keyboard support, and mobile layout.
+- [x] Implement silent browser-local save/restore for current node, choices, flags, unlocks, and settings.
+- [x] Add confirmed New Game and Reset Save actions that safely replace or erase local progress.
+- [x] Add player settings for text scale, contrast, reduced motion, scene effects, audio-category volume, mute, privacy, and English-first Persian-ready locale controls.
+- [x] Implement spoiler-safe unlockable codex sections for characters, places, organizations, symbols, and evidence.
+- [x] Implement a spoiler-safe character album with approved character sheets and progress-driven lock states.
+- [x] Add a locale layer with English UI and story source strings plus Persian/RTL-ready message structure.
+- [x] Build database schema and tRPC server procedures for story content, codex, album, audio assignments, telemetry, publication status, and content validation.
+- [x] Implement privacy-safe anonymous telemetry with an opt-out and no uploaded player save data.
+- [x] Create the private admin authentication flow with randomly generated credentials stored only in server-side secrets.
+- [x] Build the admin dashboard for anonymized starts, progress, completion, and choice-distribution metrics.
+- [x] Build admin editors for dialogue, narration, choices, node destinations, codex entries, character entries, and publication state.
+- [x] Build the audio asset assignment manager for chapter, scene, and node music, ambience, and SFX cues.
+- [x] Implement pre-publish validation for broken destinations, missing media, and unreachable nodes.
+- [x] Write and run Vitest coverage for save behavior, story validation, unlock logic, telemetry opt-out, and admin authorization.
+- [x] Verify desktop and mobile public routes, administrative routes, accessibility controls, and visual appearance with screenshots.
+- [ ] Create the final checkpoint, package the project, and privately provide the owner admin credentials at handoff.
+- [x] Implement and test keyboard navigation and focus management for story choices.
+- [x] Replace hardcoded public UI copy with a locale provider that supports English now and Persian/RTL direction later.
+- [x] Build structured owner forms for narrative blocks, dialogue, choices, node destinations, codex entries, and character entries.
+- [x] Expand publish validation to traverse choice targets, identify unreachable branching nodes, and verify media URL presence rigorously.
+- [x] Add realistic test coverage for save restoration, owner-session access control, and content validation logic.
+- [x] Verify text scale, high contrast, reduced motion, and keyboard accessibility in the browser and document results.
+- [x] Move all remaining public UI strings into the locale provider with English and Persian/RTL-ready coverage.
+- [x] Perform explicit active-state QA for text scale, high contrast, reduced motion, and keyboard-only navigation.
+- [x] Move the remaining branded and route-level public labels into the locale provider and document content-source boundaries.
+- [x] Add granular QA artifacts for large text, high contrast, reduced motion, and keyboard-focused choice navigation.
