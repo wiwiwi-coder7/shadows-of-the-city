@@ -15,3 +15,27 @@
 | Chapters 2–10 fallback | Passed by automated behavior test | `localizeChapterOneNode` returns the original English node unchanged for Chapter 2+ while the player renders the Persian `untranslatedChapter` notice when locale is `fa`. |
 
 The QA command used a browser session connected to the running development preview, rather than relying only on a URL language override. Its reported state is retained in the terminal record; generated visual evidence remains at `/home/ubuntu/qa/shadows-of-the-city/`.
+
+## Full-Chapter Persian QA — 11 August 2026
+
+The final localization registry covers all **120** runtime story nodes. An interactive browser QA run loaded representative opening nodes from Chapters 2, 6, and 10 after setting the local save directly, and confirmed `lang=fa`, `dir=rtl`, visible Persian text, three rendered choices, and no fallback notice for every sample. A 375-pixel mobile run for Chapter 10 kept the story column within the viewport at **347 pixels**, with Persian narration, dialogue and choices legible in RTL.
+
+The supplied Persian display font is applied only to concise headings. Narrative body text and choices use Vazirmatn for clearer mobile reading; the supplied IR Lotus font remains available as a self-hosted fallback asset. A final lexical audit removed visible Latin words from Chapters 2–10, other than internal field/identifier names that never render to players. Screenshots for the extended QA are stored in `/home/ubuntu/qa/shadows-of-the-city-full-persian/`.
+
+### Per-chapter runtime verification
+
+An exhaustive connected-browser run set a Persian local save at the first playable node of every translated chapter, validated the rendered Arabic-script content and RTL document direction, triggered the first displayed choice, then repeated the same flow at 375 pixels. In each case the fallback notice was absent, the opening supplied three choices, and the selected path advanced to the next Persian node.
+
+| Chapter | Opening node exercised | First-choice destination | Desktop | Mobile |
+|---|---|---|---|---|
+| 2 | `CH2_S1_N01` | `CH2_S1_N02` | Passed | Passed |
+| 3 | `CH3_S1_N01` | `CH3_S1_N02` | Passed | Passed |
+| 4 | `CH4_S1_N01` | `CH4_S1_N02` | Passed | Passed |
+| 5 | `CH5_S1_N01` | `CH5_S1_N02` | Passed | Passed |
+| 6 | `CH6_S1_N01` | `CH6_S1_N02` | Passed | Passed |
+| 7 | `CH7_S1_N01` | `CH7_S1_N02` | Passed | Passed |
+| 8 | `CH8_S1_N01` | `CH8_S1_N02` | Passed | Passed |
+| 9 | `CH9_S1_N01` | `CH9_S1_N02` | Passed | Passed |
+| 10 | `CH10_S1_N01` | `CH10_S1_N02` | Passed | Passed |
+
+The 375-pixel checks kept the story column at 347 pixels, within the mobile viewport, across the complete sample set. Screenshot evidence for each chapter and viewport is retained in `/home/ubuntu/qa/shadows-of-the-city-full-persian/`.

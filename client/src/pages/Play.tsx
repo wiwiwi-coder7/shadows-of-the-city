@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocation } from "wouter";
 import { GameHeader } from "@/components/GameHeader";
 import { storyNodes, storyStartId, type StoryNode } from "@/data/story.generated";
-import { localizeChapterOneNode } from "@/data/chapter1.fa";
+import { hasPersianStoryNode, localizeStoryNode } from "@/data/story.fa";
 import { emptySave, getInstallationId, readSave, readSettings, shouldTrackGameplay, writeSave, type GameSettings, type LocalSave } from "@/lib/gameState";
 import { trpc } from "@/lib/trpc";
 import { unlockForChapter } from "@/lib/unlocks";
@@ -34,7 +34,7 @@ export default function Play() {
   }, [publishedContent.data]);
   const runtimeNodeById = useMemo(() => Object.fromEntries(runtimeNodes.map(runtimeNode => [runtimeNode.id, runtimeNode])), [runtimeNodes]);
   const sourceNode: StoryNode | undefined = useMemo(() => save ? runtimeNodeById[save.currentNodeId] : undefined, [save, runtimeNodeById]);
-  const node: StoryNode | undefined = useMemo(() => sourceNode ? localizeChapterOneNode(sourceNode, locale) : undefined, [sourceNode, locale]);
+  const node: StoryNode | undefined = useMemo(() => sourceNode ? localizeStoryNode(sourceNode, locale) : undefined, [sourceNode, locale]);
   const trackEvent = (eventType: "game_start" | "node_view" | "choice_selected" | "chapter_reached" | "game_complete", choiceId?: string) => {
     if (!shouldTrackGameplay(settings) || !node) return;
     track.mutate({ installationId: getInstallationId(), eventType, chapter: node.chapter, nodeId: node.id, choiceId: choiceId ?? null, locale });
@@ -114,7 +114,7 @@ export default function Play() {
     {showHud && <div className="story-topbar"><button className="story-back" onClick={() => setLocation("/")}><ArrowLeft size={16} /> {t("archive")}</button><div className="chapter-status"><span>{t("chapterShort")} {String(node.chapter).padStart(2, "0")}</span><i /><span>{node.sceneTitle.replace(/\(.+\)/, "").trim()}</span></div><div className="story-tools"><button onClick={() => setLocation("/codex")} aria-label={t("openCodex")}><BookOpen size={16} /></button><button onClick={() => setLocation("/album")} aria-label={t("openAlbum")}><GalleryVerticalEnd size={16} /></button><button onClick={() => setLocation("/settings")} aria-label={t("openSettings")}><Settings2 size={16} /></button></div></div>}
     <button className="screen-toggle" onClick={() => setShowHud(!showHud)} aria-label={t("controls")}><Pause size={12} /></button>
     <section className="story-copy" aria-live="polite">
-      {locale === "fa" && node.chapter > 1 && <p className="story-fallback">{t("untranslatedChapter")}</p>}
+      {locale === "fa" && !hasPersianStoryNode(node.id) && <p className="story-fallback">{t("untranslatedChapter")}</p>}
       <div className="story-copy__meta"><span>{t("scene", { scene: node.scene })}</span><span>{t("traced", { percent: Math.min(100, Math.round((save.visitedNodeIds.length / storyNodes.length) * 100)) })}</span></div>
       <div className="story-blocks">{node.blocks.map((block, index) => block.type === "dialogue" ? <div className="dialogue-line" key={`${node.id}-${index}`}><span>{block.speaker}</span><p>“{block.text}”</p></div> : <p className="narration" key={`${node.id}-${index}`}>{block.text}</p>)}</div>
       {node.choices.length > 0 ? <div className="choice-list"><p className="eyebrow">{t("yourMove")}</p>{node.choices.map((choice, index) => <button ref={index === 0 ? primaryAction : undefined} key={choice.id} onClick={() => advance(choice.id, choice.target)}><span>0{index + 1}</span><strong>{choice.label}</strong><ChevronRight size={17} /></button>)}</div> : <div className="continue-row">{isFinalNode ? <button ref={primaryAction} className="button-primary" onClick={() => { trackEvent("game_complete"); setLocation("/"); }}><Check size={16} /> {t("closeCase")}</button> : <button ref={primaryAction} className="button-primary" onClick={() => advance()}><SkipForward size={16} /> {t("continue")} <ArrowRight size={15} /></button>}</div>}

@@ -38,3 +38,12 @@
 - [x] Verify English/Farsi switching, RTL rendering, and Chapter 1 story flow on desktop and mobile.
 - [x] Audit every Chapter 1 runtime node against the Persian translation map and assert full coverage of all 17 converged story nodes.
 - [x] Record interactive browser QA for settings-based EN→FA switching, a Chapter 1 choice transition, desktop RTL, and mobile RTL.
+- [x] Audit every Chapter 2–10 narrative node, dialogue line, choice, scene title, and player-facing string for Persian localization.
+- [x] Evaluate the supplied Persian font family and integrate the most legible licensed option for the game UI.
+- [x] Add and connect complete Persian narrative overlays for Chapters 2–10 while preserving every runtime choice target.
+- [x] Extend automated localization coverage to all 120 runtime story nodes and English/Persian fallback guarantees.
+- [x] Verify Persian RTL story flow across Chapters 2–10 on desktop and mobile, then record QA results.
+- [x] Add an exhaustive per-node Persian content audit for all chapters, including block/choice parity and visible Latin-text detection.
+- [x] Document the supplied-font comparison, the selected display role, and the user-provided authorization basis.
+- [x] Add generic localization tests for English passthrough and a missing-Persian-entry fallback.
+- [x] Exercise every Chapter 2–10 opening and first available choice in RTL on desktop and mobile, then record exact node IDs in QA notes.
