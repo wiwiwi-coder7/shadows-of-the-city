@@ -134,6 +134,30 @@ Object.assign(nodes.CH7_S4_N03, {
   ],
 });
 
+Object.assign(nodes.CH7_S5_N01, {
+  sceneTitle: "نگاهی به رهبر",
+  blocks: [
+    { type: "narration", text: "آدری یک‌باره خشک می‌شود، دستش نیک را در میانهٔ قدم نگه می‌دارد و او را به سایهٔ دهانهٔ کوچه برمی‌گرداند." },
+    { type: "dialogue", speaker: "آدری", text: "تکان نخور. حتی بلند نفس نکش." },
+    { type: "narration", text: "آن‌سوی خیابان، زنی سیاه‌پوش در ورودی گیلدهال مکث می‌کند؛ فقط آن‌قدر که هر دو یقین کنند می‌داند چه کسانی کجا پنهان شده‌اند و چرا." },
+  ],
+  choices: [
+    { id: "CH7_S5_N01-A", label: "بی‌حرکت بمان و به غریزهٔ آدری اعتماد کن.", target: "CH7_S5_N02A" },
+    { id: "CH7_S5_N01-B", label: "کمی بیشتر نگاه کن و همهٔ جزئیاتش را به خاطر بسپار.", target: "CH7_S5_N02B" },
+    { id: "CH7_S5_N01-C", label: "در پایین‌ترین زمزمه بپرس آیا همان کسی است که فکر می‌کنند.", target: "CH7_S5_N02C" },
+  ],
+});
+
+Object.assign(nodes.CH7_S5_N02, {
+  sceneTitle: "نگاهی به رهبر",
+  blocks: [
+    { type: "narration", text: "زن سیاه‌پوش بی‌آن‌که برگردد از درهای گیلدهال می‌گذرد و خیابان انگار تازه اجازهٔ نفس‌کشیدن پیدا می‌کند. نیک و آدری تا مدت‌ها تکان نمی‌خورند." },
+    { type: "dialogue", speaker: "آدری", text: "خودش بود. رهبر. در چهار سالی که زیر دستش کار کردم شاید شش‌بار از نزدیک دیدمش؛ هر بار دقیق یادم هست از چه چیزی می‌ترسیدم که از دست بدهم." },
+    { type: "dialogue", speaker: "نیک", text: "پس دفعهٔ بعد که یکی از ما او را دید، ما آن‌هایی نیستیم که در کوچه پنهان شده‌اند." },
+    { type: "narration", text: "بی‌صدا و تند راه برگشت را می‌گیرند؛ با مدرکی در دست و خاطره‌ای سنگین‌تر از هر کاری که آن شب برایش آمده بودند. پشت سرشان، زنی که زندگی هر دویشان را شکل داده، به قلمرو خود برمی‌گردد؛ شاید بی‌خبر، شاید بی‌اعتنا که اصلاً دیده شده است." },
+  ],
+});
+
 const header = 'import type { StoryBlock, StoryChoice } from "./story.generated";\n\ntype FarsiNode = { sceneTitle: string; blocks: StoryBlock[]; choices: StoryChoice[] };\n\n';
 await writeFile(target, `${header}export const chapter7Farsi: Record<string, FarsiNode> = ${JSON.stringify(nodes, null, 2)};\n`);
 console.log("Refined the Chapter 7 opening in natural Persian.");
