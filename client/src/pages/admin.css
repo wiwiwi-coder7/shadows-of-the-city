@@ -9,3 +9,18 @@
 .form-subheading button { color:var(--brass); border:0; background:transparent; font:500 10px 'DM Mono'; }
 .choice-fields input { width:100%; padding:10px; color:var(--ink); border:1px solid rgba(255,255,255,.13); background:#0d0f12; font:400 11px 'Libre Baskerville'; }
 @media (max-width:700px) { .inline-pair,.choice-fields { grid-template-columns:1fr; } }
+.language-switch { display:flex; gap:6px; margin:0 0 18px; padding:5px; border:1px solid rgba(201,166,106,.22); background:rgba(7,9,12,.62); }
+.language-switch button { flex:1; border:0; background:transparent; color:var(--muted); padding:9px 12px; font:600 10px 'DM Mono'; letter-spacing:.08em; cursor:pointer; }
+.language-switch button.is-active { background:rgba(201,166,106,.18); color:var(--brass); }
+.persian-editor .content-list__item { text-align:right; }
+.persian-editor .content-list__item.is-active { background:rgba(201,166,106,.12); }
+.persian-editor .content-list__item code { direction:ltr; text-align:left; }
+.persian-editor .admin-form { direction:rtl; }
+.persian-editor .form-subheading small { color:var(--muted); font:400 10px 'Vazirmatn',sans-serif; letter-spacing:0; text-transform:none; }
+.persian-block { display:flex; flex-direction:column; gap:6px; padding:10px 0; border-bottom:1px solid rgba(255,255,255,.08); color:var(--brass); font:600 11px 'Vazirmatn',sans-serif; }
+.persian-block textarea,.persian-editor input { width:100%; box-sizing:border-box; resize:vertical; direction:rtl; text-align:right; color:var(--ink); border:1px solid rgba(255,255,255,.13); background:#0d0f12; padding:11px; font:400 15px 'Vazirmatn',sans-serif; line-height:1.9; }
+.persian-choice { display:grid; grid-template-columns:minmax(0,1fr) 150px; gap:9px; align-items:end; padding:9px 0; }
+.persian-choice label { display:flex; flex-direction:column; gap:6px; color:var(--brass); font:600 11px 'Vazirmatn',sans-serif; }
+.persian-choice code { direction:ltr; text-align:left; color:var(--muted); font:400 10px 'DM Mono'; padding:12px 0; }
+.persian-editor__actions { display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; }
+@media (max-width:700px) { .persian-choice { grid-template-columns:1fr; } .persian-choice code { padding:0; } }

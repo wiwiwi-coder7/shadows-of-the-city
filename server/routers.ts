@@ -2,9 +2,10 @@ import { TRPCError } from "@trpc/server";
 import { eq } from "drizzle-orm";
 import { nanoid } from "nanoid";
 import { z } from "zod";
-import { audioAssets, audioAssignments, editorialContent, telemetryEvents } from "../drizzle/schema";
+import { audioAssets, audioAssignments, editorialContent, localizedStoryOverrides, telemetryEvents } from "../drizzle/schema";
 import { clearOwnerSession, loginOwner, ownerSession, requireOwner } from "./adminAuth";
-import { getDb, getRecentTelemetry, listAudioAssets, listAudioAssignments, listEditorialContent } from "./db";
+import { getDb, getRecentTelemetry, listAudioAssets, listAudioAssignments, listEditorialContent, listLocalizedStoryOverrides } from "./db";
+import { persianStoryNodes } from "../client/src/data/story.fa";
 import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
@@ -38,6 +39,20 @@ const audioInput = z.object({
   durationSeconds: z.number().int().min(0).nullable().optional(),
 });
 
+const localizedStoryOverrideInput = z.object({
+  nodeId: z.string().min(3).max(96),
+  sceneTitle: z.string().trim().min(1).max(240),
+  blocks: z.array(z.string().trim().min(1).max(16_000)).max(40),
+  choiceLabels: z.array(z.string().trim().min(1).max(2_000)).max(12),
+});
+
+function verifyPersianOverrideShape(input: z.infer<typeof localizedStoryOverrideInput>) {
+  const baseNode = persianStoryNodes[input.nodeId];
+  if (!baseNode) throw new TRPCError({ code: "NOT_FOUND", message: "The Persian base node was not found." });
+  if (input.blocks.length !== baseNode.blocks.length) throw new TRPCError({ code: "BAD_REQUEST", message: "The number of Persian blocks must match the base story node." });
+  if (input.choiceLabels.length !== baseNode.choices.length) throw new TRPCError({ code: "BAD_REQUEST", message: "The number of Persian choice labels must match the base story node." });
+}
+
 export const appRouter = router({
   system: systemRouter,
   auth: router({
@@ -54,6 +69,7 @@ export const appRouter = router({
       if (!db) return [];
       return db.select().from(editorialContent).where(eq(editorialContent.status, "published"));
     }),
+    persianStoryOverrides: publicProcedure.query(() => listLocalizedStoryOverrides()),
     audioCues: publicProcedure.query(async () => {
       const [assets, assignments] = await Promise.all([listAudioAssets(), listAudioAssignments()]);
       const byId = new Map(assets.map(asset => [asset.id, asset]));
@@ -96,6 +112,20 @@ export const appRouter = router({
       return { installations: uniqueInstallations.size, starts: count("game_start"), completions: count("game_complete"), choices, chapterReach, events: events.length };
     }),
     content: ownerProcedure.query(() => listEditorialContent()),
+    persianStoryOverrides: ownerProcedure.query(() => listLocalizedStoryOverrides()),
+    savePersianStoryOverride: ownerProcedure.input(localizedStoryOverrideInput).mutation(async ({ input }) => {
+      verifyPersianOverrideShape(input);
+      const db = await getDb();
+      if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Persian story storage is unavailable." });
+      await db.insert(localizedStoryOverrides).values({ id: input.nodeId, locale: "fa", sceneTitle: input.sceneTitle, blocks: input.blocks, choiceLabels: input.choiceLabels }).onDuplicateKeyUpdate({ set: { sceneTitle: input.sceneTitle, blocks: input.blocks, choiceLabels: input.choiceLabels } });
+      return { nodeId: input.nodeId };
+    }),
+    deletePersianStoryOverride: ownerProcedure.input(z.object({ nodeId: z.string().min(3).max(96) })).mutation(async ({ input }) => {
+      const db = await getDb();
+      if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Persian story storage is unavailable." });
+      await db.delete(localizedStoryOverrides).where(eq(localizedStoryOverrides.id, input.nodeId));
+      return { nodeId: input.nodeId };
+    }),
     saveContent: ownerProcedure.input(contentInput).mutation(async ({ input }) => {
       const db = await getDb();
       if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Content storage is unavailable." });

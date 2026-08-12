@@ -1,6 +1,6 @@
 import { desc, eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { audioAssets, audioAssignments, editorialContent, ownerCredentials, telemetryEvents, users, type InsertUser } from "../drizzle/schema";
+import { audioAssets, audioAssignments, editorialContent, localizedStoryOverrides, ownerCredentials, telemetryEvents, users, type InsertUser } from "../drizzle/schema";
 import { ENV } from "./_core/env";
 
 let database: ReturnType<typeof drizzle> | null = null;
@@ -44,6 +44,11 @@ export async function getOwnerCredential(identifier: string) {
   if (!db) return undefined;
   const result = await db.select().from(ownerCredentials).where(eq(ownerCredentials.identifier, identifier)).limit(1);
   return result[0];
+}
+
+export async function listLocalizedStoryOverrides() {
+  const db = await getDb();
+  return db ? db.select().from(localizedStoryOverrides).where(eq(localizedStoryOverrides.locale, "fa")).orderBy(desc(localizedStoryOverrides.updatedAt)) : [];
 }
 
 export async function getRecentTelemetry() {
