@@ -47,14 +47,17 @@
 - [x] Document the supplied-font comparison, the selected display role, and the user-provided authorization basis.
 - [x] Add generic localization tests for English passthrough and a missing-Persian-entry fallback.
 - [x] Exercise every Chapter 2–10 opening and first available choice in RTL on desktop and mobile, then record exact node IDs in QA notes.
-- [ ] Replace machine-literal Persian phrasing with natural, narrative-first Persian across all player-visible story text.
+- [ ] Replace machine-literal Persian phrasing with natural, narrative-first Persian across all player-visible story text. Targeted opening rewrites, runtime removal of non-diegetic text, and global Persian orthography smoothing are complete; later scene prose still needs a manual literary rewrite.
 - [x] Correct the Persian game title to «سایه‌های شهر» and audit equivalent title references.
 - [x] Remove all non-diegetic character annotations, implementation notes, editorial labels, and explanatory asides from the player story.
 - [x] Remove any Persian chapter-start or chapter-end announcement so all ten chapters remain one continuous story flow.
-- [ ] Conduct a human editorial QA pass for dialogue tone, character names, choices, and scene titles before release.
+- [ ] Conduct a human editorial QA pass for dialogue tone, character names, choices, and scene titles before release. Automated QA and narrative cleanup are complete, but a human editorial read has not yet been performed.
 - [x] Remove every designer note, visual-direction block, emotional label, branching explanation, and scene/chapter transition marker from player-facing Persian nodes.
 - [x] Keep the landing page fully English in both locales, preserving its existing typography and visual composition.
 - [x] Remove editorial parentheticals and non-diegetic labels from every Persian scene title before rendering.
 - [x] Add automated checks for prohibited production/transition language in all localized scene titles and visible blocks.
 - [x] Record a post-cleanup chapter-by-chapter browser audit of Persian story output and English Home preservation.
 - [x] Persist exact post-cleanup node IDs, desktop/mobile production-language checks, and English Home result in the QA record.
+- [ ] Rewrite remaining machine-literal Persian prose in later scenes of Chapters 7–10, preserving every node and choice target.
+- [ ] Audit and rewrite the remaining player-visible prose in Chapters 2–6 scene by scene for a consistently natural literary-noir voice.
+- [ ] Obtain a final human editorial read for dialogue tone, names, choices, and scene titles before public release.
