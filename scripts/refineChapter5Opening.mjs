@@ -125,6 +125,40 @@ Object.assign(nodes.CH5_S4_N02, {
   ],
 });
 
+Object.assign(nodes.CH5_S4_N03, {
+  sceneTitle: "دلداری",
+  blocks: [
+    { type: "narration", text: "نیک آرام کمکش می‌کند بلند شود. هیچ‌کدام بیشتر از توانش از ادین چشم برنمی‌دارد. کارهایی هست که باید انجام شوند، پرسش‌هایی که هنوز زمانشان نرسیده؛ اما نه امشب." },
+    { type: "dialogue", speaker: "آدری", text: "هنوز کامل به تو اعتماد ندارم، نیک. می‌خواهم بدانی این عوض نشده؛ نه واقعاً، نه هنوز." },
+    { type: "dialogue", speaker: "نیک", text: "می‌دانم." },
+    { type: "dialogue", speaker: "آدری", text: "اما دیگر فکر نمی‌کنم تقصیر تو بوده باشد. نه بعد از امشب. فعلاً بیشتر از این نمی‌توانم بدهم." },
+    { type: "dialogue", speaker: "نیک", text: "همین کافی است." },
+    { type: "narration", text: "صبح روز بعد، اتاق معاینهٔ هیلر سرد و مرتب است؛ تضادی بی‌رحم با آشوب شب گذشته." },
+  ],
+});
+
+Object.assign(nodes.CH5_S5_N01, {
+  sceneTitle: "صبح بعد",
+  blocks: [
+    { type: "dialogue", speaker: "هیلر", text: "امروز صبح شوخی نمی‌کنم. دربارهٔ کسی حرف می‌زنیم که شوخی‌کردن برایش درست به‌نظر نمی‌رسد." },
+    { type: "dialogue", speaker: "نیک", text: "قدردانم." },
+    { type: "dialogue", speaker: "هیلر", text: "زخم‌ها دقیقاً با پروندهٔ اولت جورند؛ همان روش، همان کارایی، همان تردیدنداشتن. هرکه این کار را کرده، آن‌قدر تکرارش کرده که دیگر برایش سخت نیست. اگر فرقی دارد، من هم ادین را دوست داشتم. تنها کسی بود که عمداً به شوخی‌هایم می‌خندید." },
+  ],
+  choices: [
+    { id: "CH5_S5_N01-A", label: "هر جزئیات فنی، هرقدر کوچک، را بپرس.", target: "CH5_S5_N02A" },
+    { id: "CH5_S5_N01-B", label: "آرام تشکر کن و از حال خودش بپرس.", target: "CH5_S5_N02B" },
+    { id: "CH5_S5_N01-C", label: "بپرس آیا این، دست داشتن همان سازمان را تأیید می‌کند.", target: "CH5_S5_N02C" },
+  ],
+});
+
+Object.assign(nodes.CH5_S5_N02, {
+  sceneTitle: "صبح بعد",
+  blocks: [
+    { type: "dialogue", speaker: "هیلر", text: "نیک. هرچه برای پیگیری این ماجرا از تو بگیرد، و پیداست که بهای زیادی دارد، امیدوارم آخرش ارزشش را داشته باشد. فکر می‌کنم ادین همین را می‌خواست؛ این‌که کسی کاری را که او شروع کرد تمام کند." },
+    { type: "narration", text: "نیک به خودش اعتماد ندارد که جواب را بلند بگوید. فقط سر تکان می‌دهد و قدم به صبح خاکستری می‌گذارد؛ صبحی که برای نخستین‌بار پس از مدتی طولانی، جهتی واقعی دارد." },
+  ],
+});
+
 const header = 'import type { StoryBlock, StoryChoice } from "./story.generated";\n\ntype FarsiNode = { sceneTitle: string; blocks: StoryBlock[]; choices: StoryChoice[] };\n\n';
 await writeFile(target, `${header}export const chapter5Farsi: Record<string, FarsiNode> = ${JSON.stringify(nodes, null, 2)};\n`);
 console.log("Refined the Chapter 5 opening in natural Persian.");
