@@ -19,7 +19,7 @@ function cleanPlayerText(raw: string) {
   if (presentationOnly.test(raw) || productionTerms.test(raw)) return null;
   const text = raw
     .replace(/^\s*\([^)]{0,220}\)\s*/g, "")
-    .replace(/\s*\[(?:expression|tone|beat|state|delivery|narration|nick|adry|kurt|gaspar|hiller|erica|anton|beni|vivienne|ozzie|adin|بیان|تعبیر|حالت|صحنه|فصل|ثابت|رفع|اصلاح|پایان)[^\]]*\]/gi, "")
+    .replace(/\s*\[[^\]]*\]/g, "")
     .replace(/^\s*["“]|["”]\s*$/g, "")
     .trim();
   return text || null;
