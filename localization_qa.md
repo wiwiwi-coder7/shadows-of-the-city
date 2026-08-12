@@ -39,3 +39,21 @@ An exhaustive connected-browser run set a Persian local save at the first playab
 | 10 | `CH10_S1_N01` | `CH10_S1_N02` | Passed | Passed |
 
 The 375-pixel checks kept the story column at 347 pixels, within the mobile viewport, across the complete sample set. Screenshot evidence for each chapter and viewport is retained in `/home/ubuntu/qa/shadows-of-the-city-full-persian/`.
+
+## Narrative Cleanup QA — 12 August 2026
+
+The player layer now filters production-only blocks for both locales, while retaining node IDs, story routing, scene art, and choices. The Persian HUD no longer shows chapter or scene labels; it shows only the in-world location. Empty bridge nodes advance silently through their existing destination rather than presenting a transition screen.
+
+The post-cleanup browser run exercised `CH2_S1_N01` through `CH10_S1_N01` and the first choice from each node in both desktop and 375-pixel mobile layouts. Every sampled route reported Persian text, RTL direction, no fallback, no production-language pattern, three initial choices, and a normal transition to `CHx_S1_N02`. The `/?lang=fa` Home-route capture remained English in copy, layout, and typography.
+
+| Chapter | Verified opening | First-choice result | Desktop / mobile production-language check |
+|---|---|---|---|
+| 2 | `CH2_S1_N01` | `CH2_S1_N02` | `false` / `false` |
+| 3 | `CH3_S1_N01` | `CH3_S1_N02` | `false` / `false` |
+| 4 | `CH4_S1_N01` | `CH4_S1_N02` | `false` / `false` |
+| 5 | `CH5_S1_N01` | `CH5_S1_N02` | `false` / `false` |
+| 6 | `CH6_S1_N01` | `CH6_S1_N02` | `false` / `false` |
+| 7 | `CH7_S1_N01` | `CH7_S1_N02` | `false` / `false` |
+| 8 | `CH8_S1_N01` | `CH8_S1_N02` | `false` / `false` |
+| 9 | `CH9_S1_N01` | `CH9_S1_N02` | `false` / `false` |
+| 10 | `CH10_S1_N01` | `CH10_S1_N02` | `false` / `false` |

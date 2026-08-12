@@ -11,30 +11,31 @@ export default function Home() {
   const [hasSave, setHasSave] = useState(false);
   const [confirmNew, setConfirmNew] = useState(false);
   const { t } = useLocale();
+  const homeCopy = { caseFile: "CASE FILE / 001", interactiveNoir: "AN INTERACTIVE NOIR NOVEL", homeDek: "The city forgets what it needs to survive. You were never meant to remember.", newGame: "NEW GAME", continue: "CONTINUE", codexLink: "THE CODEX", albumLink: "CHARACTER ALBUM", playerSettings: "PLAYER SETTINGS", localSave: "Your progress stays in this browser.", replaceCase: "REPLACE CASE FILE", beginInvestigation: "Begin a new investigation?", replaceWarning: "This will replace your current browser save.", beginAgain: "BEGIN AGAIN", keepSave: "KEEP SAVE" };
 
   useEffect(() => setHasSave(Boolean(readSave())), []);
   const begin = () => { writeSave(emptySave(storyStartId)); setLocation("/play"); };
   const continueGame = () => setLocation("/play");
 
-  return <main className="home-page">
+  return <main className="home-page" dir="ltr">
     <div className="home-backdrop" />
-    <GameHeader />
+    <GameHeader forceEnglish />
     <section className="home-hero">
-      <div className="home-hero__number">{t("caseFile")}</div>
-      <p className="eyebrow">{t("interactiveNoir")}</p>
-      <h1><span>{t("brandTitle").toUpperCase()}</span><em>{t("brandSubtitle")}</em></h1>
-      <p className="home-hero__dek">{t("homeDek")}</p>
+      <div className="home-hero__number">{homeCopy.caseFile}</div>
+      <p className="eyebrow">{homeCopy.interactiveNoir}</p>
+      <h1><span>SHADOWS</span><em>of the city</em></h1>
+      <p className="home-hero__dek">{homeCopy.homeDek}</p>
       <div className="home-actions">
-        <button className="button-primary" onClick={() => hasSave ? setConfirmNew(true) : begin()}><CirclePlay size={17} /> {t("newGame")} <ArrowRight size={16} /></button>
-        <button className={`button-secondary ${hasSave ? "" : "is-disabled"}`} disabled={!hasSave} onClick={continueGame}><RotateCcw size={16} /> {t("continue")}</button>
+        <button className="button-primary" onClick={() => hasSave ? setConfirmNew(true) : begin()}><CirclePlay size={17} /> {homeCopy.newGame} <ArrowRight size={16} /></button>
+        <button className={`button-secondary ${hasSave ? "" : "is-disabled"}`} disabled={!hasSave} onClick={continueGame}><RotateCcw size={16} /> {homeCopy.continue}</button>
       </div>
       <div className="hero-links">
-        <button onClick={() => setLocation("/codex")}><BookOpen size={15} /> {t("codexLink")}</button>
-        <button onClick={() => setLocation("/album")}><Compass size={15} /> {t("albumLink")}</button>
-        <button onClick={() => setLocation("/settings")}><Settings2 size={15} /> {t("playerSettings")}</button>
+        <button onClick={() => setLocation("/codex")}><BookOpen size={15} /> {homeCopy.codexLink}</button>
+        <button onClick={() => setLocation("/album")}><Compass size={15} /> {homeCopy.albumLink}</button>
+        <button onClick={() => setLocation("/settings")}><Settings2 size={15} /> {homeCopy.playerSettings}</button>
       </div>
     </section>
-    <aside className="home-note"><LockKeyhole size={14} /><span>{t("localSave")}</span></aside>
-    {confirmNew && <div className="modal-scrim" role="dialog" aria-modal="true"><div className="noir-modal"><p className="eyebrow">{t("replaceCase")}</p><h2>{t("beginInvestigation")}</h2><p>{t("replaceWarning")}</p><div><button className="button-primary" onClick={begin}>{t("beginAgain")}</button><button className="button-secondary" onClick={() => setConfirmNew(false)}>{t("keepSave")}</button></div></div></div>}
+    <aside className="home-note"><LockKeyhole size={14} /><span>{homeCopy.localSave}</span></aside>
+    {confirmNew && <div className="modal-scrim" role="dialog" aria-modal="true"><div className="noir-modal"><p className="eyebrow">{homeCopy.replaceCase}</p><h2>{homeCopy.beginInvestigation}</h2><p>{homeCopy.replaceWarning}</p><div><button className="button-primary" onClick={begin}>{homeCopy.beginAgain}</button><button className="button-secondary" onClick={() => setConfirmNew(false)}>{homeCopy.keepSave}</button></div></div></div>}
   </main>;
 }
