@@ -97,6 +97,34 @@ Object.assign(nodes.CH5_S3_N03, {
   ],
 });
 
+Object.assign(nodes.CH5_S4_N01, {
+  sceneTitle: "دلداری",
+  blocks: [
+    { type: "dialogue", speaker: "نیک", text: "این‌طور نیست. تقصیر من است؛ منظورم همین است. می‌دانم چیزی را درست نمی‌کند و لازم نیست امشب، یا هیچ‌وقت، حرفم را باور کنی. اما نمی‌گذارم فقط چون حقیقت سنگین‌تر است، بار یک دروغ را روی دوشت بگذاری." },
+    { type: "narration", text: "آدری فوراً جواب نمی‌دهد. دوباره به بدن بی‌حرکت ادین نگاه می‌کند و بعد به نیک. چیزی دیگر پشت چشم‌هایش می‌شکند." },
+  ],
+  choices: [
+    { id: "CH5_S4_N01-A", label: "یک قدم نزدیک شو و بی‌کلام آغوشت را باز کن.", target: "CH5_S4_N02A" },
+    { id: "CH5_S4_N01-B", label: "همان‌جا بمان و ساده بگو متأسفی.", target: "CH5_S4_N02B" },
+    { id: "CH5_S4_N01-C", label: "کنار ادین زانو بزن و غم را در کنارش شریک شو.", target: "CH5_S4_N02C" },
+  ],
+});
+
+Object.assign(nodes.CH5_S4_N02, {
+  sceneTitle: "دلداری",
+  blocks: [
+    { type: "narration", text: "هر راهی که به این لحظه رسیده باشند، آخرش در یک حقیقت خاموش می‌نشینند: آدری برای نخستین‌بار از وقتی نیک می‌شناسدش، می‌گذارد کسی نزدیکش بماند؛ نه از روی تاکتیک و نه برای بقا، فقط چون هر دو چیزی را از دست داده‌اند که تنهایی از پسش برنمی‌آید." },
+    { type: "dialogue", speaker: "نیک", text: "متأسفم. اگر فرقی دارد، من هم دوستش داشتم. باعث می‌شد تمام این جنگِ لعنتی، هر بار چند دقیقه کمتر شبیه جنگ باشد؛ و فکر نمی‌کنم هیچ‌وقت به او گفته باشم." },
+    { type: "dialogue", speaker: "آدری", text: "خوشحال می‌شد بشنود. همیشه می‌گفت تو را دوست دارد؛ برخلاف قضاوت بهترش." },
+    { type: "narration", text: "مدتی همان‌جا می‌مانند. چیزی را درست نمی‌کنند و چیزی را حل نمی‌کنند؛ فقط حاضرند، بی‌آن‌که دیگر توانی برای نگه‌داشتن سپرهایشان داشته باشند." },
+  ],
+  choices: [
+    { id: "CH5_S4_N02-A", label: "سکوت کن و لحظه را نگه دار.", target: "CH5_S4_N03A" },
+    { id: "CH5_S4_N02-B", label: "قول بده کسی که این کار را کرده، پاسخ‌گو خواهد شد.", target: "CH5_S4_N03B" },
+    { id: "CH5_S4_N02-C", label: "بپرس می‌خواهد حرف بزند یا مدتی ساکت بماند.", target: "CH5_S4_N03C" },
+  ],
+});
+
 const header = 'import type { StoryBlock, StoryChoice } from "./story.generated";\n\ntype FarsiNode = { sceneTitle: string; blocks: StoryBlock[]; choices: StoryChoice[] };\n\n';
 await writeFile(target, `${header}export const chapter5Farsi: Record<string, FarsiNode> = ${JSON.stringify(nodes, null, 2)};\n`);
 console.log("Refined the Chapter 5 opening in natural Persian.");

@@ -146,6 +146,43 @@ Object.assign(nodes.CH9_S4_N03, {
   ],
 });
 
+Object.assign(nodes.CH9_S5_N01, {
+  sceneTitle: "حوزه؛ آخرین بار",
+  blocks: [
+    { type: "dialogue", speaker: "کرت", text: "پس واقعاً می‌خواهید بروید منطقهٔ تپه و سراغ زنی بزنید که نصف ساختار قدرت شهر، بیشتر از عمر همهٔ ما، پشتش ایستاده است." },
+    { type: "dialogue", speaker: "نیک", text: "نقشه همین است." },
+    { type: "dialogue", speaker: "کرت", text: "رسماً نمی‌توانم کمک‌تان کنم. غیررسمی... این نقشهٔ نقاط کور پلیس در منطقهٔ تپه است، با برنامهٔ گشتِ همین ماه. نپرس از کجا می‌دانم." },
+  ],
+  choices: [
+    { id: "CH9_S5_N01-A", label: "صمیمانه تشکر کن و بگو می‌دانی این کار برایش خطر دارد.", target: "CH9_S5_N02A" },
+    { id: "CH9_S5_N01-B", label: "بپرس آیا بالاخره نیکِ پیش از پاک‌شدن حافظه را بخشیده است.", target: "CH9_S5_N02B" },
+    { id: "CH9_S5_N01-C", label: "پیشنهاد بده نامش را کاملاً دور از این ماجرا نگه دارید.", target: "CH9_S5_N02C" },
+  ],
+});
+
+Object.assign(nodes.CH9_S5_N02, {
+  sceneTitle: "حوزه؛ آخرین بار",
+  blocks: [
+    { type: "dialogue", speaker: "هیلر", text: "از آن طرف دیوار شنیدم می‌خواهید برای جنگ با دولت سایه بروید منطقهٔ تپه. اگر کسی آن‌جا نباشد که بعدش شما را وصله‌پینه کند، دست‌کم دو کار خطرناک می‌کنید." },
+    { type: "dialogue", speaker: "نیک", text: "ممنون، هیلر." },
+    { type: "dialogue", speaker: "هیلر", text: "تشکر نکن. فقط روی میز من نمیر. به‌شکلی غیرحرفه‌ای به زنده‌ماندن هر دوتان وابسته شده‌ام." },
+  ],
+  choices: [
+    { id: "CH9_S5_N02-A", label: "شوخی کن که این نزدیک‌ترین شکل ابراز احساسات اوست.", target: "CH9_S5_N03A" },
+    { id: "CH9_S5_N02-B", label: "جدی باش و برای تمام کمک‌هایش تشکر کن.", target: "CH9_S5_N03B" },
+    { id: "CH9_S5_N02-C", label: "قول بده دست‌کم برای او در جای روشن‌تری نمیری.", target: "CH9_S5_N03C" },
+  ],
+});
+
+Object.assign(nodes.CH9_S5_N03, {
+  sceneTitle: "حوزه؛ آخرین بار",
+  blocks: [
+    { type: "dialogue", speaker: "کرت", text: "نیک. هرچه بالای آن تپه شد، یادت بماند تو مدت‌ها پیش مهم‌ترین چیز را ثابت کردی. اگر اوضاع بد شد، فراموشش نکن." },
+    { type: "dialogue", speaker: "نیک", text: "فراموش نمی‌کنم." },
+    { type: "narration", text: "با نقشهٔ نقاط کور، جعبهٔ کوچک تجهیزات پزشکی و گرمای آدم‌هایی که پشت سرش ایستاده‌اند، نیک از حوزه بیرون می‌رود. برای نخستین‌بار در سال‌هایی که به یاد دارد، تنها نیست." },
+  ],
+});
+
 const header = 'import type { StoryBlock, StoryChoice } from "./story.generated";\n\ntype FarsiNode = { sceneTitle: string; blocks: StoryBlock[]; choices: StoryChoice[] };\n\n';
 await writeFile(target, `${header}export const chapter9Farsi: Record<string, FarsiNode> = ${JSON.stringify(nodes, null, 2)};\n`);
 console.log("Refined the Chapter 9 opening in natural Persian.");
