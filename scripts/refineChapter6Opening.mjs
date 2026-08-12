@@ -120,6 +120,21 @@ Object.assign(nodes.CH6_S4_N02, {
     { type: "dialogue", speaker: "نیک", text: "همکاری از طریق چه چیزی تضمین شده بود؟" },
     { type: "dialogue", speaker: "کرت", text: "نمی‌دانم؛ آن بخش پیش از رسیدن به من پاک شده بود. اما معنی‌اش را می‌فهمم. آن‌ها تو را استخدام نکردند، نیک. وادارت کردند به خدمتشان ناپدید شوی؛ بعد هم اداره را وادار کردند کمک کند همه‌چیز بی‌صدا بماند." },
   ],
+  choices: [
+    { id: "CH6_S4_N02-A", label: "بپرس آن زمان خودش از ماجرا خبر داشته یا نه.", target: "CH6_S4_N03A" },
+    { id: "CH6_S4_N02-B", label: "بپرس «نظارت خارجی؛ رابط روکری» در عمل یعنی چه.", target: "CH6_S4_N03B" },
+    { id: "CH6_S4_N02-C", label: "پیش از جواب‌دادن، یک لحظه با حقیقتش بمان.", target: "CH6_S4_N03C" },
+  ],
+});
+
+Object.assign(nodes.CH6_S4_N03, {
+  sceneTitle: "حوزه پس از ساعت اداری",
+  blocks: [
+    { type: "dialogue", speaker: "کرت", text: "یک چیز دیگر هست؛ امشب نه. برای یک شب به‌اندازهٔ کافی بار برداشتی، من هم همین‌طور. اما این پرونده ثابت می‌کند هر کاری با تو کردند، تو از اول چه کسی بودی. این را انتخاب نکردی." },
+    { type: "dialogue", speaker: "نیک", text: "ممنون، کرت. واقعاً." },
+    { type: "dialogue", speaker: "کرت", text: "بهش عادت نکن. اعتباری دارم که باید حفظش کنم." },
+    { type: "narration", text: "نیک با پوشه‌ای که انگار هنوز شکننده است از حوزه بیرون می‌رود. پشت سرش، پرونده‌های بیشتری در کشویی بازنشده منتظرند؛ اما برای امشب، همین بار کافی است." },
+  ],
 });
 
 const header = 'import type { StoryBlock, StoryChoice } from "./story.generated";\n\ntype FarsiNode = { sceneTitle: string; blocks: StoryBlock[]; choices: StoryChoice[] };\n\n';
