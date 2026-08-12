@@ -12,6 +12,8 @@ import { chapter10Farsi } from "./chapter10.fa";
 
 export const persianStoryNodes = { ...chapter1Farsi, ...chapter2Farsi, ...chapter3Farsi, ...chapter4Farsi, ...chapter5Farsi, ...chapter6Farsi, ...chapter7Farsi, ...chapter8Farsi, ...chapter9Farsi, ...chapter10Farsi };
 
+export type PersianStoryOverride = { id?: string; nodeId?: string; sceneTitle: string; blocks: unknown; choiceLabels: unknown };
+
 const presentationOnly = /^(?:\s*[-–]\s*(?:fixed|relationship|branch|choice|note|continuity|design|writer|نتایج|پرچم|شاخه|یادداشت)|\s*\[?\s*(?:(?:scene|chapter)\s+\d+\s+(?:ends?|begins?|start|end|transition)|(?:صحنه|فصل)\s*\d*\s*(?:به پایان|شروع|پایان|انتقال))|\s*(?:interior|exterior|wide shot|close on|establishing shot|camera|cut to|فضای داخلی|فضای خارجی|خارج به داخل|نمای باز|نمای نزدیک|کادربندی|پالت|حالت|خلق و خو))/i;
 const productionTerms = /(?:\bpalette\s*:|\bmood\s*:|\bcamera\s*:|\bframing\s*:|\bproduction\s+note\b|\bbranch\s+(?:note|design)\b|\brelationship\s+flag\b|پالت(?:\s*رنگی)?\s*:|حالت\s*:|حال[‌\s]*و[‌\s]*هوا\s*:|کادربندی\s*:|یادداشت\s*(?:طراح|تولید)|توضیح\s*شاخه|پرچم\s*(?:رابطه|های))/i;
 
@@ -37,9 +39,18 @@ export function hasPersianStoryNode(nodeId: string) {
   return Boolean(persianStoryNodes[nodeId]);
 }
 
-export function localizeStoryNode(node: StoryNode, locale: "en" | "fa"): StoryNode {
+export function localizeStoryNode(node: StoryNode, locale: "en" | "fa", override?: PersianStoryOverride): StoryNode {
   const translation = locale === "fa" ? persianStoryNodes[node.id] : undefined;
-  const merged = translation ? { ...node, ...translation } : node;
+  const localized = translation ? { ...node, ...translation } : node;
+  const overrideBlocks = Array.isArray(override?.blocks) ? override.blocks : [];
+  const overrideChoiceLabels = Array.isArray(override?.choiceLabels) ? override.choiceLabels : [];
+  const hasMatchingOverride = locale === "fa" && translation && override && (override.id === node.id || override.nodeId === node.id) && overrideBlocks.length === localized.blocks.length && overrideChoiceLabels.length === localized.choices.length;
+  const merged = hasMatchingOverride ? {
+    ...localized,
+    sceneTitle: override.sceneTitle,
+    blocks: localized.blocks.map((block, index) => ({ ...block, text: String(overrideBlocks[index]) })),
+    choices: localized.choices.map((choice, index) => ({ ...choice, label: String(overrideChoiceLabels[index]) })),
+  } : localized;
   return {
     ...merged,
     sceneTitle: cleanSceneTitle(merged.sceneTitle),

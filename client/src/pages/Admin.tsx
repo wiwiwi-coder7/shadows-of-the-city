@@ -1,7 +1,8 @@
 import { Activity, AudioLines, BookOpenCheck, CheckCircle2, ClipboardList, FilePenLine, LayoutDashboard, LockKeyhole, LogOut, Plus, ShieldCheck, Sparkles, UsersRound, XCircle } from "lucide-react";
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useEffect, useMemo, useState } from "react";
 import { useLocation } from "wouter";
 import { trpc } from "@/lib/trpc";
+import { persianStoryNodes } from "@/data/story.fa";
 import "./admin.css";
 
 type AdminTab = "overview" | "story" | "lore" | "audio" | "validation";
@@ -59,7 +60,7 @@ function ContentEditor({ kind }: { kind: "story-node" | "codex" | "character" })
 
 type ChoiceForm = { id: string; label: string; target: string };
 
-function StructuredStoryEditor() {
+function EnglishStoryEditor() {
   const content = trpc.admin.content.useQuery(); const utils = trpc.useUtils();
   const save = trpc.admin.saveContent.useMutation({ onSuccess: () => utils.admin.content.invalidate() });
   const items = content.data?.filter(item => item.kind === "story-node") ?? [];
@@ -68,6 +69,37 @@ function StructuredStoryEditor() {
   const updateChoice = (index: number, field: keyof ChoiceForm, value: string) => setChoices(choices.map((choice, candidate) => candidate === index ? { ...choice, [field]: value } : choice));
   const submit = (event: FormEvent) => { event.preventDefault(); const blocks = [...(narration.trim() ? narration.split(/\n{2,}/).map(text => ({ type: "narration", text })) : []), ...(dialogue.trim() ? [{ type: "dialogue", speaker: speaker || "NICK", text: dialogue }] : [])]; save.mutate({ id: selectedId || undefined, kind: "story-node", title, chapter: Number(chapter), status: "published", payload: { imageUrl, nextId, blocks, choices: choices.filter(choice => choice.label.trim() && choice.target.trim()) } }); };
   return <div className="admin-view"><section className="admin-grid-two content-grid"><article className="admin-card"><div className="card-heading"><h2>Story nodes</h2><span>{items.length} published</span></div><div className="content-list compact">{items.map(item => <button className="content-list__item" onClick={() => load(item)} key={item.id}><span><b>{item.title}</b><small>Chapter {item.chapter} · {item.status}</small></span><code>{item.id}</code></button>)}</div></article><article className="admin-card"><div className="card-heading"><h2>{selectedId ? "Edit node" : "New node"}</h2><span>{selectedId || "Draft"}</span></div><form className="admin-form structured-form" onSubmit={submit}><label>Node title<input required value={title} onChange={event => setTitle(event.target.value)} placeholder="CH1_S1_N01" /></label><label>Chapter<select value={chapter} onChange={event => setChapter(event.target.value)}>{Array.from({ length: 10 }, (_, index) => <option key={index + 1}>{index + 1}</option>)}</select></label><label>Scene image URL<input required value={imageUrl} onChange={event => setImageUrl(event.target.value)} placeholder="/manus-storage/…" /></label><label>Continue destination<input value={nextId} onChange={event => setNextId(event.target.value)} placeholder="CH1_S1_N02" /></label><label>Narration<textarea value={narration} onChange={event => setNarration(event.target.value)} rows={5} /></label><div className="inline-pair"><label>Dialogue speaker<input value={speaker} onChange={event => setSpeaker(event.target.value)} placeholder="NICK" /></label><label>Dialogue line<input value={dialogue} onChange={event => setDialogue(event.target.value)} placeholder="A line of dialogue" /></label></div><div className="form-subheading"><span>Choices</span><button type="button" onClick={() => setChoices([...choices, { id: String.fromCharCode(65 + choices.length), label: "", target: "" }])}>+ Add choice</button></div>{choices.map((choice, index) => <div className="choice-fields" key={`${choice.id}-${index}`}><input aria-label="Choice label" value={choice.label} onChange={event => updateChoice(index, "label", event.target.value)} placeholder="Choice copy" /><input aria-label="Choice target" value={choice.target} onChange={event => updateChoice(index, "target", event.target.value)} placeholder="Destination node" /></div>)}<button className="button-primary" disabled={save.isPending}><FilePenLine size={15} /> {save.isPending ? "Publishing…" : "Publish node"}</button></form></article></section></div>;
+}
+
+function PersianStoryEditor() {
+  const overrides = trpc.admin.persianStoryOverrides.useQuery();
+  const utils = trpc.useUtils();
+  const save = trpc.admin.savePersianStoryOverride.useMutation({ onSuccess: () => { utils.admin.persianStoryOverrides.invalidate(); utils.game.persianStoryOverrides.invalidate(); } });
+  const restore = trpc.admin.deletePersianStoryOverride.useMutation({ onSuccess: () => { utils.admin.persianStoryOverrides.invalidate(); utils.game.persianStoryOverrides.invalidate(); } });
+  const nodeEntries = useMemo(() => Object.entries(persianStoryNodes).sort(([left], [right]) => left.localeCompare(right)), []);
+  const [selectedId, setSelectedId] = useState("");
+  const [sceneTitle, setSceneTitle] = useState("");
+  const [blocks, setBlocks] = useState<string[]>([]);
+  const [choiceLabels, setChoiceLabels] = useState<string[]>([]);
+  const overrideById = useMemo(() => new Map((overrides.data ?? []).map(item => [item.id, item])), [overrides.data]);
+  const base = selectedId ? persianStoryNodes[selectedId] : undefined;
+  const currentOverride = selectedId ? overrideById.get(selectedId) : undefined;
+  useEffect(() => { if (!selectedId && nodeEntries.length) setSelectedId(nodeEntries[0][0]); }, [selectedId, nodeEntries]);
+  useEffect(() => {
+    if (!base) return;
+    setSceneTitle(currentOverride?.sceneTitle ?? base.sceneTitle);
+    setBlocks(Array.isArray(currentOverride?.blocks) ? currentOverride.blocks.map(String) : base.blocks.map(block => block.text));
+    setChoiceLabels(Array.isArray(currentOverride?.choiceLabels) ? currentOverride.choiceLabels.map(String) : base.choices.map(choice => choice.label));
+  }, [base, currentOverride, selectedId]);
+  const updateBlock = (index: number, value: string) => setBlocks(current => current.map((block, candidate) => candidate === index ? value : block));
+  const updateChoice = (index: number, value: string) => setChoiceLabels(current => current.map((label, candidate) => candidate === index ? value : label));
+  if (!base) return <div className="admin-skeleton">Loading Persian story nodes…</div>;
+  return <div className="admin-view persian-editor" dir="rtl"><section className="admin-grid-two content-grid"><article className="admin-card"><div className="card-heading"><h2>گره‌های فارسی داستان</h2><span>{nodeEntries.length} گره</span></div><div className="content-list compact">{nodeEntries.map(([nodeId, node]) => <button className={`content-list__item ${selectedId === nodeId ? "is-active" : ""}`} onClick={() => setSelectedId(nodeId)} key={nodeId}><span><b>{node.sceneTitle}</b><small>{nodeId}{overrideById.has(nodeId) ? " · ویرایش‌شده" : " · پایه"}</small></span><code>{nodeId}</code></button>)}</div></article><article className="admin-card"><div className="card-heading"><h2>ویرایش فارسی</h2><span>{selectedId}</span></div><form className="admin-form structured-form" onSubmit={event => { event.preventDefault(); save.mutate({ nodeId: selectedId, sceneTitle, blocks, choiceLabels }); }}><label>عنوان صحنه<input required value={sceneTitle} onChange={event => setSceneTitle(event.target.value)} /></label><div className="form-subheading"><span>متن صحنه</span><small>نام گوینده و ساختار ثابت است</small></div>{base.blocks.map((block, index) => <label className="persian-block" key={`${selectedId}-block-${index}`}><span>{block.type === "dialogue" ? `دیالوگ — ${block.speaker ?? "راوی"}` : "روایت"}</span><textarea required value={blocks[index] ?? ""} onChange={event => updateBlock(index, event.target.value)} rows={4} /></label>)}{base.choices.length > 0 && <><div className="form-subheading"><span>انتخاب‌ها</span><small>مقصدها قفل هستند</small></div>{base.choices.map((choice, index) => <div className="persian-choice" key={`${selectedId}-choice-${choice.id}`}><label><span>متن انتخاب {index + 1}</span><input required value={choiceLabels[index] ?? ""} onChange={event => updateChoice(index, event.target.value)} /></label><code>{choice.target}</code></div>)}</>}<div className="persian-editor__actions"><button className="button-primary" disabled={save.isPending}>{save.isPending ? "در حال ذخیره…" : "ذخیره و انتشار فوری"}</button><button type="button" className="button-secondary" disabled={!currentOverride || restore.isPending} onClick={() => restore.mutate({ nodeId: selectedId })}>بازگردانی ترجمهٔ پایه</button></div>{save.error && <div className="form-error">{save.error.message}</div>}{restore.error && <div className="form-error">{restore.error.message}</div>}</form></article></section></div>;
+}
+
+function StructuredStoryEditor() {
+  const [language, setLanguage] = useState<"en" | "fa">("en");
+  return <div className="admin-view"><div className="language-switch" aria-label="Story editing language"><button type="button" className={language === "en" ? "is-active" : ""} onClick={() => setLanguage("en")}>EN · English</button><button type="button" className={language === "fa" ? "is-active" : ""} onClick={() => setLanguage("fa")}>FA · فارسی</button></div>{language === "fa" ? <PersianStoryEditor /> : <EnglishStoryEditor />}</div>;
 }
 
 function StructuredLoreEditor({ kind }: { kind: "codex" | "character" }) {

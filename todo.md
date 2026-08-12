@@ -47,7 +47,7 @@
 - [x] Document the supplied-font comparison, the selected display role, and the user-provided authorization basis.
 - [x] Add generic localization tests for English passthrough and a missing-Persian-entry fallback.
 - [x] Exercise every Chapter 2–10 opening and first available choice in RTL on desktop and mobile, then record exact node IDs in QA notes.
-- [ ] Replace machine-literal Persian phrasing with natural, narrative-first Persian across all player-visible story text. Targeted opening rewrites, runtime removal of non-diegetic text, and global Persian orthography smoothing are complete; later scene prose still needs a manual literary rewrite.
+- [ ] Replace machine-literal Persian phrasing with natural, narrative-first Persian across all player-visible story text. Targeted rewrites, runtime removal of non-diegetic text, and global orthography smoothing are complete; retain an explicit node-by-node literary record for Chapters 2–6 before treating the full editorial pass as complete.
 - [x] Correct the Persian game title to «سایه‌های شهر» and audit equivalent title references.
 - [x] Remove all non-diegetic character annotations, implementation notes, editorial labels, and explanatory asides from the player story.
 - [x] Remove any Persian chapter-start or chapter-end announcement so all ten chapters remain one continuous story flow.
@@ -58,6 +58,11 @@
 - [x] Add automated checks for prohibited production/transition language in all localized scene titles and visible blocks.
 - [x] Record a post-cleanup chapter-by-chapter browser audit of Persian story output and English Home preservation.
 - [x] Persist exact post-cleanup node IDs, desktop/mobile production-language checks, and English Home result in the QA record.
-- [ ] Rewrite remaining machine-literal Persian prose in later scenes of Chapters 7–10, preserving every node and choice target.
-- [ ] Audit and rewrite the remaining player-visible prose in Chapters 2–6 scene by scene for a consistently natural literary-noir voice.
+- [x] Rewrite remaining machine-literal Persian prose in later scenes of Chapters 7–10, preserving every node and choice target.
+- [ ] Audit and rewrite the remaining player-visible prose in Chapters 2–6 scene by scene for a consistently natural literary-noir voice. Earlier chapters have been sampled and Chapters 5–6 expanded, but a documented full node-by-node literary record is still required.
 - [ ] Obtain a final human editorial read for dialogue tone, names, choices, and scene titles before public release.
+- [ ] Record a node-by-node literary audit for Chapters 2–6, then re-check those chapters for any remaining machine-literal phrasing.
+- [x] Diagnose the reported private-admin login failure and verify that the owner credentials work against the current development instance. The active identifier was confirmed, the password was securely reset, the new credential was verified against the stored hash, and an end-to-end login request received a new secure owner-session cookie.
+- [x] Investigate the continued browser-facing admin login rejection and reconcile any active-instance or routing mismatch with the verified credential. The public admin endpoint was tested successfully after a readable-password reset and returned a secure owner-session cookie.
+- [x] Add an owner-only Persian story editing workflow in the admin panel, keeping English and Persian content separate while preserving every story node and choice destination. The owner API, immediate runtime overrides, RTL editor, protected choice targets, reset-to-base action, migration, unit tests, and public-domain API check are complete.
+- [x] Run and document an end-to-end Persian override QA flow: save a temporary owner override, verify public runtime retrieval, then restore the base translation without leaving test content behind.

@@ -65,6 +65,16 @@ export const ownerCredentials = mysqlTable("owner_credentials", {
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
 });
 
+export const localizedStoryOverrides = mysqlTable("localized_story_overrides", {
+  id: varchar("id", { length: 96 }).primaryKey(),
+  locale: mysqlEnum("locale", ["fa"]).default("fa").notNull(),
+  sceneTitle: text("sceneTitle").notNull(),
+  blocks: json("blocks").notNull(),
+  choiceLabels: json("choiceLabels").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
 export const adminSessions = mysqlTable("admin_sessions", {
   id: varchar("id", { length: 96 }).primaryKey(),
   credentialId: int("credentialId").notNull(),

@@ -15,6 +15,13 @@
       "when": 1786468704276,
       "tag": "0001_famous_valeria_richards",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1786556660575,
+      "tag": "0002_small_onslaught",
+      "breakpoints": true
     }
   ]
 }

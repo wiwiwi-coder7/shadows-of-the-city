@@ -19,6 +19,7 @@ export default function Play() {
   const primaryAction = useRef<HTMLButtonElement | null>(null);
   const track = trpc.game.track.useMutation();
   const publishedContent = trpc.game.publishedContent.useQuery();
+  const persianOverrides = trpc.game.persianStoryOverrides.useQuery();
   const audioCues = trpc.game.audioCues.useQuery();
   const { locale, t } = useLocale();
 
@@ -34,7 +35,8 @@ export default function Play() {
   }, [publishedContent.data]);
   const runtimeNodeById = useMemo(() => Object.fromEntries(runtimeNodes.map(runtimeNode => [runtimeNode.id, runtimeNode])), [runtimeNodes]);
   const sourceNode: StoryNode | undefined = useMemo(() => save ? runtimeNodeById[save.currentNodeId] : undefined, [save, runtimeNodeById]);
-  const node: StoryNode | undefined = useMemo(() => sourceNode ? localizeStoryNode(sourceNode, locale) : undefined, [sourceNode, locale]);
+  const persianOverrideByNodeId = useMemo(() => new Map((persianOverrides.data ?? []).map(override => [override.id, override])), [persianOverrides.data]);
+  const node: StoryNode | undefined = useMemo(() => sourceNode ? localizeStoryNode(sourceNode, locale, locale === "fa" ? persianOverrideByNodeId.get(sourceNode.id) : undefined) : undefined, [sourceNode, locale, persianOverrideByNodeId]);
   const trackEvent = (eventType: "game_start" | "node_view" | "choice_selected" | "chapter_reached" | "game_complete", choiceId?: string) => {
     if (!shouldTrackGameplay(settings) || !node) return;
     track.mutate({ installationId: getInstallationId(), eventType, chapter: node.chapter, nodeId: node.id, choiceId: choiceId ?? null, locale });
