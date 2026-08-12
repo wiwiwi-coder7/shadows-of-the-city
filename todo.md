@@ -47,3 +47,14 @@
 - [x] Document the supplied-font comparison, the selected display role, and the user-provided authorization basis.
 - [x] Add generic localization tests for English passthrough and a missing-Persian-entry fallback.
 - [x] Exercise every Chapter 2–10 opening and first available choice in RTL on desktop and mobile, then record exact node IDs in QA notes.
+- [ ] Replace machine-literal Persian phrasing with natural, narrative-first Persian across all player-visible story text.
+- [x] Correct the Persian game title to «سایه‌های شهر» and audit equivalent title references.
+- [x] Remove all non-diegetic character annotations, implementation notes, editorial labels, and explanatory asides from the player story.
+- [x] Remove any Persian chapter-start or chapter-end announcement so all ten chapters remain one continuous story flow.
+- [ ] Conduct a human editorial QA pass for dialogue tone, character names, choices, and scene titles before release.
+- [x] Remove every designer note, visual-direction block, emotional label, branching explanation, and scene/chapter transition marker from player-facing Persian nodes.
+- [x] Keep the landing page fully English in both locales, preserving its existing typography and visual composition.
+- [x] Remove editorial parentheticals and non-diegetic labels from every Persian scene title before rendering.
+- [x] Add automated checks for prohibited production/transition language in all localized scene titles and visible blocks.
+- [x] Record a post-cleanup chapter-by-chapter browser audit of Persian story output and English Home preservation.
+- [x] Persist exact post-cleanup node IDs, desktop/mobile production-language checks, and English Home result in the QA record.

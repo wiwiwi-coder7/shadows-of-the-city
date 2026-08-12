@@ -90,6 +90,12 @@ export default function Play() {
     writeSave(next);
   };
 
+  useEffect(() => {
+    if (!node || !save || node.blocks.length > 0 || node.choices.length > 0 || !node.nextId) return;
+    const timer = window.setTimeout(() => advance(), 0);
+    return () => window.clearTimeout(timer);
+  }, [node?.id, save?.currentNodeId]);
+
   if (!node || !save) return <div className="loading-screen">{t("loading")}</div>;
   const isFinalNode = !node.nextId;
   const playerClass = `story-player text-${settings.textScale} ${settings.highContrast ? "is-high-contrast" : ""} ${settings.reducedMotion ? "is-reduced-motion" : ""}`;
@@ -111,11 +117,11 @@ export default function Play() {
     <div className="story-image" style={{ backgroundImage: `url(${node.imageUrl})` }} />
     <div className={`story-grain ${settings.sceneEffects ? "" : "is-hidden"}`} />
     <div className="story-vignette" />
-    {showHud && <div className="story-topbar"><button className="story-back" onClick={() => setLocation("/")}><ArrowLeft size={16} /> {t("archive")}</button><div className="chapter-status"><span>{t("chapterShort")} {String(node.chapter).padStart(2, "0")}</span><i /><span>{node.sceneTitle.replace(/\(.+\)/, "").trim()}</span></div><div className="story-tools"><button onClick={() => setLocation("/codex")} aria-label={t("openCodex")}><BookOpen size={16} /></button><button onClick={() => setLocation("/album")} aria-label={t("openAlbum")}><GalleryVerticalEnd size={16} /></button><button onClick={() => setLocation("/settings")} aria-label={t("openSettings")}><Settings2 size={16} /></button></div></div>}
+    {showHud && <div className="story-topbar"><button className="story-back" onClick={() => setLocation("/")}><ArrowLeft size={16} /> {t("archive")}</button><div className="chapter-status">{locale !== "fa" && <><span>{t("chapterShort")} {String(node.chapter).padStart(2, "0")}</span><i /></>}<span>{node.sceneTitle.replace(/\(.+\)/, "").trim()}</span></div><div className="story-tools"><button onClick={() => setLocation("/codex")} aria-label={t("openCodex")}><BookOpen size={16} /></button><button onClick={() => setLocation("/album")} aria-label={t("openAlbum")}><GalleryVerticalEnd size={16} /></button><button onClick={() => setLocation("/settings")} aria-label={t("openSettings")}><Settings2 size={16} /></button></div></div>}
     <button className="screen-toggle" onClick={() => setShowHud(!showHud)} aria-label={t("controls")}><Pause size={12} /></button>
     <section className="story-copy" aria-live="polite">
       {locale === "fa" && !hasPersianStoryNode(node.id) && <p className="story-fallback">{t("untranslatedChapter")}</p>}
-      <div className="story-copy__meta"><span>{t("scene", { scene: node.scene })}</span><span>{t("traced", { percent: Math.min(100, Math.round((save.visitedNodeIds.length / storyNodes.length) * 100)) })}</span></div>
+      <div className="story-copy__meta">{locale !== "fa" && <span>{t("scene", { scene: node.scene })}</span>}<span>{t("traced", { percent: Math.min(100, Math.round((save.visitedNodeIds.length / storyNodes.length) * 100)) })}</span></div>
       <div className="story-blocks">{node.blocks.map((block, index) => block.type === "dialogue" ? <div className="dialogue-line" key={`${node.id}-${index}`}><span>{block.speaker}</span><p>“{block.text}”</p></div> : <p className="narration" key={`${node.id}-${index}`}>{block.text}</p>)}</div>
       {node.choices.length > 0 ? <div className="choice-list"><p className="eyebrow">{t("yourMove")}</p>{node.choices.map((choice, index) => <button ref={index === 0 ? primaryAction : undefined} key={choice.id} onClick={() => advance(choice.id, choice.target)}><span>0{index + 1}</span><strong>{choice.label}</strong><ChevronRight size={17} /></button>)}</div> : <div className="continue-row">{isFinalNode ? <button ref={primaryAction} className="button-primary" onClick={() => { trackEvent("game_complete"); setLocation("/"); }}><Check size={16} /> {t("closeCase")}</button> : <button ref={primaryAction} className="button-primary" onClick={() => advance()}><SkipForward size={16} /> {t("continue")} <ArrowRight size={15} /></button>}</div>}
     </section>
