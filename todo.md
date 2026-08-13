@@ -66,3 +66,4 @@
 - [x] Investigate the continued browser-facing admin login rejection and reconcile any active-instance or routing mismatch with the verified credential. The public admin endpoint was tested successfully after a readable-password reset and returned a secure owner-session cookie.
 - [x] Add an owner-only Persian story editing workflow in the admin panel, keeping English and Persian content separate while preserving every story node and choice destination. The owner API, immediate runtime overrides, RTL editor, protected choice targets, reset-to-base action, migration, unit tests, and public-domain API check are complete.
 - [x] Run and document an end-to-end Persian override QA flow: save a temporary owner override, verify public runtime retrieval, then restore the base translation without leaving test content behind.
+- [ ] Export the complete project to a new private GitHub repository and verify the repository privacy setting.
