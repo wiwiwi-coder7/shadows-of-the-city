@@ -1,10 +1,8 @@
 import { TRPCError } from "@trpc/server";
-import { eq } from "drizzle-orm";
 import { nanoid } from "nanoid";
 import { z } from "zod";
-import { audioAssets, audioAssignments, editorialContent, localizedStoryOverrides, telemetryEvents } from "../drizzle/schema";
 import { clearOwnerSession, loginOwner, ownerSession, requireOwner } from "./adminAuth";
-import { getDb, getRecentTelemetry, listAudioAssets, listAudioAssignments, listEditorialContent, listLocalizedStoryOverrides } from "./db";
+import { deleteEditorialContent, deleteLocalizedStoryOverride, getRecentTelemetry, listAudioAssets, listAudioAssignments, listEditorialContent, listLocalizedStoryOverrides, listPublishedEditorialContent, saveAudioAsset, saveAudioAssignment, saveEditorialContent, saveLocalizedStoryOverride, storeTelemetry } from "./db";
 import { persianStoryNodes } from "../client/src/data/story.fa";
 import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
@@ -64,18 +62,14 @@ export const appRouter = router({
     }),
   }),
   game: router({
-    publishedContent: publicProcedure.query(async () => {
-      const db = await getDb();
-      if (!db) return [];
-      return db.select().from(editorialContent).where(eq(editorialContent.status, "published"));
-    }),
+    publishedContent: publicProcedure.query(() => listPublishedEditorialContent()),
     persianStoryOverrides: publicProcedure.query(() => listLocalizedStoryOverrides()),
     audioCues: publicProcedure.query(async () => {
       const [assets, assignments] = await Promise.all([listAudioAssets(), listAudioAssignments()]);
       const byId = new Map(assets.map(asset => [asset.id, asset]));
       return assignments.map(assignment => {
         const asset = byId.get(assignment.audioAssetId);
-        return asset ? { targetType: assignment.targetType, targetId: assignment.targetId, volume: assignment.volume, loop: Boolean(assignment.loop), url: asset.url, category: asset.category } : null;
+        return asset ? { targetType: assignment.targetType, targetId: assignment.targetId, volume: assignment.volume, loop: assignment.loop, url: asset.url, category: asset.category } : null;
       }).filter((cue): cue is NonNullable<typeof cue> => Boolean(cue));
     }),
     track: publicProcedure.input(z.object({
@@ -86,9 +80,7 @@ export const appRouter = router({
       choiceId: z.string().max(128).nullable().optional(),
       locale: z.string().max(12).default("en"),
     })).mutation(async ({ input }) => {
-      const db = await getDb();
-      if (!db) return { stored: false };
-      await db.insert(telemetryEvents).values({ id: nanoid(), installationId: input.installationId, eventType: input.eventType, chapter: input.chapter ?? null, nodeId: input.nodeId ?? null, choiceId: input.choiceId ?? null, locale: input.locale });
+      await storeTelemetry({ id: nanoid(), installationId: input.installationId, eventType: input.eventType, chapter: input.chapter ?? null, nodeId: input.nodeId ?? null, choiceId: input.choiceId ?? null, locale: input.locale });
       return { stored: true };
     }),
   }),
@@ -115,37 +107,27 @@ export const appRouter = router({
     persianStoryOverrides: ownerProcedure.query(() => listLocalizedStoryOverrides()),
     savePersianStoryOverride: ownerProcedure.input(localizedStoryOverrideInput).mutation(async ({ input }) => {
       verifyPersianOverrideShape(input);
-      const db = await getDb();
-      if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Persian story storage is unavailable." });
-      await db.insert(localizedStoryOverrides).values({ id: input.nodeId, locale: "fa", sceneTitle: input.sceneTitle, blocks: input.blocks, choiceLabels: input.choiceLabels }).onDuplicateKeyUpdate({ set: { sceneTitle: input.sceneTitle, blocks: input.blocks, choiceLabels: input.choiceLabels } });
+      await saveLocalizedStoryOverride({ id: input.nodeId, locale: "fa", sceneTitle: input.sceneTitle, blocks: input.blocks, choiceLabels: input.choiceLabels });
       return { nodeId: input.nodeId };
     }),
     deletePersianStoryOverride: ownerProcedure.input(z.object({ nodeId: z.string().min(3).max(96) })).mutation(async ({ input }) => {
-      const db = await getDb();
-      if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Persian story storage is unavailable." });
-      await db.delete(localizedStoryOverrides).where(eq(localizedStoryOverrides.id, input.nodeId));
+      await deleteLocalizedStoryOverride(input.nodeId);
       return { nodeId: input.nodeId };
     }),
     saveContent: ownerProcedure.input(contentInput).mutation(async ({ input }) => {
-      const db = await getDb();
-      if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Content storage is unavailable." });
       const id = input.id ?? nanoid();
-      await db.insert(editorialContent).values({ id, kind: input.kind, title: input.title, chapter: input.chapter ?? null, status: input.status, payload: input.payload }).onDuplicateKeyUpdate({ set: { kind: input.kind, title: input.title, chapter: input.chapter ?? null, status: input.status, payload: input.payload } });
+      await saveEditorialContent({ id, kind: input.kind, title: input.title, chapter: input.chapter ?? null, status: input.status, payload: input.payload });
       return { id };
     }),
     deleteContent: ownerProcedure.input(z.object({ id: z.string().min(2).max(96) })).mutation(async ({ input }) => {
-      const db = await getDb();
-      if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Content storage is unavailable." });
-      await db.delete(editorialContent).where(eq(editorialContent.id, input.id));
+      await deleteEditorialContent(input.id);
       return { success: true };
     }),
     audioAssets: ownerProcedure.query(() => listAudioAssets()),
     audioAssignments: ownerProcedure.query(() => listAudioAssignments()),
     saveAudioAsset: ownerProcedure.input(audioInput).mutation(async ({ input }) => {
-      const db = await getDb();
-      if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Audio storage is unavailable." });
       const id = input.id ?? nanoid();
-      await db.insert(audioAssets).values({ id, name: input.name, category: input.category, url: input.url, durationSeconds: input.durationSeconds ?? null }).onDuplicateKeyUpdate({ set: { name: input.name, category: input.category, url: input.url, durationSeconds: input.durationSeconds ?? null } });
+      await saveAudioAsset({ id, name: input.name, category: input.category, url: input.url, durationSeconds: input.durationSeconds ?? null });
       return { id };
     }),
     uploadAudio: ownerProcedure.input(z.object({ fileName: z.string().min(1).max(180), mimeType: z.string().regex(/^audio\/[a-z0-9.+-]+$/i), base64: z.string().min(8).max(14_000_000) })).mutation(async ({ input }) => {
@@ -153,24 +135,20 @@ export const appRouter = router({
       if (!buffer.length || buffer.length > 10 * 1024 * 1024) throw new TRPCError({ code: "PAYLOAD_TOO_LARGE", message: "Audio uploads must be between 1 byte and 10 MB." });
       const safeName = input.fileName.replace(/[^a-zA-Z0-9._-]/g, "_");
       const stored = await storagePut(`shadows-of-the-city/audio/${safeName}`, buffer, input.mimeType);
-      const db = await getDb();
-      if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Audio storage is unavailable." });
       const id = nanoid();
       const category = input.mimeType.includes("ambient") ? "ambience" : "music";
-      await db.insert(audioAssets).values({ id, name: input.fileName, category, url: stored.url, durationSeconds: null });
+      await saveAudioAsset({ id, name: input.fileName, category, url: stored.url, durationSeconds: null });
       return { id, url: stored.url };
     }),
     assignAudio: ownerProcedure.input(z.object({ id: z.string().min(2).max(96).optional(), audioAssetId: z.string().min(2).max(96), targetType: z.enum(["chapter", "scene", "node"]), targetId: z.string().min(1).max(96), volume: z.number().int().min(0).max(100).default(70), loop: z.boolean().default(false) })).mutation(async ({ input }) => {
-      const db = await getDb();
-      if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Audio storage is unavailable." });
       const id = input.id ?? nanoid();
-      await db.insert(audioAssignments).values({ id, audioAssetId: input.audioAssetId, targetType: input.targetType, targetId: input.targetId, volume: input.volume, loop: input.loop ? 1 : 0 }).onDuplicateKeyUpdate({ set: { audioAssetId: input.audioAssetId, targetType: input.targetType, targetId: input.targetId, volume: input.volume, loop: input.loop ? 1 : 0 } });
+      await saveAudioAssignment({ id, audioAssetId: input.audioAssetId, targetType: input.targetType, targetId: input.targetId, volume: input.volume, loop: input.loop });
       return { id };
     }),
     validate: ownerProcedure.query(async () => {
       const content = await listEditorialContent();
       const storyItems = content.filter(item => item.kind === "story-node");
-      return validateManagedStory(storyItems.map(item => ({ id: item.id, payload: item.payload as Record<string, unknown> })));
+      return validateManagedStory(storyItems.map(item => ({ id: item.id, payload: item.payload })));
     }),
   }),
 });

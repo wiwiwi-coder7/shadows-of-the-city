@@ -1,7 +1,5 @@
 import { createHash, randomBytes, randomUUID, scryptSync, timingSafeEqual } from "node:crypto";
-import { and, eq, gt } from "drizzle-orm";
-import { adminSessions } from "../drizzle/schema";
-import { getDb, getOwnerCredential } from "./db";
+import { getOwnerCredential, getSupabase } from "./db";
 
 const COOKIE_NAME = "sotc_owner_session";
 const SESSION_DAYS = 14;
@@ -28,11 +26,10 @@ function readToken(header: string | undefined) {
 export async function loginOwner(identifier: string, password: string, res: { cookie: (name: string, value: string, options: Record<string, unknown>) => void }) {
   const credential = await getOwnerCredential(identifier);
   if (!credential || !credential.isActive || !verifyPassword(password, credential.passwordSalt, credential.passwordHash)) return false;
-  const db = await getDb();
-  if (!db) throw new Error("Database connection unavailable");
   const token = randomBytes(32).toString("base64url");
   const expiresAt = new Date(Date.now() + SESSION_DAYS * 24 * 60 * 60 * 1000);
-  await db.insert(adminSessions).values({ id: randomUUID(), credentialId: credential.id, tokenHash: hash(token), expiresAt });
+  const { error } = await getSupabase().from("admin_sessions").insert({ id: randomUUID(), credential_id: credential.id, token_hash: hash(token), expires_at: expiresAt.toISOString() });
+  if (error) throw new Error(`Supabase session storage failed: ${error.message}`);
   res.cookie(COOKIE_NAME, token, { httpOnly: true, sameSite: "lax", secure: true, expires: expiresAt, path: "/" });
   return true;
 }
@@ -41,10 +38,9 @@ export async function ownerSession(req: { headers: Record<string, string | strin
   const tokenHeader = req.headers.cookie;
   const token = readToken(Array.isArray(tokenHeader) ? tokenHeader[0] : tokenHeader);
   if (!token) return undefined;
-  const db = await getDb();
-  if (!db) return undefined;
-  const sessions = await db.select().from(adminSessions).where(and(eq(adminSessions.tokenHash, hash(token)), gt(adminSessions.expiresAt, new Date()))).limit(1);
-  return sessions[0];
+  const { data, error } = await getSupabase().from("admin_sessions").select("id, credential_id, token_hash, expires_at, created_at").eq("token_hash", hash(token)).gt("expires_at", new Date().toISOString()).maybeSingle();
+  if (error) throw new Error(`Supabase session lookup failed: ${error.message}`);
+  return data ? { id: data.id, credentialId: data.credential_id, tokenHash: data.token_hash, expiresAt: new Date(data.expires_at), createdAt: new Date(data.created_at) } : undefined;
 }
 
 export async function requireOwner(req: { headers: Record<string, string | string[] | undefined> }) {
