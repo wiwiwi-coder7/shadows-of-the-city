@@ -9,7 +9,7 @@ export const chapter10Farsi: Record<string, FarsiNode> = {
       {
         "type": "dialogue",
         "speaker": "اریکا",
-        "text": "چهار دقیقه دیگر نگهبان عوض می‌شود. پنجرهٔ ورود از درِ کناری، همین است."
+        "text": "چهار دقیقه دیگر نگهبان عوض می‌شود. فرصت ورود از درِ کناری، همین چهار دقیقه است."
       },
       {
         "type": "dialogue",
@@ -81,7 +81,7 @@ export const chapter10Farsi: Record<string, FarsiNode> = {
     "choices": [
       {
         "id": "CH10_S2_N01-A",
-        "label": "با خشم جواب بده و از ادین و همهٔ آسیب‌دیدگان بگو.",
+        "label": "با خشم جواب بده و از آدین و همهٔ آسیب‌دیدگان بگو.",
         "target": "CH10_S2_N02A"
       },
       {
