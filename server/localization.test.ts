@@ -61,4 +61,13 @@ describe("Persian story localization", () => {
     expect(localizedChapterTwo.blocks.length).toBeGreaterThan(0);
     expect(localizedChapterTwo.nextId).toBe(chapterTwo.nextId);
   });
+
+  it("keeps the post-reread Persian prose idiomatic and preserves canonical character names", () => {
+    const serializedStory = JSON.stringify(persianStoryNodes);
+    expect(serializedStory).not.toContain("ادین");
+    expect(serializedStory).not.toContain("پاک‌سازی می‌کنند");
+    expect(persianStoryNodes.CH2_S4_N03.blocks[0].text).toContain("اتاق پشتی را می‌گردند");
+    expect(persianStoryNodes.CH5_S2_N02.blocks[1].text).toContain("آدین هنوز نفس می‌کشد");
+    expect(persianStoryNodes.CH10_S1_N01.blocks[0].text).toContain("فرصت ورود");
+  });
 });
