@@ -20,7 +20,7 @@ export function GameHeader({ compact = false, forceEnglish = false }: { compact?
         <button onClick={() => setLocation("/codex")}><BookOpen size={15} /> {copy?.codex ?? t("codex")}</button>
         <button onClick={() => setLocation("/album")}><GalleryVerticalEnd size={15} /> {copy?.album ?? t("album")}</button>
         <button onClick={() => setLocation("/settings")}><Settings2 size={15} /> {copy?.settings ?? t("settings")}</button>
-        <button className="nav-admin" onClick={() => setLocation("/admin")}><Sparkles size={14} /> {copy?.archive ?? t("archive")}</button>
+        {import.meta.env.VITE_STATIC_RUNTIME !== "true" && <button className="nav-admin" onClick={() => setLocation("/admin")}><Sparkles size={14} /> {copy?.archive ?? t("archive")}</button>}
       </nav>
       <button className="mobile-menu" aria-label="Open game navigation"><Menu size={20} /></button>
     </header>

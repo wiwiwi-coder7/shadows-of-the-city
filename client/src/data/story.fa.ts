@@ -12,7 +12,7 @@ import { chapter10Farsi } from "./chapter10.fa";
 
 export const persianStoryNodes = { ...chapter1Farsi, ...chapter2Farsi, ...chapter3Farsi, ...chapter4Farsi, ...chapter5Farsi, ...chapter6Farsi, ...chapter7Farsi, ...chapter8Farsi, ...chapter9Farsi, ...chapter10Farsi };
 
-export type PersianStoryOverride = { id?: string; nodeId?: string; sceneTitle: string; blocks: unknown; choiceLabels: unknown };
+export type PersianStoryOverride = { id?: string; nodeId?: string; sceneTitle?: string; scene_title?: string; blocks: unknown; choiceLabels?: unknown; choice_labels?: unknown };
 
 const presentationOnly = /^(?:\s*[-–]\s*(?:fixed|relationship|branch|choice|note|continuity|design|writer|نتایج|پرچم|شاخه|یادداشت)|\s*\[?\s*(?:(?:scene|chapter)\s+\d+\s+(?:ends?|begins?|start|end|transition)|(?:صحنه|فصل)\s*\d*\s*(?:به پایان|شروع|پایان|انتقال))|\s*(?:interior|exterior|wide shot|close on|establishing shot|camera|cut to|فضای داخلی|فضای خارجی|خارج به داخل|نمای باز|نمای نزدیک|کادربندی|پالت|حالت|خلق و خو))/i;
 const productionTerms = /(?:\bpalette\s*:|\bmood\s*:|\bcamera\s*:|\bframing\s*:|\bproduction\s+note\b|\bbranch\s+(?:note|design)\b|\brelationship\s+flag\b|پالت(?:\s*رنگی)?\s*:|حالت\s*:|حال[‌\s]*و[‌\s]*هوا\s*:|کادربندی\s*:|یادداشت\s*(?:طراح|تولید)|توضیح\s*شاخه|پرچم\s*(?:رابطه|های))/i;
@@ -43,11 +43,11 @@ export function localizeStoryNode(node: StoryNode, locale: "en" | "fa", override
   const translation = locale === "fa" ? persianStoryNodes[node.id] : undefined;
   const localized = translation ? { ...node, ...translation } : node;
   const overrideBlocks = Array.isArray(override?.blocks) ? override.blocks : [];
-  const overrideChoiceLabels = Array.isArray(override?.choiceLabels) ? override.choiceLabels : [];
+  const overrideChoiceLabels = Array.isArray(override?.choiceLabels) ? override.choiceLabels : Array.isArray(override?.choice_labels) ? override.choice_labels : [];
   const hasMatchingOverride = locale === "fa" && translation && override && (override.id === node.id || override.nodeId === node.id) && overrideBlocks.length === localized.blocks.length && overrideChoiceLabels.length === localized.choices.length;
   const merged = hasMatchingOverride ? {
     ...localized,
-    sceneTitle: override.sceneTitle,
+    sceneTitle: override.sceneTitle ?? override.scene_title ?? localized.sceneTitle,
     blocks: localized.blocks.map((block, index) => ({ ...block, text: String(overrideBlocks[index]) })),
     choices: localized.choices.map((choice, index) => ({ ...choice, label: String(overrideChoiceLabels[index]) })),
   } : localized;

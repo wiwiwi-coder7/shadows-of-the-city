@@ -5,6 +5,7 @@ import { GameHeader } from "@/components/GameHeader";
 import { characterEntries, codexEntries, type CatalogType } from "@/data/gameCatalog";
 import { useLocale } from "@/contexts/LocaleContext";
 import { readSave } from "@/lib/gameState";
+import { publicAssetUrl } from "@/lib/publicAssets";
 
 const typeMessageKey: Record<CatalogType, string> = { character: "characters", place: "places", organization: "organizations", symbol: "symbols", evidence: "evidence" };
 
@@ -25,5 +26,5 @@ export function AlbumPage() {
   const [unlocked, setUnlocked] = useState<string[]>([]);
   const { t } = useLocale();
   useEffect(() => setUnlocked(readSave()?.unlockedIds ?? []), []);
-  return <main className="library-page"><GameHeader compact /><section className="library-hero"><button onClick={() => setLocation("/")}><ArrowLeft size={16} /> {t("returnToArchive")}</button><p className="eyebrow">{t("knownFaces")}</p><h1>{t("albumTitle")}</h1><p>{t("albumDek")}</p></section><section className="album-grid">{characterEntries.map(person => { const isUnlocked = unlocked.includes(person.id); return <article className={`album-card ${isUnlocked ? "" : "is-locked"}`} key={person.id}><div className="album-image">{isUnlocked ? <img src={person.imageUrl} alt={t("expressionSheet", { name: person.name })} /> : <div className="locked-portrait"><UsersRound size={40} /><LockKeyhole size={15} /></div>}</div><div><p className="eyebrow">{isUnlocked ? person.role : t("unlocksChapter", { chapter: person.unlockChapter })}</p><h2>{isUnlocked ? person.name : t("unknown")}</h2></div></article>; })}</section></main>;
+  return <main className="library-page"><GameHeader compact /><section className="library-hero"><button onClick={() => setLocation("/")}><ArrowLeft size={16} /> {t("returnToArchive")}</button><p className="eyebrow">{t("knownFaces")}</p><h1>{t("albumTitle")}</h1><p>{t("albumDek")}</p></section><section className="album-grid">{characterEntries.map(person => { const isUnlocked = unlocked.includes(person.id); return <article className={`album-card ${isUnlocked ? "" : "is-locked"}`} key={person.id}><div className="album-image">{isUnlocked ? <img src={publicAssetUrl(person.imageUrl)} alt={t("expressionSheet", { name: person.name })} /> : <div className="locked-portrait"><UsersRound size={40} /><LockKeyhole size={15} /></div>}</div><div><p className="eyebrow">{isUnlocked ? person.role : t("unlocksChapter", { chapter: person.unlockChapter })}</p><h2>{isUnlocked ? person.name : t("unknown")}</h2></div></article>; })}</section></main>;
 }

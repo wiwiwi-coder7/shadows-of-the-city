@@ -14,7 +14,7 @@ export type GameSettings = {
 };
 
 export type LocalSave = {
-  version: 1;
+  version: 2;
   currentNodeId: string;
   visitedNodeIds: string[];
   selectedChoiceIds: string[];
@@ -57,8 +57,16 @@ export function readSave(): LocalSave | null {
   if (typeof window === "undefined") return null;
   try {
     const parsed = JSON.parse(localStorage.getItem(SAVE_KEY) ?? "null");
-    if (!parsed || parsed.version !== 1 || typeof parsed.currentNodeId !== "string") return null;
-    return parsed as LocalSave;
+    if (!parsed || (parsed.version !== 1 && parsed.version !== 2) || typeof parsed.currentNodeId !== "string") return null;
+    return {
+      ...parsed,
+      version: 2,
+      visitedNodeIds: Array.isArray(parsed.visitedNodeIds) ? parsed.visitedNodeIds : [parsed.currentNodeId],
+      selectedChoiceIds: Array.isArray(parsed.selectedChoiceIds) ? parsed.selectedChoiceIds : [],
+      flags: parsed.flags && typeof parsed.flags === "object" ? parsed.flags : { started: true },
+      unlockedIds: Array.isArray(parsed.unlockedIds) ? parsed.unlockedIds : [],
+      lastPlayedAt: typeof parsed.lastPlayedAt === "number" ? parsed.lastPlayedAt : Date.now(),
+    } as LocalSave;
   } catch {
     return null;
   }
@@ -82,7 +90,7 @@ export function getInstallationId() {
 
 export function emptySave(currentNodeId: string): LocalSave {
   return {
-    version: 1,
+    version: 2,
     currentNodeId,
     visitedNodeIds: [currentNodeId],
     selectedChoiceIds: [],

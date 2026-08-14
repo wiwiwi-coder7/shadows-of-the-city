@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Vazirmatn:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
-@font-face { font-family:'Shadows Persian Text'; src:url('/manus-storage/IRLotus_2912ac16.ttf') format('truetype'); font-style:normal; font-weight:400; font-display:swap; }
-@font-face { font-family:'Shadows Persian Display'; src:url('/manus-storage/IRYekanBold_4c4ddab8.ttf') format('truetype'); font-style:normal; font-weight:700; font-display:swap; }
+@font-face { font-family:'Shadows Persian Text'; src:url('https://blxvvllrtpmqgswhpjiy.supabase.co/storage/v1/object/public/game-assets/fonts/IRLotus.ttf') format('truetype'); font-style:normal; font-weight:400; font-display:swap; }
+@font-face { font-family:'Shadows Persian Display'; src:url('https://blxvvllrtpmqgswhpjiy.supabase.co/storage/v1/object/public/game-assets/fonts/IRYekanBold.ttf') format('truetype'); font-style:normal; font-weight:700; font-display:swap; }
 
 :root { --ink:#d8d3c9; --muted:#98948c; --void:#090b0e; --panel:#121416; --brass:#c9a66a; --line:rgba(222,214,196,.18); --ember:#d67a42; --ease-out:cubic-bezier(.23,1,.32,1); }
 * { box-sizing:border-box; }
@@ -13,7 +13,7 @@ button { cursor:pointer; }
 button:focus-visible, input:focus-visible { outline:2px solid var(--brass); outline-offset:3px; }
 .eyebrow { margin:0; color:var(--brass); font:500 10px/1.4 'DM Mono', monospace; letter-spacing:.19em; text-transform:uppercase; }
 .home-page { min-height:100svh; overflow:hidden; position:relative; display:flex; flex-direction:column; isolation:isolate; background:#090a0c; }
-.home-backdrop { position:absolute; inset:0; z-index:-3; background:linear-gradient(90deg,rgba(5,6,8,.94) 0%,rgba(5,6,8,.68) 39%,rgba(5,6,8,.25) 100%),url('/manus-storage/scene_04_harbor_overlook_epilogue_17c28853.png') center/cover; transform:scale(1.02); }
+.home-backdrop { position:absolute; inset:0; z-index:-3; background:linear-gradient(90deg,rgba(5,6,8,.94) 0%,rgba(5,6,8,.68) 39%,rgba(5,6,8,.25) 100%),url('https://blxvvllrtpmqgswhpjiy.supabase.co/storage/v1/object/public/game-assets/scenes/scene_04_harbor_overlook_epilogue.png') center/cover; transform:scale(1.02); }
 .home-backdrop::after { content:""; position:absolute; inset:0; background:radial-gradient(circle at 82% 18%,rgba(219,165,91,.17),transparent 28%),linear-gradient(0deg,rgba(4,5,6,.84),transparent 45%); }
 .site-header { height:86px; display:flex; justify-content:space-between; align-items:center; padding:0 clamp(22px,5vw,76px); border-bottom:1px solid rgba(235,226,206,.08); backdrop-filter:blur(9px); position:relative; z-index:5; }
 .site-header--compact { background:rgba(9,11,14,.72); }
@@ -33,6 +33,7 @@ button:focus-visible, input:focus-visible { outline:2px solid var(--brass); outl
 .home-hero h1 em { color:var(--brass); padding-left:clamp(43px,7vw,105px); font:italic 600 clamp(36px,6vw,83px)/1.12 'Playfair Display'; letter-spacing:-.065em; }
 .home-hero__dek { max-width:470px; margin:29px 0; color:#c6c0b5; font:400 clamp(15px,1.4vw,18px)/1.75 'Libre Baskerville'; }
 .home-actions { display:flex; flex-wrap:wrap; gap:11px; margin-top:38px; }
+.save-resume-card { width:min(500px,100%); display:flex; align-items:center; justify-content:space-between; gap:17px; margin-top:17px; padding:13px 14px 13px 16px; border:1px solid rgba(201,166,106,.34); background:rgba(7,9,11,.63); backdrop-filter:blur(8px); }.save-resume-card>div { display:grid; gap:4px; }.save-resume-card span { color:var(--brass); font:500 8px/1 'DM Mono'; letter-spacing:.13em; }.save-resume-card strong { color:#e4ddcf; font:500 11px/1.25 'DM Mono'; letter-spacing:.06em; text-transform:uppercase; }.save-resume-card small { color:var(--muted); font:400 10px/1.4 'Libre Baskerville'; }.save-resume-card button { display:inline-flex; align-items:center; gap:6px; flex:0 0 auto; color:#17130e; border:1px solid var(--brass); background:var(--brass); padding:9px 11px; font:500 9px 'DM Mono'; letter-spacing:.08em; }.save-resume-card button:hover { background:#dfbd80; }
 .button-primary,.button-secondary { display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:46px; border-radius:2px; padding:0 19px; font:500 11px/1 'DM Mono'; letter-spacing:.09em; text-transform:uppercase; transition:transform .16s var(--ease-out),background .16s var(--ease-out),color .16s var(--ease-out); }
 .button-primary { color:#181511; border:1px solid var(--brass); background:var(--brass); }
 .button-primary:hover { background:#dfbd80; transform:translateY(-2px); }
