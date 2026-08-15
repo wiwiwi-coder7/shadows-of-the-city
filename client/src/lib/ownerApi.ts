@@ -15,6 +15,7 @@ export type OwnerDashboard = {
   starts: number;
   completions: number;
   events: number;
+  choiceChapter: number | null;
   choiceEvents: number;
   choicePaths: number;
   chapterReach: { chapter: number; reached: number }[];
@@ -77,7 +78,13 @@ export async function logoutOwner() {
   try { await request<{ success: boolean }>("logout", { method: "POST" }); } finally { clearOwnerToken(); }
 }
 
-export function getOwnerDashboard() { return request<OwnerDashboard>("dashboard"); }
+export function ownerDashboardSearch(chapter: number | null = null) {
+  if (chapter === null) return undefined;
+  if (!Number.isInteger(chapter) || chapter < 1 || chapter > 10) throw new Error("Chapter filter must be between 1 and 10.");
+  return { chapter: String(chapter) };
+}
+
+export function getOwnerDashboard(chapter: number | null = null) { return request<OwnerDashboard>("dashboard", undefined, ownerDashboardSearch(chapter)); }
 export function getPersianOverrides() { return request<{ overrides: PersianOverride[] }>("persian-overrides"); }
 export function savePersianOverride(input: { nodeId: string; sceneTitle: string; blocks: string[]; choiceLabels: string[] }) {
   return request<{ nodeId: string }>("save-persian-override", { method: "POST", body: JSON.stringify(input) });

@@ -79,13 +79,16 @@ Deno.serve(async request => {
 
     if (action === "dashboard") {
       await requireOwner(request);
+      const chapterParameter = url.searchParams.get("chapter");
+      if (chapterParameter !== null && !/^(?:[1-9]|10)$/.test(chapterParameter)) return response({ error: "INVALID_CHAPTER" }, 400);
+      const choiceChapter = chapterParameter === null ? null : Number(chapterParameter);
       const { data: events, error } = await database.from("telemetry_events").select("installation_id, event_type, chapter, choice_id").order("created_at", { ascending: false }).limit(5000);
       if (error) throw new Error(error.message);
       const all = events ?? [];
       const installations = new Set(all.map(event => event.installation_id)).size;
       const counts = (eventType: string) => all.filter(event => event.event_type === eventType).length;
       const chapterReach = Array.from({ length: 10 }, (_, index) => ({ chapter: index + 1, reached: new Set(all.filter(event => event.chapter === index + 1).map(event => event.installation_id)).size }));
-      const choiceEvents = all.filter(event => event.event_type === "choice_selected" && typeof event.choice_id === "string");
+      const choiceEvents = all.filter(event => event.event_type === "choice_selected" && typeof event.choice_id === "string" && (choiceChapter === null || event.chapter === choiceChapter));
       const choiceMetrics = new Map<string, { id: string; nodeId: string; option: string; chapter: number | null; selections: number; installations: Set<string> }>();
       const nodeMetrics = new Map<string, { nodeId: string; chapter: number | null; selections: number; installations: Set<string>; options: Map<string, { option: string; selections: number; installations: Set<string> }> }>();
       for (const event of choiceEvents) {
@@ -102,7 +105,7 @@ Deno.serve(async request => {
       }
       const choices = Array.from(choiceMetrics.values()).map(metric => ({ id: metric.id, nodeId: metric.nodeId, option: metric.option, chapter: metric.chapter, selections: metric.selections, uniqueInstallations: metric.installations.size })).sort((left, right) => right.selections - left.selections || left.id.localeCompare(right.id)).slice(0, 24);
       const choiceNodes = Array.from(nodeMetrics.values()).map(metric => ({ nodeId: metric.nodeId, chapter: metric.chapter, selections: metric.selections, uniqueInstallations: metric.installations.size, options: Array.from(metric.options.values()).map(option => ({ option: option.option, selections: option.selections, uniqueInstallations: option.installations.size, percent: Math.round((option.selections / Math.max(1, metric.selections)) * 100) })).sort((left, right) => right.selections - left.selections || left.option.localeCompare(right.option)) })).sort((left, right) => right.selections - left.selections || left.nodeId.localeCompare(right.nodeId)).slice(0, 12);
-      return response({ installations, starts: counts("game_start"), completions: counts("game_complete"), events: all.length, choiceEvents: choiceEvents.length, choicePaths: choiceMetrics.size, chapterReach, choices, choiceNodes });
+      return response({ installations, starts: counts("game_start"), completions: counts("game_complete"), events: all.length, choiceChapter, choiceEvents: choiceEvents.length, choicePaths: choiceMetrics.size, chapterReach, choices, choiceNodes });
     }
 
     if (action === "save-persian-override" && request.method === "POST") {
