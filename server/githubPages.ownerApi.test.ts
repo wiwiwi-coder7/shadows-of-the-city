@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { persianStoryNodes, localizeStoryNode } from "../client/src/data/story.fa";
 import { storyNodes } from "../client/src/data/story.generated";
 import { OWNER_API_URL } from "../client/src/lib/ownerApi";
+import { publicAssetFallbackUrl, publicAssetUrl } from "../client/src/lib/publicAssets";
 
 describe("GitHub Pages Supabase runtime", () => {
   it("uses a standalone Supabase Edge Function rather than a Manus endpoint", () => {
@@ -20,5 +21,11 @@ describe("GitHub Pages Supabase runtime", () => {
     });
     expect(localized.sceneTitle).toBe("عنوان آزمایشی انتشار");
     expect(localized.blocks[0]?.text).toBe("متن آزمایشی انتشار");
+  });
+
+  it("uses a lightweight WebP scene asset with a deterministic PNG fallback", () => {
+    const source = "/manus-storage/scene_01_nicks_apartment_ab12cd34.png";
+    expect(publicAssetUrl(source)).toContain("/game-assets/scenes-webp/scene_01_nicks_apartment.webp");
+    expect(publicAssetFallbackUrl(source)).toContain("/game-assets/scenes/scene_01_nicks_apartment.png");
   });
 });

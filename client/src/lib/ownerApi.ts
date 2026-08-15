@@ -15,7 +15,11 @@ export type OwnerDashboard = {
   starts: number;
   completions: number;
   events: number;
+  choiceEvents: number;
+  choicePaths: number;
   chapterReach: { chapter: number; reached: number }[];
+  choices: { id: string; nodeId: string; option: string; chapter: number | null; selections: number; uniqueInstallations: number }[];
+  choiceNodes: { nodeId: string; chapter: number | null; selections: number; uniqueInstallations: number; options: { option: string; selections: number; uniqueInstallations: number; percent: number }[] }[];
 };
 
 type ApiErrorBody = { error?: string };

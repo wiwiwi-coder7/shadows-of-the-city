@@ -85,7 +85,24 @@ Deno.serve(async request => {
       const installations = new Set(all.map(event => event.installation_id)).size;
       const counts = (eventType: string) => all.filter(event => event.event_type === eventType).length;
       const chapterReach = Array.from({ length: 10 }, (_, index) => ({ chapter: index + 1, reached: new Set(all.filter(event => event.chapter === index + 1).map(event => event.installation_id)).size }));
-      return response({ installations, starts: counts("game_start"), completions: counts("game_complete"), events: all.length, chapterReach });
+      const choiceEvents = all.filter(event => event.event_type === "choice_selected" && typeof event.choice_id === "string");
+      const choiceMetrics = new Map<string, { id: string; nodeId: string; option: string; chapter: number | null; selections: number; installations: Set<string> }>();
+      const nodeMetrics = new Map<string, { nodeId: string; chapter: number | null; selections: number; installations: Set<string>; options: Map<string, { option: string; selections: number; installations: Set<string> }> }>();
+      for (const event of choiceEvents) {
+        const choiceId = event.choice_id!;
+        const splitAt = choiceId.lastIndexOf("-");
+        const nodeId = splitAt > 0 ? choiceId.slice(0, splitAt) : choiceId;
+        const option = splitAt > 0 ? choiceId.slice(splitAt + 1) : "?";
+        const metric = choiceMetrics.get(choiceId) ?? { id: choiceId, nodeId, option, chapter: event.chapter, selections: 0, installations: new Set<string>() };
+        metric.selections += 1; metric.installations.add(event.installation_id); choiceMetrics.set(choiceId, metric);
+        const node = nodeMetrics.get(nodeId) ?? { nodeId, chapter: event.chapter, selections: 0, installations: new Set<string>(), options: new Map() };
+        node.selections += 1; node.installations.add(event.installation_id);
+        const optionMetric = node.options.get(option) ?? { option, selections: 0, installations: new Set<string>() };
+        optionMetric.selections += 1; optionMetric.installations.add(event.installation_id); node.options.set(option, optionMetric); nodeMetrics.set(nodeId, node);
+      }
+      const choices = Array.from(choiceMetrics.values()).map(metric => ({ id: metric.id, nodeId: metric.nodeId, option: metric.option, chapter: metric.chapter, selections: metric.selections, uniqueInstallations: metric.installations.size })).sort((left, right) => right.selections - left.selections || left.id.localeCompare(right.id)).slice(0, 24);
+      const choiceNodes = Array.from(nodeMetrics.values()).map(metric => ({ nodeId: metric.nodeId, chapter: metric.chapter, selections: metric.selections, uniqueInstallations: metric.installations.size, options: Array.from(metric.options.values()).map(option => ({ option: option.option, selections: option.selections, uniqueInstallations: option.installations.size, percent: Math.round((option.selections / Math.max(1, metric.selections)) * 100) })).sort((left, right) => right.selections - left.selections || left.option.localeCompare(right.option)) })).sort((left, right) => right.selections - left.selections || left.nodeId.localeCompare(right.nodeId)).slice(0, 12);
+      return response({ installations, starts: counts("game_start"), completions: counts("game_complete"), events: all.length, choiceEvents: choiceEvents.length, choicePaths: choiceMetrics.size, chapterReach, choices, choiceNodes });
     }
 
     if (action === "save-persian-override" && request.method === "POST") {
