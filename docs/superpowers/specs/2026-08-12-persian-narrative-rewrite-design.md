@@ -27,7 +27,7 @@ The rewrite preserves every node ID, scene image URL, choice ID, and choice targ
 
 ## Quality rules
 
-Every surviving Persian block must read as in-world narration or dialogue. Character traits must emerge from action and speech; no explanatory parenthetical such as “older than her age”, “controlled anger”, or “resolution” may appear. Scene transitions are implied by the next scene’s narrative rather than announced. The rewrite uses consistent Persian names: نیک، آدری، کرت، گاسپار، هیلر، اریکا، آنتون، بنی، وین، اوزی و آدین.
+Every surviving Persian block must read as in-world narration or dialogue. Character traits must emerge from action and speech; no explanatory parenthetical such as “older than her age”, “controlled anger”, or “resolution” may appear. Scene transitions are implied by the next scene’s narrative rather than announced. The rewrite uses consistent Persian names: نیک، لیا، کرت، گاسپار، هیلر، اریکا، آنتون، بنی، وین، اوزی و آدین.
 
 ## Validation
 

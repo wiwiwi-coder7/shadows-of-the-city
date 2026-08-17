@@ -35,7 +35,7 @@ export const chapter6Farsi: Record<string, FarsiNode> = {
     "blocks": [
       {
         "type": "narration",
-        "text": "این یکی را به آدری نمی‌گوید؛ هنوز نه. غریزه‌ای قدیمی و بی‌دلیل به او می‌گوید این تکه تا وقتی نفهمد چرا بیشتر از هر زخم بوی عذرخواهی می‌دهد، نباید بلند گفته شود."
+        "text": "این یکی را به لیا نمی‌گوید؛ هنوز نه. غریزه‌ای قدیمی و بی‌دلیل به او می‌گوید این تکه تا وقتی نفهمد چرا بیشتر از هر زخم بوی عذرخواهی می‌دهد، نباید بلند گفته شود."
       }
     ],
     "choices": []
@@ -50,7 +50,7 @@ export const chapter6Farsi: Record<string, FarsiNode> = {
       },
       {
         "type": "dialogue",
-        "speaker": "آدری",
+        "speaker": "لیا",
         "text": "اگر این بار واقعاً جواب بدهی، کمتر."
       },
       {
@@ -62,7 +62,7 @@ export const chapter6Farsi: Record<string, FarsiNode> = {
     "choices": [
       {
         "id": "CH6_S2_N01-A",
-        "label": "بگذار آدری جلو برود؛ شاید بیش از انتظارش آرامش کند.",
+        "label": "بگذار لیا جلو برود؛ شاید بیش از انتظارش آرامش کند.",
         "target": "CH6_S2_N02A"
       },
       {
@@ -87,7 +87,7 @@ export const chapter6Farsi: Record<string, FarsiNode> = {
       },
       {
         "type": "dialogue",
-        "speaker": "آدری",
+        "speaker": "لیا",
         "text": "اسم‌ها؟"
       },
       {
@@ -123,7 +123,7 @@ export const chapter6Farsi: Record<string, FarsiNode> = {
       },
       {
         "type": "dialogue",
-        "speaker": "آدری",
+        "speaker": "لیا",
         "text": "این واقعی است. اولین چیز واقعی‌ای که از آن روز گیرمان آمده…"
       },
       {
