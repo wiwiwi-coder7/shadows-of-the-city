@@ -18,7 +18,7 @@ export type CharacterEntry = {
 
 export const codexEntries: CodexEntry[] = [
   { id: "character:nick", type: "character", title: "Nick", summary: "A young detective carrying an old case he cannot fully remember.", unlockChapter: 1 },
-  { id: "character:adry", type: "character", title: "Adry", summary: "A guarded woman who recognizes more of Nick's past than she says.", unlockChapter: 1 },
+  { id: "character:adry", type: "character", title: "Lia", summary: "A guarded woman who recognizes more of Nick's past than she says.", unlockChapter: 1 },
   { id: "character:kurt", type: "character", title: "Kurt", summary: "A sharp young police officer caught between conscience and the institution.", unlockChapter: 1 },
   { id: "character:gaspar", type: "character", title: "Gaspar", summary: "The quietly observant owner of a harbor café and keeper of old rumors.", unlockChapter: 1 },
   { id: "character:hiller", type: "character", title: "Hiller", summary: "A meticulous forensic examiner whose restraint hides genuine care.", unlockChapter: 1 },
@@ -40,7 +40,7 @@ export const codexEntries: CodexEntry[] = [
 
 export const characterEntries: CharacterEntry[] = [
   { id: "character:nick", name: "Nick", role: "Detective", imageUrl: "/manus-storage/nick_expression_sheet_ff7ab402.png", unlockChapter: 1 },
-  { id: "character:adry", name: "Adry", role: "The woman in the depot", imageUrl: "/manus-storage/adry_expression_sheet_fe98de3a.png", unlockChapter: 1 },
+  { id: "character:adry", name: "Lia", role: "The woman in the depot", imageUrl: "/manus-storage/adry_expression_sheet_fe98de3a.png", unlockChapter: 1 },
   { id: "character:kurt", name: "Kurt", role: "Police officer", imageUrl: "/manus-storage/kurt_expression_sheet_5ca03a49.png", unlockChapter: 1 },
   { id: "character:gaspar", name: "Gaspar", role: "Café owner", imageUrl: "/manus-storage/gaspar_expression_sheet_563293c2.png", unlockChapter: 1 },
   { id: "character:hiller", name: "Hiller", role: "Forensic examiner", imageUrl: "/manus-storage/hiller_expression_sheet_7be0518d.png", unlockChapter: 1 },

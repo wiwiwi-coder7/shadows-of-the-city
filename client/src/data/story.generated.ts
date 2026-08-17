@@ -544,7 +544,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "Interior, dusk settling, heavy fog bleeding in through broken windows and a half-open loading door. An officially shuttered courier depot — dust sheets over old counters, undelivered parcels stacked and forgotten, a faded company sign hanging by one chain. Long shadows, the last grey daylight cutting weak shafts through gaps in the roof. In the back of the room, half-turned away, stands Adry: tall, black hair loose, dark coat, utterly still in the way that trained people are still — like she was carved into the scene rather than standing in it. She's examining something on a counter — papers, a ledger — when Nick's footsteps announce him. Palette: desaturated blues and greys, one shaft of dying amber light between them like a physical line neither has crossed yet. Mood: sudden, sharp tension after the quiet of the previous scenes — a held breath."
+        "text": "Interior, dusk settling, heavy fog bleeding in through broken windows and a half-open loading door. An officially shuttered courier depot — dust sheets over old counters, undelivered parcels stacked and forgotten, a faded company sign hanging by one chain. Long shadows, the last grey daylight cutting weak shafts through gaps in the roof. In the back of the room, half-turned away, stands Lia: tall, black hair loose, dark coat, utterly still in the way that trained people are still — like she was carved into the scene rather than standing in it. She's examining something on a counter — papers, a ledger — when Nick's footsteps announce him. Palette: desaturated blues and greys, one shaft of dying amber light between them like a physical line neither has crossed yet. Mood: sudden, sharp tension after the quiet of the previous scenes — a held breath."
       }
     ],
     "choices": [],
@@ -559,7 +559,7 @@ export const storyNodes: StoryNode[] = [
     "blocks": [
       {
         "type": "narration",
-        "text": "The floorboard creaks under Nick's boot before he can help it. Adry doesn't jump. She goes still in a different way — the stillness of someone recalculating a threat in half a second — and turns. [Adry: Guarded Neutral, shifting fast]"
+        "text": "The floorboard creaks under Nick's boot before he can help it. Lia doesn't jump. She goes still in a different way — the stillness of someone recalculating a threat in half a second — and turns. [Lia: Guarded Neutral, shifting fast]"
       },
       {
         "type": "narration",
@@ -567,7 +567,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "It shifts toward recognition. And recognition, on her, looks like rage held very carefully in check. [Adry: Controlled Fury]"
+        "text": "It shifts toward recognition. And recognition, on her, looks like rage held very carefully in check. [Lia: Controlled Fury]"
       },
       {
         "type": "dialogue",
@@ -613,7 +613,7 @@ export const storyNodes: StoryNode[] = [
     "blocks": [
       {
         "type": "narration",
-        "text": "Whatever happened, Adry takes a measured step back toward the depot's rear exit, never fully turning away from him — the posture of someone who's survived by never trusting a room enough to turn her back on it. [Adry: Guarded Neutral]"
+        "text": "Whatever happened, Lia takes a measured step back toward the depot's rear exit, never fully turning away from him — the posture of someone who's survived by never trusting a room enough to turn her back on it. [Lia: Guarded Neutral]"
       },
       {
         "type": "dialogue",
@@ -688,7 +688,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "- No branch in this chapter changes the fixed plot outcomes (token found → Gaspar → Kurt → Hiller → depot → Adry encounter → torn ledger page). Choices only affect dialogue flavor and small relationship-tracking flags, per your design rule."
+        "text": "- No branch in this chapter changes the fixed plot outcomes (token found → Gaspar → Kurt → Hiller → depot → Lia encounter → torn ledger page). Choices only affect dialogue flavor and small relationship-tracking flags, per your design rule."
       },
       {
         "type": "narration",
@@ -708,11 +708,11 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "- Ozzie: throwaway detail about \"the woman\" — minor color, reinforces Adry's presence in the area."
+        "text": "- Ozzie: throwaway detail about \"the woman\" — minor color, reinforces Lia's presence in the area."
       },
       {
         "type": "narration",
-        "text": "- Adry: the word \"twice\" and her flicker of doubt (if Option A chosen in S6_N01) are the two seeds carried forward."
+        "text": "- Lia: the word \"twice\" and her flicker of doubt (if Option A chosen in S6_N01) are the two seeds carried forward."
       },
       {
         "type": "narration",
@@ -1041,7 +1041,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "Interior, the Draeger Shipping Company's front office, moments later. A cramped, cluttered space — ledgers stacked floor to ceiling, a single clerk's desk overturned, papers scattered. A back office door stands ajar, low afternoon light slicing through dusty air. Adry is pressed against the wall beside the inner doorway, listening for movement beyond it, coat dusted with plaster, utterly composed despite the chaos around her — the eye of the small storm she likely caused herself. When Nick and Adin enter, the three of them are suddenly crowded into a narrow space too small for the tension in the room. Palette: dust-gold light through grime-streaked windows, scattered white paper against dark wood, Adry's dark coat and hair a sharp vertical line against it all. Mood: cramped, adrenaline-charged, three very different kinds of danger occupying the same six feet of floor."
+        "text": "Interior, the Draeger Shipping Company's front office, moments later. A cramped, cluttered space — ledgers stacked floor to ceiling, a single clerk's desk overturned, papers scattered. A back office door stands ajar, low afternoon light slicing through dusty air. Lia is pressed against the wall beside the inner doorway, listening for movement beyond it, coat dusted with plaster, utterly composed despite the chaos around her — the eye of the small storm she likely caused herself. When Nick and Adin enter, the three of them are suddenly crowded into a narrow space too small for the tension in the room. Palette: dust-gold light through grime-streaked windows, scattered white paper against dark wood, Lia's dark coat and hair a sharp vertical line against it all. Mood: cramped, adrenaline-charged, three very different kinds of danger occupying the same six feet of floor."
       }
     ],
     "choices": [],
@@ -1056,7 +1056,7 @@ export const storyNodes: StoryNode[] = [
     "blocks": [
       {
         "type": "narration",
-        "text": "Adry's head snaps toward the door at the sound of it opening — knife already half-drawn before she registers who's standing there. Two people. One she trusts. One she very much does not. [Adry: Guarded Neutral, snapping to Controlled Fury]"
+        "text": "Lia's head snaps toward the door at the sound of it opening — knife already half-drawn before she registers who's standing there. Two people. One she trusts. One she very much does not. [Lia: Guarded Neutral, snapping to Controlled Fury]"
       },
       {
         "type": "dialogue",
@@ -1087,7 +1087,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "id": "CH2_S4_N01-C",
-        "label": "Address Adin instead of Adry — ask if there's a plan, treat her hostility as background noise.",
+        "label": "Address Adin instead of Lia — ask if there's a plan, treat her hostility as background noise.",
         "target": "CH2_S4_N02C"
       }
     ],
@@ -1123,12 +1123,12 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "id": "CH2_S4_N02-B",
-        "label": "Defer to Adry — let her lead, since this was clearly her operation first.",
+        "label": "Defer to Lia — let her lead, since this was clearly her operation first.",
         "target": "CH2_S4_N03B"
       },
       {
         "id": "CH2_S4_N02-C",
-        "label": "Suggest splitting — Nick and Adin cover the front exit while Adry checks the back room.",
+        "label": "Suggest splitting — Nick and Adin cover the front exit while Lia checks the back room.",
         "target": "CH2_S4_N03C"
       }
     ],
@@ -1147,7 +1147,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "Adry stares at it a long moment, unreadable, then straightens and pulls her coat tighter, already retreating back into the version of herself that doesn't need anyone. [Adry: Guarded Neutral]"
+        "text": "Lia stares at it a long moment, unreadable, then straightens and pulls her coat tighter, already retreating back into the version of herself that doesn't need anyone. [Lia: Guarded Neutral]"
       },
       {
         "type": "dialogue",
@@ -1170,7 +1170,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "- Fixed outcomes regardless of choices: Anton reveals the name \"the Rookery\" and points to Draeger Shipping; Adin and Nick meet and enter together; the office confrontation ends with the culprit escaping and a burned raven mark left behind; Adry leaves with the same closing line."
+        "text": "- Fixed outcomes regardless of choices: Anton reveals the name \"the Rookery\" and points to Draeger Shipping; Adin and Nick meet and enter together; the office confrontation ends with the culprit escaping and a burned raven mark left behind; Lia leaves with the same closing line."
       },
       {
         "type": "narration",
@@ -1182,11 +1182,11 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "- Adin: warms to Nick noticeably faster than Adry does — sets up his role in Ch3-4 as an informal bridge between the two of them."
+        "text": "- Adin: warms to Nick noticeably faster than Lia does — sets up his role in Ch3-4 as an informal bridge between the two of them."
       },
       {
         "type": "narration",
-        "text": "- Adry: multiple small, deniable cracks (the tactical-respect line in S4_N02, option C, is the strongest) — none of them resolve anything, all of them are meant to accumulate quietly toward Chapter 4's vulnerability beat."
+        "text": "- Lia: multiple small, deniable cracks (the tactical-respect line in S4_N02, option C, is the strongest) — none of them resolve anything, all of them are meant to accumulate quietly toward Chapter 4's vulnerability beat."
       },
       {
         "type": "narration",
@@ -1328,7 +1328,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "Same cramped tenement room, moments later, now with four people crowded into a space built for one. The enforcer stands in the doorway: unremarkable clothing by design, a face built for being forgotten, calm in a way that reads as far more dangerous than Doyle's bluster ever did. Behind him, glimpsed through the doorway, Adry has just arrived on the landing — she'd clearly been watching this building too, and steps into view a beat after the enforcer, immediately reading the room's danger correctly. Adin's voice, if included, comes from further down the stairwell — he stayed as lookout and is calling up a warning a half-second too late. Lighting: the single gas lamp now feels inadequate, throwing long knife-edge shadows. Palette: same sickly yellow, but tension has turned it colder, sharper. Mood: sudden, compressed danger — too many people, one exit, one professional threat."
+        "text": "Same cramped tenement room, moments later, now with four people crowded into a space built for one. The enforcer stands in the doorway: unremarkable clothing by design, a face built for being forgotten, calm in a way that reads as far more dangerous than Doyle's bluster ever did. Behind him, glimpsed through the doorway, Lia has just arrived on the landing — she'd clearly been watching this building too, and steps into view a beat after the enforcer, immediately reading the room's danger correctly. Adin's voice, if included, comes from further down the stairwell — he stayed as lookout and is calling up a warning a half-second too late. Lighting: the single gas lamp now feels inadequate, throwing long knife-edge shadows. Palette: same sickly yellow, but tension has turned it colder, sharper. Mood: sudden, compressed danger — too many people, one exit, one professional threat."
       }
     ],
     "choices": [],
@@ -1348,7 +1348,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "Adry appears in the doorway behind him at that exact moment, and for one suspended second, nobody moves. [Adry: Guarded Neutral, sharpening fast]"
+        "text": "Lia appears in the doorway behind him at that exact moment, and for one suspended second, nobody moves. [Lia: Guarded Neutral, sharpening fast]"
       },
       {
         "type": "dialogue",
@@ -1384,11 +1384,11 @@ export const storyNodes: StoryNode[] = [
     "blocks": [
       {
         "type": "narration",
-        "text": "The enforcer moves. It's fast, and it's clean, and for three or four seconds the tiny room is nothing but controlled violence — Adry meeting him blade to forearm with brutal economy, Nick closing the gap to keep Renner pinned safely behind him, Doyle's earlier noise-making replaced by something far more dangerous and far quieter. [Adry: Controlled Fury] [Nick: Focused / Investigator, shifting to Barely Controlled Anger]"
+        "text": "The enforcer moves. It's fast, and it's clean, and for three or four seconds the tiny room is nothing but controlled violence — Lia meeting him blade to forearm with brutal economy, Nick closing the gap to keep Renner pinned safely behind him, Doyle's earlier noise-making replaced by something far more dangerous and far quieter. [Lia: Controlled Fury] [Nick: Focused / Investigator, shifting to Barely Controlled Anger]"
       },
       {
         "type": "narration",
-        "text": "It's Adry who ends it — not with the knife, but with words, hissed close to the enforcer's ear as she has his arm locked and his own blade turned half back toward his own throat."
+        "text": "It's Lia who ends it — not with the knife, but with words, hissed close to the enforcer's ear as she has his arm locked and his own blade turned half back toward his own throat."
       },
       {
         "type": "dialogue",
@@ -1413,7 +1413,7 @@ export const storyNodes: StoryNode[] = [
     "choices": [
       {
         "id": "CH3_S2_N02-A",
-        "label": "Stay silent, let Adry finish this on her own terms.",
+        "label": "Stay silent, let Lia finish this on her own terms.",
         "target": "CH3_S2_N03A"
       },
       {
@@ -1438,7 +1438,7 @@ export const storyNodes: StoryNode[] = [
     "blocks": [
       {
         "type": "narration",
-        "text": "The enforcer is gone. Renner is shaking, useless for questioning for at least the next hour. Adry stands very still in the middle of the wrecked little room, breathing evening out, visibly working to fold herself back into the controlled version of herself. [Adry: Guarded Neutral]"
+        "text": "The enforcer is gone. Renner is shaking, useless for questioning for at least the next hour. Lia stands very still in the middle of the wrecked little room, breathing evening out, visibly working to fold herself back into the controlled version of herself. [Lia: Guarded Neutral]"
       },
       {
         "type": "narration",
@@ -1446,7 +1446,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "Interior, the same tenement hallway, now spilling out onto the building's narrow rear stairwell and a small back landing that opens onto a quiet alley. Dusk light, blue-grey and soft, filtering down between close buildings. Adin waits at the bottom of the stairs, having missed the worst of it, visibly relieved and trying not to show how frightened he'd been. Adry and Nick end up a few steps apart on the landing, momentarily removed from the others — the adrenaline of the fight fading into something quieter and more dangerous: an actual unguarded moment. Palette: cooling dusk blues, the last warm light catching just the edges of things. Mood: the held breath after violence — too raw for hostility, not yet safe enough for honesty."
+        "text": "Interior, the same tenement hallway, now spilling out onto the building's narrow rear stairwell and a small back landing that opens onto a quiet alley. Dusk light, blue-grey and soft, filtering down between close buildings. Adin waits at the bottom of the stairs, having missed the worst of it, visibly relieved and trying not to show how frightened he'd been. Lia and Nick end up a few steps apart on the landing, momentarily removed from the others — the adrenaline of the fight fading into something quieter and more dangerous: an actual unguarded moment. Palette: cooling dusk blues, the last warm light catching just the edges of things. Mood: the held breath after violence — too raw for hostility, not yet safe enough for honesty."
       }
     ],
     "choices": [],
@@ -1466,7 +1466,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "Adry doesn't answer him. She's looking at Nick instead, something unresolved and heavy behind her eyes. [Adry: Vulnerable / Unguarded]"
+        "text": "Lia doesn't answer him. She's looking at Nick instead, something unresolved and heavy behind her eyes. [Lia: Vulnerable / Unguarded]"
       },
       {
         "type": "dialogue",
@@ -1502,7 +1502,7 @@ export const storyNodes: StoryNode[] = [
     "blocks": [
       {
         "type": "narration",
-        "text": "Whatever path got them here, Adry's composure cracks for exactly one sentence."
+        "text": "Whatever path got them here, Lia's composure cracks for exactly one sentence."
       },
       {
         "type": "dialogue",
@@ -1511,7 +1511,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "She stops. Physically stops — jaw shutting, eyes going somewhere far away and then snapping back, present and guarded, faster than either man can react to what almost happened. [Adry: Shock / Fear (rare), collapsing instantly into Cold Hostility]"
+        "text": "She stops. Physically stops — jaw shutting, eyes going somewhere far away and then snapping back, present and guarded, faster than either man can react to what almost happened. [Lia: Shock / Fear (rare), collapsing instantly into Cold Hostility]"
       },
       {
         "type": "dialogue",
@@ -1521,7 +1521,7 @@ export const storyNodes: StoryNode[] = [
       {
         "type": "dialogue",
         "speaker": "ADIN",
-        "text": "(carefully, gently, the only one who seems to understand exactly what she pulled back from) [Expression: Concerned / Protective] \"Adry—\""
+        "text": "(carefully, gently, the only one who seems to understand exactly what she pulled back from) [Expression: Concerned / Protective] \"Lia—\""
       },
       {
         "type": "dialogue",
@@ -1697,7 +1697,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "- Fixed outcomes regardless of choices: Doyle threatens Renner and is driven off; the enforcer arrives and is repelled specifically by Adry invoking the Rookery's name; Adry begins a sentence about recognizing Nick's fighting style and stops herself before finishing it; Erica makes contact, offers a transactional relationship, and reveals she already knows more about Nick's personal situation than she should."
+        "text": "- Fixed outcomes regardless of choices: Doyle threatens Renner and is driven off; the enforcer arrives and is repelled specifically by Lia invoking the Rookery's name; Lia begins a sentence about recognizing Nick's fighting style and stops herself before finishing it; Erica makes contact, offers a transactional relationship, and reveals she already knows more about Nick's personal situation than she should."
       },
       {
         "type": "narration",
@@ -1709,7 +1709,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "- The Enforcer/Rookery: first indirect confirmation that Adry's old rank still carries real weight and real fear inside the organization — important groundwork for her backstory reveal later."
+        "text": "- The Enforcer/Rookery: first indirect confirmation that Lia's old rank still carries real weight and real fear inside the organization — important groundwork for her backstory reveal later."
       },
       {
         "type": "narration",
@@ -1717,7 +1717,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "- Adry: the almost-confession (\"the last time I saw you move like that, you were—\") is the single most important planted line in this chapter. It should echo directly in Chapter 7-8 when the truth comes out — she was, without knowing it, one sentence away from describing the night he was sent to kill her."
+        "text": "- Lia: the almost-confession (\"the last time I saw you move like that, you were—\") is the single most important planted line in this chapter. It should echo directly in Chapter 7-8 when the truth comes out — she was, without knowing it, one sentence away from describing the night he was sent to kill her."
       },
       {
         "type": "narration",
@@ -2034,7 +2034,7 @@ export const storyNodes: StoryNode[] = [
       {
         "type": "dialogue",
         "speaker": "ADIN",
-        "text": "[Expression: Serious / Urgent] \"Nick — I need you. Now. It's Adry.\""
+        "text": "[Expression: Serious / Urgent] \"Nick — I need you. Now. It's Lia.\""
       },
       {
         "type": "narration",
@@ -2042,7 +2042,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "Exterior, late afternoon fading fast into evening, a narrow service alley behind a row of harbor warehouses — crates, broken barrels, a rusted fire escape climbing one wall. Adry is braced against a stack of crates, one hand pressed hard against her side, dark fabric darker still where blood has soaked through, breathing controlled through visible pain. Two or three discarded weapons and at least one unmoving figure in Rookery-plain clothing lie scattered nearby — evidence of exactly how close this came to going differently. Fading amber-to-blue dusk light, long shadows, a sense of a fight that just barely ended in her favor. Palette: harsh contrast between deep shadow and the one shaft of dying light illuminating her, blood-dark red against her black coat. Mood: raw, urgent, the first time the audience sees Adry genuinely vulnerable rather than composed."
+        "text": "Exterior, late afternoon fading fast into evening, a narrow service alley behind a row of harbor warehouses — crates, broken barrels, a rusted fire escape climbing one wall. Lia is braced against a stack of crates, one hand pressed hard against her side, dark fabric darker still where blood has soaked through, breathing controlled through visible pain. Two or three discarded weapons and at least one unmoving figure in Rookery-plain clothing lie scattered nearby — evidence of exactly how close this came to going differently. Fading amber-to-blue dusk light, long shadows, a sense of a fight that just barely ended in her favor. Palette: harsh contrast between deep shadow and the one shaft of dying light illuminating her, blood-dark red against her black coat. Mood: raw, urgent, the first time the audience sees Lia genuinely vulnerable rather than composed."
       }
     ],
     "choices": [],
@@ -2057,7 +2057,7 @@ export const storyNodes: StoryNode[] = [
     "blocks": [
       {
         "type": "narration",
-        "text": "By the time Nick reaches her, Adin already has one arm half-around her, trying to get her upright without hurting her further. She's fighting him on it, out of pure reflexive stubbornness, and losing. [Adry: Fear (rare), masked by Controlled Fury]"
+        "text": "By the time Nick reaches her, Adin already has one arm half-around her, trying to get her upright without hurting her further. She's fighting him on it, out of pure reflexive stubbornness, and losing. [Lia: Fear (rare), masked by Controlled Fury]"
       },
       {
         "type": "dialogue",
@@ -2083,7 +2083,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "id": "CH4_S4_N01-B",
-        "label": "Defer to Adry's wishes as much as possible — ask her where she wants to go, not tell her.",
+        "label": "Defer to Lia's wishes as much as possible — ask her where she wants to go, not tell her.",
         "target": "CH4_S4_N02B"
       },
       {
@@ -2103,11 +2103,11 @@ export const storyNodes: StoryNode[] = [
     "blocks": [
       {
         "type": "narration",
-        "text": "Between the three of them, they get her moving — toward a narrow, unremarkable door two streets over that Adry directs them to with brief, clipped instructions, clearly a safehouse she's used before and clearly not thrilled to be revealing it to either man."
+        "text": "Between the three of them, they get her moving — toward a narrow, unremarkable door two streets over that Lia directs them to with brief, clipped instructions, clearly a safehouse she's used before and clearly not thrilled to be revealing it to either man."
       },
       {
         "type": "narration",
-        "text": "[FIXED — Interior transition: a small, sparse room above a shuttered print shop not unlike Nick's own apartment, though barer, more temporary — the home of someone who's never let herself unpack fully. Adin tends the wound with rough, practiced competence while Adry sits rigid on the edge of a cot, jaw tight against the pain.] [Adry: Vulnerable / Unguarded, fighting to hold Guarded Neutral]"
+        "text": "[FIXED — Interior transition: a small, sparse room above a shuttered print shop not unlike Nick's own apartment, though barer, more temporary — the home of someone who's never let herself unpack fully. Adin tends the wound with rough, practiced competence while Lia sits rigid on the edge of a cot, jaw tight against the pain.] [Lia: Vulnerable / Unguarded, fighting to hold Guarded Neutral]"
       },
       {
         "type": "dialogue",
@@ -2128,7 +2128,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "id": "CH4_S4_N02-C",
-        "label": "Stay quiet, let Adin and Adry work through the immediate fear first.",
+        "label": "Stay quiet, let Adin and Lia work through the immediate fear first.",
         "target": "CH4_S4_N03C"
       }
     ],
@@ -2152,7 +2152,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "He steps out, leaving Nick and Adry alone in the small room for the first time since this all began."
+        "text": "He steps out, leaving Nick and Lia alone in the small room for the first time since this all began."
       },
       {
         "type": "narration",
@@ -2160,7 +2160,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "Interior, the same small safehouse room, now quiet, evening light gone fully to blue-grey through a single curtained window. A candle or single low lamp provides the only warmth in the frame. Adry remains seated on the edge of the cot, some of her guard finally, visibly lowered by exhaustion and pain rather than choice. Nick stands or sits a careful, respectful distance away — close enough to matter, far enough not to crowd. The framing should feel intimate but restrained, two people balanced on the edge of a conversation neither is sure they're ready to have. Palette: low-key blues and single-source warm lamplight, soft shadow, nothing sharp anywhere in the composition. Mood: the most vulnerable, quietest moment in the story so far."
+        "text": "Interior, the same small safehouse room, now quiet, evening light gone fully to blue-grey through a single curtained window. A candle or single low lamp provides the only warmth in the frame. Lia remains seated on the edge of the cot, some of her guard finally, visibly lowered by exhaustion and pain rather than choice. Nick stands or sits a careful, respectful distance away — close enough to matter, far enough not to crowd. The framing should feel intimate but restrained, two people balanced on the edge of a conversation neither is sure they're ready to have. Palette: low-key blues and single-source warm lamplight, soft shadow, nothing sharp anywhere in the composition. Mood: the most vulnerable, quietest moment in the story so far."
       }
     ],
     "choices": [],
@@ -2175,7 +2175,7 @@ export const storyNodes: StoryNode[] = [
     "blocks": [
       {
         "type": "narration",
-        "text": "For a while, neither of them says anything. Then Adry speaks, quiet, not quite looking at him."
+        "text": "For a while, neither of them says anything. Then Lia speaks, quiet, not quite looking at him."
       },
       {
         "type": "dialogue",
@@ -2221,7 +2221,7 @@ export const storyNodes: StoryNode[] = [
     "blocks": [
       {
         "type": "narration",
-        "text": "Adry opens her mouth to ask it — Nick can see the shape of the question forming, something that's clearly been sitting behind her ribs since Chapter 3's unfinished sentence, since long before that, probably. Her eyes are steady on his, and for one full second, she is closer to actually asking it than she has ever let herself be. [Adry: Vulnerable / Unguarded]"
+        "text": "Lia opens her mouth to ask it — Nick can see the shape of the question forming, something that's clearly been sitting behind her ribs since Chapter 3's unfinished sentence, since long before that, probably. Her eyes are steady on his, and for one full second, she is closer to actually asking it than she has ever let herself be. [Lia: Vulnerable / Unguarded]"
       },
       {
         "type": "dialogue",
@@ -2230,7 +2230,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "She stops. Not the same way as before — not a wall slamming shut in panic. This time it's slower, more deliberate, a choice made with her eyes still open. [Adry: Vulnerable / Unguarded, settling into Reluctant Warmth]"
+        "text": "She stops. Not the same way as before — not a wall slamming shut in panic. This time it's slower, more deliberate, a choice made with her eyes still open. [Lia: Vulnerable / Unguarded, settling into Reluctant Warmth]"
       },
       {
         "type": "dialogue",
@@ -2281,7 +2281,7 @@ export const storyNodes: StoryNode[] = [
       {
         "type": "dialogue",
         "speaker": "NARRATION",
-        "text": "Outside, Adin's footsteps return on the stairs, and whatever this was — this fragile, unnamed thing — folds itself carefully away before he opens the door, the way both of them have clearly practiced doing with everything that matters. [Adry: Guarded Neutral] [Nick: Neutral / Guarded]"
+        "text": "Outside, Adin's footsteps return on the stairs, and whatever this was — this fragile, unnamed thing — folds itself carefully away before he opens the door, the way both of them have clearly practiced doing with everything that matters. [Lia: Guarded Neutral] [Nick: Neutral / Guarded]"
       },
       {
         "type": "narration",
@@ -2289,7 +2289,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "- Fixed outcomes regardless of choices: Doyle's complaint forces institutional pressure through Kurt; Nick confirms multiple prior cases share the Rookery's fingerprints; Gaspar admits a personal, buried history with the organization's predecessor; Adry is ambushed and wounded, forcing her to accept Nick's help for the first time; she begins to ask the pivotal question and deliberately chooses not to finish it — a conscious choice this time, not a panic reaction."
+        "text": "- Fixed outcomes regardless of choices: Doyle's complaint forces institutional pressure through Kurt; Nick confirms multiple prior cases share the Rookery's fingerprints; Gaspar admits a personal, buried history with the organization's predecessor; Lia is ambushed and wounded, forcing her to accept Nick's help for the first time; she begins to ask the pivotal question and deliberately chooses not to finish it — a conscious choice this time, not a panic reaction."
       },
       {
         "type": "narration",
@@ -2305,11 +2305,11 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "- Adry: this is her core vulnerability chapter. The strongest trust-building combination is S4_N02 Option A (explicitly stating she doesn't suspect him) + S5_N02 Option A or C (respecting her silence, or offering his own parallel vulnerability). Recommend treating the \"iron door\" dream-parallel (S5_N02 Option C) as a strong dramatic-irony beat worth referencing again in Chapter 6-7, regardless of whether the player chose it, since it's such a clean thematic echo — consider finding a way to surface it again narratively even on other branches."
+        "text": "- Lia: this is her core vulnerability chapter. The strongest trust-building combination is S4_N02 Option A (explicitly stating she doesn't suspect him) + S5_N02 Option A or C (respecting her silence, or offering his own parallel vulnerability). Recommend treating the \"iron door\" dream-parallel (S5_N02 Option C) as a strong dramatic-irony beat worth referencing again in Chapter 6-7, regardless of whether the player chose it, since it's such a clean thematic echo — consider finding a way to surface it again narratively even on other branches."
       },
       {
         "type": "narration",
-        "text": "- New lead carried into Chapter 5: the unresolved question of who leaked Adry's location to the Rookery. This should NOT be answered yet — it deepens the dread heading into Adin's death in Chapter 5, and can optionally be revealed later (a mole, surveillance, or simple bad luck — your choice as writer) without changing Chapter 5's fixed events."
+        "text": "- New lead carried into Chapter 5: the unresolved question of who leaked Lia's location to the Rookery. This should NOT be answered yet — it deepens the dread heading into Adin's death in Chapter 5, and can optionally be revealed later (a mole, surveillance, or simple bad luck — your choice as writer) without changing Chapter 5's fixed events."
       },
       {
         "type": "narration",
@@ -2358,12 +2358,12 @@ export const storyNodes: StoryNode[] = [
     "choices": [
       {
         "id": "CH5_S1_N01-A",
-        "label": "Back Adin up — tell Adry she genuinely isn't ready.",
+        "label": "Back Adin up — tell Lia she genuinely isn't ready.",
         "target": "CH5_S1_N02A"
       },
       {
         "id": "CH5_S1_N01-B",
-        "label": "Offer a compromise — suggest Nick goes in Adry's place, alongside Adin.",
+        "label": "Offer a compromise — suggest Nick goes in Lia's place, alongside Adin.",
         "target": "CH5_S1_N02B"
       },
       {
@@ -2384,7 +2384,7 @@ export const storyNodes: StoryNode[] = [
       {
         "type": "dialogue",
         "speaker": "ADIN",
-        "text": "(crouching in front of Adry, taking her hand, all the earlier lightness gone from his voice) [Expression: Concerned / Protective] \"I'll be back before you've even finished being annoyed at me. One name, that's all I need. Then we bring it to Nick, and we do this properly, together, like people who don't get themselves killed over pride.\""
+        "text": "(crouching in front of Lia, taking her hand, all the earlier lightness gone from his voice) [Expression: Concerned / Protective] \"I'll be back before you've even finished being annoyed at me. One name, that's all I need. Then we bring it to Nick, and we do this properly, together, like people who don't get themselves killed over pride.\""
       },
       {
         "type": "dialogue",
@@ -2425,12 +2425,12 @@ export const storyNodes: StoryNode[] = [
     "blocks": [
       {
         "type": "narration",
-        "text": "Adin pulls his coat the rest of the way on, squeezes Adry's hand once more, and slips out into the evening with the easy, unhurried confidence of a man who has done difficult, dangerous things many times before and always come home. [Adin: Warm Open Smile]"
+        "text": "Adin pulls his coat the rest of the way on, squeezes Lia's hand once more, and slips out into the evening with the easy, unhurried confidence of a man who has done difficult, dangerous things many times before and always come home. [Adin: Warm Open Smile]"
       },
       {
         "type": "dialogue",
         "speaker": "NARRATION",
-        "text": "The door closes. The room feels smaller without him in it — the specific kind of smaller that happens when the warmest person in a room leaves it. [Adry: Vulnerable / Unguarded] [Nick: Restrained Grief, quiet foreboding]"
+        "text": "The door closes. The room feels smaller without him in it — the specific kind of smaller that happens when the warmest person in a room leaves it. [Lia: Vulnerable / Unguarded] [Nick: Restrained Grief, quiet foreboding]"
       },
       {
         "type": "narration",
@@ -2438,7 +2438,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "Exterior-to-interior, deep night, a weathered dockside warehouse well past its two-hour mark, fog rolled in thick off the water. Nick and Adry approach on foot, Adry moving with grim determination through obvious lingering pain, both of them silent, both of them already afraid in the specific way that comes before confirmation. The warehouse's side door stands open — wrong, a door that should be shut. Inside: near-total darkness but for a single knocked-over lantern still weakly burning on its side, throwing long, wrong-angled shadows across overturned crates and unmistakable signs of a struggle. Palette: near-monochrome fog-blue and black, the one guttering lantern flame the only warm color in the entire frame — small, dying, insufficient. Mood: dread given physical shape; the worst kind of quiet."
+        "text": "Exterior-to-interior, deep night, a weathered dockside warehouse well past its two-hour mark, fog rolled in thick off the water. Nick and Lia approach on foot, Lia moving with grim determination through obvious lingering pain, both of them silent, both of them already afraid in the specific way that comes before confirmation. The warehouse's side door stands open — wrong, a door that should be shut. Inside: near-total darkness but for a single knocked-over lantern still weakly burning on its side, throwing long, wrong-angled shadows across overturned crates and unmistakable signs of a struggle. Palette: near-monochrome fog-blue and black, the one guttering lantern flame the only warm color in the entire frame — small, dying, insufficient. Mood: dread given physical shape; the worst kind of quiet."
       }
     ],
     "choices": [],
@@ -2453,7 +2453,7 @@ export const storyNodes: StoryNode[] = [
     "blocks": [
       {
         "type": "narration",
-        "text": "Two hours became two hours and ten minutes became something neither of them said out loud they were counting anymore. Adry stops at the warehouse's open side door first, goes very still. [Adry: Fear (rare)]"
+        "text": "Two hours became two hours and ten minutes became something neither of them said out loud they were counting anymore. Lia stops at the warehouse's open side door first, goes very still. [Lia: Fear (rare)]"
       },
       {
         "type": "dialogue",
@@ -2493,7 +2493,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "Adin is still breathing when they reach him. Barely. Long enough for his eyes to find Adry's face in the lantern light, long enough for the ghost of that same easy smile to try, one last time, to reassure her. [Adin: Dying / Weak Smile]"
+        "text": "Adin is still breathing when they reach him. Barely. Long enough for his eyes to find Lia's face in the lantern light, long enough for the ghost of that same easy smile to try, one last time, to reassure her. [Adin: Dying / Weak Smile]"
       },
       {
         "type": "dialogue",
@@ -2502,7 +2502,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "[FIXED — He doesn't get the rest of the sentence out. Adry is already on the ground beside him, hands pressed uselessly against a wound too severe for hands to fix, and by the time Nick reaches them both, it's already over.] [Adry: Raw Grief] [Nick: Shock / Disorientation, collapsing into Restrained Grief]"
+        "text": "[FIXED — He doesn't get the rest of the sentence out. Lia is already on the ground beside him, hands pressed uselessly against a wound too severe for hands to fix, and by the time Nick reaches them both, it's already over.] [Lia: Raw Grief] [Nick: Shock / Disorientation, collapsing into Restrained Grief]"
       },
       {
         "type": "narration",
@@ -2514,7 +2514,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "Same warehouse interior, minutes later. Adry kneels where she fell, unmoving, one hand still resting on Adin's still chest, the lantern nearly guttered out now, throwing almost no light at all — the scene should feel like it's dimming in real time, grief physically darkening the frame. Nick stands a short distance away, present but giving her the space of the moment, his own face unreadable in the near-dark. Palette: nearly desaturated, the barest ember of lantern-orange fading toward black. Mood: the rawest, quietest, heaviest scene in the story so far."
+        "text": "Same warehouse interior, minutes later. Lia kneels where she fell, unmoving, one hand still resting on Adin's still chest, the lantern nearly guttered out now, throwing almost no light at all — the scene should feel like it's dimming in real time, grief physically darkening the frame. Nick stands a short distance away, present but giving her the space of the moment, his own face unreadable in the near-dark. Palette: nearly desaturated, the barest ember of lantern-orange fading toward black. Mood: the rawest, quietest, heaviest scene in the story so far."
       }
     ],
     "choices": [],
@@ -2529,7 +2529,7 @@ export const storyNodes: StoryNode[] = [
     "blocks": [
       {
         "type": "narration",
-        "text": "For a long, terrible stretch of time, Adry doesn't move, doesn't speak. Then, slowly, she looks up — not at Adin anymore, but at Nick — and something in her face has gone somewhere Nick has never seen it go before: past hostility, past guardedness, into something raw and undefended and dangerous. [Adry: Raw Grief, curdling toward Controlled Fury]"
+        "text": "For a long, terrible stretch of time, Lia doesn't move, doesn't speak. Then, slowly, she looks up — not at Adin anymore, but at Nick — and something in her face has gone somewhere Nick has never seen it go before: past hostility, past guardedness, into something raw and undefended and dangerous. [Lia: Raw Grief, curdling toward Controlled Fury]"
       },
       {
         "type": "dialogue",
@@ -2565,7 +2565,7 @@ export const storyNodes: StoryNode[] = [
     "blocks": [
       {
         "type": "narration",
-        "text": "Whatever precedes it, Adry comes to her feet fast, grief curdling into something with teeth, closing the distance toward Nick with real, dangerous intent behind it. [Adry: Controlled Fury, full intensity]"
+        "text": "Whatever precedes it, Lia comes to her feet fast, grief curdling into something with teeth, closing the distance toward Nick with real, dangerous intent behind it. [Lia: Controlled Fury, full intensity]"
       },
       {
         "type": "dialogue",
@@ -2601,7 +2601,7 @@ export const storyNodes: StoryNode[] = [
     "blocks": [
       {
         "type": "narration",
-        "text": "Whatever the path, the fury finally breaks — not resolves, just breaks, the way a wave breaks, leaving Adry standing there shaking, furious and grieving and, for the first time since Nick has known her, entirely without her usual armor. [Adry: Raw Grief]"
+        "text": "Whatever the path, the fury finally breaks — not resolves, just breaks, the way a wave breaks, leaving Lia standing there shaking, furious and grieving and, for the first time since Nick has known her, entirely without her usual armor. [Lia: Raw Grief]"
       },
       {
         "type": "dialogue",
@@ -2614,7 +2614,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "Same warehouse, the lantern now fully out, the only light a thin wash of moonlight through a high broken window. Nick and Adry stand close, the physical distance between them finally collapsed by grief rather than argument. This scene should be framed intimately — tight, quiet, the vast dark warehouse around them shrinking to just the small space between two people. When the embrace happens, it should read as two exhausted, grieving people holding onto the only steady thing left in the room, not as a romantic beat with intent behind it — tenderness born entirely out of shared loss. Palette: cool moonlight silver-blue, soft-edged, almost tender despite the grim setting. Mood: the quietest, most emotionally exposed moment in the story so far — the actual turning point of the entire Nick-Adry relationship."
+        "text": "Same warehouse, the lantern now fully out, the only light a thin wash of moonlight through a high broken window. Nick and Lia stand close, the physical distance between them finally collapsed by grief rather than argument. This scene should be framed intimately — tight, quiet, the vast dark warehouse around them shrinking to just the small space between two people. When the embrace happens, it should read as two exhausted, grieving people holding onto the only steady thing left in the room, not as a romantic beat with intent behind it — tenderness born entirely out of shared loss. Palette: cool moonlight silver-blue, soft-edged, almost tender despite the grim setting. Mood: the quietest, most emotionally exposed moment in the story so far — the actual turning point of the entire Nick-Lia relationship."
       }
     ],
     "choices": [],
@@ -2634,7 +2634,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "Adry doesn't answer right away. She looks at Adin's still form one more time, then back at Nick, something fracturing further behind her eyes. [Adry: Raw Grief, softening toward Vulnerable / Unguarded]"
+        "text": "Lia doesn't answer right away. She looks at Adin's still form one more time, then back at Nick, something fracturing further behind her eyes. [Lia: Raw Grief, softening toward Vulnerable / Unguarded]"
       }
     ],
     "choices": [
@@ -2665,7 +2665,7 @@ export const storyNodes: StoryNode[] = [
     "blocks": [
       {
         "type": "narration",
-        "text": "Whatever path brought them here, the result settles into the same quiet truth: Adry, for the first time since Nick has known her, lets herself be held — or leans, or simply stays close, unguarded in a way that has nothing to do with strategy or survival and everything to do with two people who have both lost more than they know how to carry alone. [Adry: Vulnerable / Unguarded] [Nick: Restrained Grief]"
+        "text": "Whatever path brought them here, the result settles into the same quiet truth: Lia, for the first time since Nick has known her, lets herself be held — or leans, or simply stays close, unguarded in a way that has nothing to do with strategy or survival and everything to do with two people who have both lost more than they know how to carry alone. [Lia: Vulnerable / Unguarded] [Nick: Restrained Grief]"
       },
       {
         "type": "dialogue",
@@ -2809,7 +2809,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "- Fixed outcomes regardless of choices: Adin goes to the meeting alone; he is fatally wounded in the ambush and dies moments after Nick and Adry arrive; Adry initially blames Nick out of grief; Nick responds with calm honesty rather than defensiveness; this restraint leads to a genuine embrace/physical comfort moment and Nick saying \"I'm sorry\" sincerely; Adry ends the chapter stating she no longer believes Nick was responsible, though full trust remains unearned; Hiller confirms the method matches the Rookery's known operations."
+        "text": "- Fixed outcomes regardless of choices: Adin goes to the meeting alone; he is fatally wounded in the ambush and dies moments after Nick and Lia arrive; Lia initially blames Nick out of grief; Nick responds with calm honesty rather than defensiveness; this restraint leads to a genuine embrace/physical comfort moment and Nick saying \"I'm sorry\" sincerely; Lia ends the chapter stating she no longer believes Nick was responsible, though full trust remains unearned; Hiller confirms the method matches the Rookery's known operations."
       },
       {
         "type": "narration",
@@ -2821,7 +2821,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "- Adry: this is the single largest trust shift in the entire story. She explicitly states, out loud, that she no longer believes Nick was responsible — a directly quotable line for Chapter 6's opening."
+        "text": "- Lia: this is the single largest trust shift in the entire story. She explicitly states, out loud, that she no longer believes Nick was responsible — a directly quotable line for Chapter 6's opening."
       },
       {
         "type": "narration",
@@ -2833,7 +2833,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "- New lead carried into Chapter 6: the identity of the leak who gave up Adry's location is still unresolved and now carries much higher emotional stakes — it directly caused Adin's death. This should surface again once the investigation resumes."
+        "text": "- New lead carried into Chapter 6: the identity of the leak who gave up Lia's location is still unresolved and now carries much higher emotional stakes — it directly caused Adin's death. This should surface again once the investigation resumes."
       },
       {
         "type": "narration",
@@ -2889,7 +2889,7 @@ export const storyNodes: StoryNode[] = [
       {
         "type": "dialogue",
         "speaker": "NARRATION",
-        "text": "He doesn't tell Adry about this one. Not yet. Some instinct — old, careful, not fully examined — tells him this particular fragment isn't ready to be spoken aloud, not until he understands why it feels less like a wound and more like the edge of an apology he hasn't finished making. [Nick: Restrained Grief]"
+        "text": "He doesn't tell Lia about this one. Not yet. Some instinct — old, careful, not fully examined — tells him this particular fragment isn't ready to be spoken aloud, not until he understands why it feels less like a wound and more like the edge of an apology he hasn't finished making. [Nick: Restrained Grief]"
       },
       {
         "type": "narration",
@@ -2901,7 +2901,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "Interior, mid-morning, Renner's small tenement room, now tidier than the chaos of Chapter 3 — a man trying, badly, to rebuild a sense of normalcy around himself. Nick and Adry arrive together this time, not circling each other's investigations but walking in as a unit — a visual detail worth making clear: shared pace, no distance held between them, the physical language of two people who trust each other's instincts now. Renner startles at the knock regardless, still jumpy, though he relaxes fractionally once he sees who it is. Soft daylight through a cleaner window than before. Palette: warmer than Chapter 3's version of this room, though still modest and worn. Mood: cautious rebuilding, on every level the scene operates on."
+        "text": "Interior, mid-morning, Renner's small tenement room, now tidier than the chaos of Chapter 3 — a man trying, badly, to rebuild a sense of normalcy around himself. Nick and Lia arrive together this time, not circling each other's investigations but walking in as a unit — a visual detail worth making clear: shared pace, no distance held between them, the physical language of two people who trust each other's instincts now. Renner startles at the knock regardless, still jumpy, though he relaxes fractionally once he sees who it is. Soft daylight through a cleaner window than before. Palette: warmer than Chapter 3's version of this room, though still modest and worn. Mood: cautious rebuilding, on every level the scene operates on."
       }
     ],
     "choices": [],
@@ -2933,7 +2933,7 @@ export const storyNodes: StoryNode[] = [
     "choices": [
       {
         "id": "CH6_S2_N01-A",
-        "label": "Let Adry take the lead on questioning — she can be more disarming than expected.",
+        "label": "Let Lia take the lead on questioning — she can be more disarming than expected.",
         "target": "CH6_S2_N02A"
       },
       {
@@ -3006,7 +3006,7 @@ export const storyNodes: StoryNode[] = [
       {
         "type": "dialogue",
         "speaker": "ADRY",
-        "text": "(taking it carefully, studying it) [Expression: Focused, tactical] \"This is real. This is the first real thread we've had since—\" (she doesn't finish that sentence either, but the shape of it is unmistakable — since Adin.) [Adry: Restrained Grief, brief]"
+        "text": "(taking it carefully, studying it) [Expression: Focused, tactical] \"This is real. This is the first real thread we've had since—\" (she doesn't finish that sentence either, but the shape of it is unmistakable — since Adin.) [Lia: Restrained Grief, brief]"
       },
       {
         "type": "dialogue",
@@ -3020,7 +3020,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "[FIXED — They agree, and leave him to whatever fragile peace he can rebuild. Outside, on the street, something in the way Nick and Adry fall into step together feels different than it did even a week ago — less like two people tolerating a shared problem, more like two people actually solving one.] [Nick: Resolve] [Adry: Reluctant Warmth]"
+        "text": "[FIXED — They agree, and leave him to whatever fragile peace he can rebuild. Outside, on the street, something in the way Nick and Lia fall into step together feels different than it did even a week ago — less like two people tolerating a shared problem, more like two people actually solving one.] [Nick: Resolve] [Lia: Reluctant Warmth]"
       },
       {
         "type": "narration",
@@ -3028,7 +3028,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "Interior, early evening, a different location than the Rusted Anchor this time — a quieter, more private back room of a print shop that doubles as a message drop, chosen deliberately by Erica for its discretion. Erica is already seated when Nick arrives, alone this time (Adry has gone to see to Renner's continued safety, or similar reason for narrative separation), a small stack of paper in front of her that she keeps one hand resting on, as if reluctant to let it go too easily. Warm lamplight, close quarters, the smell of ink and paper. Palette: amber and umber tones, intimate and a little conspiratorial. Mood: transactional warmth undercut by a sharper edge than her Chapter 3 appearance — the price has gone up, and so has the tension."
+        "text": "Interior, early evening, a different location than the Rusted Anchor this time — a quieter, more private back room of a print shop that doubles as a message drop, chosen deliberately by Erica for its discretion. Erica is already seated when Nick arrives, alone this time (Lia has gone to see to Renner's continued safety, or similar reason for narrative separation), a small stack of paper in front of her that she keeps one hand resting on, as if reluctant to let it go too easily. Warm lamplight, close quarters, the smell of ink and paper. Palette: amber and umber tones, intimate and a little conspiratorial. Mood: transactional warmth undercut by a sharper edge than her Chapter 3 appearance — the price has gone up, and so has the tension."
       }
     ],
     "choices": [],
@@ -3267,7 +3267,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "- Fixed outcomes regardless of choices: Nick's nightmare produces its first face — blurred, female, unidentified, and notably unafraid of him; Renner reveals the title \"the Conductor\" and hands over a surviving evidence fragment; Nick and Adry's partnership visibly shifts into genuine alliance; Erica returns with deeper information at the cost of an open, unspecified future favor, and reveals she has her own personal grudge against \"the Conductor\"; Kurt hands over Nick's redacted dismissal file, providing the first institutional proof that his service to the Rookery was coerced, not chosen."
+        "text": "- Fixed outcomes regardless of choices: Nick's nightmare produces its first face — blurred, female, unidentified, and notably unafraid of him; Renner reveals the title \"the Conductor\" and hands over a surviving evidence fragment; Nick and Lia's partnership visibly shifts into genuine alliance; Erica returns with deeper information at the cost of an open, unspecified future favor, and reveals she has her own personal grudge against \"the Conductor\"; Kurt hands over Nick's redacted dismissal file, providing the first institutional proof that his service to the Rookery was coerced, not chosen."
       },
       {
         "type": "narration",
@@ -3275,7 +3275,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "- Adry: Scene 2 firmly establishes the shift from \"necessity\" to genuine alliance — no single line does this alone, it's the accumulated texture of the scene (shared pace, gentler tone, unfinished sentence about \"since—\" implicitly meaning since Adin's death)."
+        "text": "- Lia: Scene 2 firmly establishes the shift from \"necessity\" to genuine alliance — no single line does this alone, it's the accumulated texture of the scene (shared pace, gentler tone, unfinished sentence about \"since—\" implicitly meaning since Adin's death)."
       },
       {
         "type": "narration",
@@ -3291,7 +3291,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "- Nick's memory thread: escalated to the first fragment with a face — deliberately not yet connected by Nick (or explicitly confirmed to the player) as Adry's face, though the visual description is written to let the player begin suspecting it strongly."
+        "text": "- Nick's memory thread: escalated to the first fragment with a face — deliberately not yet connected by Nick (or explicitly confirmed to the player) as Lia's face, though the visual description is written to let the player begin suspecting it strongly."
       },
       {
         "type": "narration",
@@ -3314,7 +3314,7 @@ export const storyNodes: StoryNode[] = [
     "blocks": [
       {
         "type": "narration",
-        "text": "Erica's directions were precise, as promised — the false shelf, the narrow stair, the vault itself, exactly where she said it would be. Adry runs a gloved hand along a row of cabinets, reading labels in the dark. [Adry: Focused, tactical]"
+        "text": "Erica's directions were precise, as promised — the false shelf, the narrow stair, the vault itself, exactly where she said it would be. Lia runs a gloved hand along a row of cabinets, reading labels in the dark. [Lia: Focused, tactical]"
       },
       {
         "type": "dialogue",
@@ -3350,7 +3350,7 @@ export const storyNodes: StoryNode[] = [
     "blocks": [
       {
         "type": "narration",
-        "text": "It takes the better part of an hour of careful, silent searching before Adry's fingers still over a specific drawer, a specific date, a specific case number that matches nothing either of them expected to find so easily."
+        "text": "It takes the better part of an hour of careful, silent searching before Lia's fingers still over a specific drawer, a specific date, a specific case number that matches nothing either of them expected to find so easily."
       },
       {
         "type": "dialogue",
@@ -3386,7 +3386,7 @@ export const storyNodes: StoryNode[] = [
     "blocks": [
       {
         "type": "narration",
-        "text": "Whatever led him there, Nick finds himself standing beside Adry, looking down at a thin operational file, its cover stamped with a case number and a single word: INCOMPLETE."
+        "text": "Whatever led him there, Nick finds himself standing beside Lia, looking down at a thin operational file, its cover stamped with a case number and a single word: INCOMPLETE."
       },
       {
         "type": "narration",
@@ -3470,7 +3470,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "id": "CH7_S2_N02-B",
-        "label": "Ask Adry to read the rest of the file aloud, hoping to hear it might trigger something.",
+        "label": "Ask Lia to read the rest of the file aloud, hoping to hear it might trigger something.",
         "target": "CH7_S2_N03B"
       },
       {
@@ -3498,7 +3498,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "This scene should be rendered as a distinct visual register from the rest of the game — no longer dream-abstract, but crystallized, hyper-real memory: the same bare room from the recurring nightmare, but now fully resolved, fully lit, fully specific. Cold stone walls, a single harsh overhead lamp, a heavy iron-banded door in the far wall (the same door from Chapter 2's nightmare). Adry — younger by a few years, harder-edged, clearly restrained or cornered — stands where the blurred seated figure used to be, now fully clear, fully herself. Nick, in memory, stands with a weapon raised, his own face (from the inside, as the player/POV) not visible but his hand and arm rendered in sharp, present detail. Palette: the cold clinical blue-white of the dream sequences, but saturated now, vivid, undeniably real rather than impressionistic. Mood: the collision of memory and truth — the exact moment the entire story has been building toward."
+        "text": "This scene should be rendered as a distinct visual register from the rest of the game — no longer dream-abstract, but crystallized, hyper-real memory: the same bare room from the recurring nightmare, but now fully resolved, fully lit, fully specific. Cold stone walls, a single harsh overhead lamp, a heavy iron-banded door in the far wall (the same door from Chapter 2's nightmare). Lia — younger by a few years, harder-edged, clearly restrained or cornered — stands where the blurred seated figure used to be, now fully clear, fully herself. Nick, in memory, stands with a weapon raised, his own face (from the inside, as the player/POV) not visible but his hand and arm rendered in sharp, present detail. Palette: the cold clinical blue-white of the dream sequences, but saturated now, vivid, undeniably real rather than impressionistic. Mood: the collision of memory and truth — the exact moment the entire story has been building toward."
       }
     ],
     "choices": [],
@@ -3513,7 +3513,7 @@ export const storyNodes: StoryNode[] = [
     "blocks": [
       {
         "type": "narration",
-        "text": "He is standing in the room. Really standing in it, or as close to really as memory allows. The weight in his hand is a service pistol, standard Rookery issue, and across from him, Adry — impossibly, unmistakably her, younger, furious, and terrified in a way she has never once let Nick see in the present — is on her knees, hands bound, blood at her temple from whatever happened before this moment began. [Young Adry: Fear (rare), masked by Controlled Fury]"
+        "text": "He is standing in the room. Really standing in it, or as close to really as memory allows. The weight in his hand is a service pistol, standard Rookery issue, and across from him, Lia — impossibly, unmistakably her, younger, furious, and terrified in a way she has never once let Nick see in the present — is on her knees, hands bound, blood at her temple from whatever happened before this moment began. [Young Lia: Fear (rare), masked by Controlled Fury]"
       },
       {
         "type": "narration",
@@ -3533,7 +3533,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "Adry stares at him — disbelief, calculation, something that might, in a different life, have been the beginning of trust, if either of them had ever been given the chance to build on it properly. [Young Adry: Shock / Disorientation]"
+        "text": "Lia stares at him — disbelief, calculation, something that might, in a different life, have been the beginning of trust, if either of them had ever been given the chance to build on it properly. [Young Lia: Shock / Disorientation]"
       },
       {
         "type": "narration",
@@ -3556,7 +3556,7 @@ export const storyNodes: StoryNode[] = [
     "blocks": [
       {
         "type": "narration",
-        "text": "Nick surfaces back into the vault gasping, on his knees, Adry's hands gripping his shoulders hard enough to ground him. [Nick: Shock / Disorientation]"
+        "text": "Nick surfaces back into the vault gasping, on his knees, Lia's hands gripping his shoulders hard enough to ground him. [Nick: Shock / Disorientation]"
       },
       {
         "type": "dialogue",
@@ -3570,7 +3570,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "Adry doesn't say anything for a long moment. Her hands don't leave his shoulders. [Adry: Vulnerable / Unguarded]"
+        "text": "Lia doesn't say anything for a long moment. Her hands don't leave his shoulders. [Lia: Vulnerable / Unguarded]"
       },
       {
         "type": "narration",
@@ -3578,7 +3578,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "Same vault, moments later, but something in the light has changed — the single dark-lantern now throwing an impossible extra shadow near the far row of cabinets, a presence that shouldn't be there and yet unmistakably is. Vivienne stands at the edge of the lantern's reach: grey clothing exactly as described in every prior fragment, features still deliberately soft-edged and hard to fully resolve even now, up close, in a way that should be impossible in a physically real space — as though she exists slightly out of register with the room around her. She doesn't move like an intruder; she moves like someone who has always had a right to be exactly here. Palette: the same cold vault tones, but with Vivienne rendered in a faint, deliberate desaturation compared to Nick and Adry — visually marking her as not-quite-of-this-scene even while physically present in it. Mood: uncanny, hushed, the specific unease of a ghost that turns out to also be real."
+        "text": "Same vault, moments later, but something in the light has changed — the single dark-lantern now throwing an impossible extra shadow near the far row of cabinets, a presence that shouldn't be there and yet unmistakably is. Vivienne stands at the edge of the lantern's reach: grey clothing exactly as described in every prior fragment, features still deliberately soft-edged and hard to fully resolve even now, up close, in a way that should be impossible in a physically real space — as though she exists slightly out of register with the room around her. She doesn't move like an intruder; she moves like someone who has always had a right to be exactly here. Palette: the same cold vault tones, but with Vivienne rendered in a faint, deliberate desaturation compared to Nick and Lia — visually marking her as not-quite-of-this-scene even while physically present in it. Mood: uncanny, hushed, the specific unease of a ghost that turns out to also be real."
       }
     ],
     "choices": [],
@@ -3593,7 +3593,7 @@ export const storyNodes: StoryNode[] = [
     "blocks": [
       {
         "type": "narration",
-        "text": "Adry sees her first — goes rigid, one hand already moving toward a blade before some instinct stops her. [Adry: Guarded Neutral, alarmed]"
+        "text": "Lia sees her first — goes rigid, one hand already moving toward a blade before some instinct stops her. [Lia: Guarded Neutral, alarmed]"
       },
       {
         "type": "dialogue",
@@ -3623,7 +3623,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "id": "CH7_S4_N01-C",
-        "label": "Ask Adry if she can see her too — grounding yourself in shared reality first.",
+        "label": "Ask Lia if she can see her too — grounding yourself in shared reality first.",
         "target": "CH7_S4_N02C"
       }
     ],
@@ -3649,7 +3649,7 @@ export const storyNodes: StoryNode[] = [
       {
         "type": "dialogue",
         "speaker": "VIVIENNE",
-        "text": "[Expression: Cryptic Calm] \"I kept your memory, Nick. There's a difference, even if it never once felt like one to you.\" A pause, her eyes moving briefly to Adry, something like grief in them. [Expression: Soft Sadness] \"They wanted it gone entirely. Burned out, the way they'd have burned you out, eventually, if I'd let them see how much of you was still in there, still choosing her over every order they ever gave you.\""
+        "text": "[Expression: Cryptic Calm] \"I kept your memory, Nick. There's a difference, even if it never once felt like one to you.\" A pause, her eyes moving briefly to Lia, something like grief in them. [Expression: Soft Sadness] \"They wanted it gone entirely. Burned out, the way they'd have burned you out, eventually, if I'd let them see how much of you was still in there, still choosing her over every order they ever gave you.\""
       }
     ],
     "choices": [
@@ -3703,7 +3703,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "Exterior, the alley and street behind the Guildhall, deep night, fog rolling thin along the cobblestones. Nick and Adry emerge from the coal cellar entrance cautiously, evidence in hand, senses still raw from everything that just happened underground. Across the street, briefly illuminated by a single working gas lamp, a black carriage has stopped outside the Guildhall's front entrance — too fine, too well-kept for the surrounding district, its horses groomed to a shine even at this hour. A figure steps down from it: tall, dressed entirely in severe black, hair sleek and precisely bound back, moving with the unhurried authority of someone who has never once needed to walk quickly to make a room fall silent. Her face is visible only in profile, briefly, before she turns toward the Guildhall's front doors — cold grey eyes catching the gaslight for one full second in a way that reads as far more unsettling than any overt threat could. Palette: deep midnight blue and fog-grey, the single gaslight throwing her black coat into sharp, deliberate silhouette. Mood: the story's central antagonist made real for the first time — no dialogue, no confrontation, just the sudden, undeniable fact of her existence."
+        "text": "Exterior, the alley and street behind the Guildhall, deep night, fog rolling thin along the cobblestones. Nick and Lia emerge from the coal cellar entrance cautiously, evidence in hand, senses still raw from everything that just happened underground. Across the street, briefly illuminated by a single working gas lamp, a black carriage has stopped outside the Guildhall's front entrance — too fine, too well-kept for the surrounding district, its horses groomed to a shine even at this hour. A figure steps down from it: tall, dressed entirely in severe black, hair sleek and precisely bound back, moving with the unhurried authority of someone who has never once needed to walk quickly to make a room fall silent. Her face is visible only in profile, briefly, before she turns toward the Guildhall's front doors — cold grey eyes catching the gaslight for one full second in a way that reads as far more unsettling than any overt threat could. Palette: deep midnight blue and fog-grey, the single gaslight throwing her black coat into sharp, deliberate silhouette. Mood: the story's central antagonist made real for the first time — no dialogue, no confrontation, just the sudden, undeniable fact of her existence."
       }
     ],
     "choices": [],
@@ -3718,7 +3718,7 @@ export const storyNodes: StoryNode[] = [
     "blocks": [
       {
         "type": "narration",
-        "text": "Adry freezes first, one hand shooting out to stop Nick mid-step, pulling him back into the shadow of the alley mouth. [Adry: Fear (rare)]"
+        "text": "Lia freezes first, one hand shooting out to stop Nick mid-step, pulling him back into the shadow of the alley mouth. [Lia: Fear (rare)]"
       },
       {
         "type": "dialogue",
@@ -3733,7 +3733,7 @@ export const storyNodes: StoryNode[] = [
     "choices": [
       {
         "id": "CH7_S5_N01-A",
-        "label": "Stay perfectly still, trust Adry's instinct completely.",
+        "label": "Stay perfectly still, trust Lia's instinct completely.",
         "target": "CH7_S5_N02A"
       },
       {
@@ -3743,7 +3743,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "id": "CH7_S5_N01-C",
-        "label": "Ask Adry, in the barest whisper, if that's who you both think it is.",
+        "label": "Ask Lia, in the barest whisper, if that's who you both think it is.",
         "target": "CH7_S5_N02C"
       }
     ],
@@ -3758,7 +3758,7 @@ export const storyNodes: StoryNode[] = [
     "blocks": [
       {
         "type": "narration",
-        "text": "The woman in black steps through the Guildhall's front doors without a backward glance, and the street exhales around her absence the way a room exhales when a held breath is finally allowed to leave it. [Beni: Calm Composure] Neither Nick nor Adry moves for a long moment afterward."
+        "text": "The woman in black steps through the Guildhall's front doors without a backward glance, and the street exhales around her absence the way a room exhales when a held breath is finally allowed to leave it. [Beni: Calm Composure] Neither Nick nor Lia moves for a long moment afterward."
       },
       {
         "type": "dialogue",
@@ -3781,11 +3781,11 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "- Fixed outcomes regardless of choices: Nick and Adry infiltrate the Rookery's records vault using Erica's directions; they find the operational file proving Nick's report was deliberately falsified; Nick experiences his strongest flashback yet, fully confirming (to the player and to him) that Adry was the target and that he chose to let her go; Vivienne appears in person for the first time, confirms she deliberately preserved rather than destroyed his memory, and hints strongly that the full recovery is imminent; as they leave, they glimpse Beni (\"the Conductor\") in person for the first time, wordlessly, establishing her as a real, physically present threat rather than a rumor."
+        "text": "- Fixed outcomes regardless of choices: Nick and Lia infiltrate the Rookery's records vault using Erica's directions; they find the operational file proving Nick's report was deliberately falsified; Nick experiences his strongest flashback yet, fully confirming (to the player and to him) that Lia was the target and that he chose to let her go; Vivienne appears in person for the first time, confirms she deliberately preserved rather than destroyed his memory, and hints strongly that the full recovery is imminent; as they leave, they glimpse Beni (\"the Conductor\") in person for the first time, wordlessly, establishing her as a real, physically present threat rather than a rumor."
       },
       {
         "type": "narration",
-        "text": "- This chapter fulfills the request to make Beni more palpable by giving her a full physical sighting — detailed visual presence, confirmed identity via Adry's dialogue, without giving her spoken dialogue yet. This preserves her design principle (felt before fully seen/heard) while significantly raising the stakes and tension ahead of Chapter 8's full revelation and Chapter 10's actual confrontation."
+        "text": "- This chapter fulfills the request to make Beni more palpable by giving her a full physical sighting — detailed visual presence, confirmed identity via Lia's dialogue, without giving her spoken dialogue yet. This preserves her design principle (felt before fully seen/heard) while significantly raising the stakes and tension ahead of Chapter 8's full revelation and Chapter 10's actual confrontation."
       },
       {
         "type": "narration",
@@ -3793,7 +3793,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "- Adry: Scene 3's flashback and Scene 4's aftermath mark the emotional turning point where dramatic irony finally resolves — she now knows, with total certainty, that Nick chose to save her. Her reaction is written to remain complex rather than simply relieved, per the Story Bible's instruction that Chapter 7 should leave her \"gratitude, suspicion, and old fear colliding at once.\""
+        "text": "- Lia: Scene 3's flashback and Scene 4's aftermath mark the emotional turning point where dramatic irony finally resolves — she now knows, with total certainty, that Nick chose to save her. Her reaction is written to remain complex rather than simply relieved, per the Story Bible's instruction that Chapter 7 should leave her \"gratitude, suspicion, and old fear colliding at once.\""
       },
       {
         "type": "narration",
@@ -3801,11 +3801,11 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "- Beni: this sighting should be referenced again in Chapters 9-10 — Adry's line about \"four years working under her\" and what she \"was afraid of losing\" each time is worth returning to for a possible late-game emotional beat about Adry's own history with Beni specifically."
+        "text": "- Beni: this sighting should be referenced again in Chapters 9-10 — Lia's line about \"four years working under her\" and what she \"was afraid of losing\" each time is worth returning to for a possible late-game emotional beat about Lia's own history with Beni specifically."
       },
       {
         "type": "narration",
-        "text": "- New lead carried into Chapter 8: Nick's memory is now confirmed to be on the verge of full return, per Vivienne's warning. The falsified report and the flashback together constitute the bulk of the \"truth,\" but Chapter 8 should deliver the emotional completion — Nick recounting it to Adry directly, in his own words, in the present, rather than through documents or visions."
+        "text": "- New lead carried into Chapter 8: Nick's memory is now confirmed to be on the verge of full return, per Vivienne's warning. The falsified report and the flashback together constitute the bulk of the \"truth,\" but Chapter 8 should deliver the emotional completion — Nick recounting it to Lia directly, in his own words, in the present, rather than through documents or visions."
       },
       {
         "type": "narration",
@@ -3813,7 +3813,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "- Expression tags reference the standalone Character Expression Reference Sheet. Young Adry in the Scene 3 flashback uses the same base labels as present-day Adry — the age difference is a visual/costume distinction, not an expression one. Beni's tags in this chapter are limited to \"Calm Composure\" since she has no dialogue yet."
+        "text": "- Expression tags reference the standalone Character Expression Reference Sheet. Young Lia in the Scene 3 flashback uses the same base labels as present-day Lia — the age difference is a visual/costume distinction, not an expression one. Beni's tags in this chapter are limited to \"Calm Composure\" since she has no dialogue yet."
       }
     ],
     "choices": [],
@@ -3844,7 +3844,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "id": "CH8_S1_N01-B",
-        "label": "Go straight to Adry — she deserves to hear this the moment you have it, not after you've had time to compose yourself.",
+        "label": "Go straight to Lia — she deserves to hear this the moment you have it, not after you've had time to compose yourself.",
         "target": "CH8_S1_N02"
       },
       {
@@ -3877,7 +3877,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "Exterior, the hour just before true dawn, the flat rooftop of the safehouse building. The city spreads out below in shades of slate and fading violet, gas lamps still burning here and there against a sky just beginning to lighten at its eastern edge. Adry stands near the roof's low parapet wall, wrapped in her coat against the pre-dawn chill, looking out over the rooftops rather than at the door when Nick emerges. The framing should feel exposed and open after the claustrophobia of the vault and the apartment — the first genuinely open-sky scene in several chapters, symbolically apt for the moment the truth finally gets room to breathe. Palette: soft violet-grey transitioning to the first pale gold at the horizon, cool city tones below giving way to warmth above. Mood: the calm, suspended stillness of the hour before a day that's about to change everything."
+        "text": "Exterior, the hour just before true dawn, the flat rooftop of the safehouse building. The city spreads out below in shades of slate and fading violet, gas lamps still burning here and there against a sky just beginning to lighten at its eastern edge. Lia stands near the roof's low parapet wall, wrapped in her coat against the pre-dawn chill, looking out over the rooftops rather than at the door when Nick emerges. The framing should feel exposed and open after the claustrophobia of the vault and the apartment — the first genuinely open-sky scene in several chapters, symbolically apt for the moment the truth finally gets room to breathe. Palette: soft violet-grey transitioning to the first pale gold at the horizon, cool city tones below giving way to warmth above. Mood: the calm, suspended stillness of the hour before a day that's about to change everything."
       }
     ],
     "choices": [],
@@ -3892,7 +3892,7 @@ export const storyNodes: StoryNode[] = [
     "blocks": [
       {
         "type": "narration",
-        "text": "Adry doesn't turn around right away, though she clearly hears the door. [Adry: Guarded Neutral]"
+        "text": "Lia doesn't turn around right away, though she clearly hears the door. [Lia: Guarded Neutral]"
       },
       {
         "type": "dialogue",
@@ -3942,7 +3942,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "Same rooftop, the sky now noticeably lighter, the first true gold of sunrise beginning to touch the tallest rooftops of the city below. Adry has moved to sit on the low parapet wall, no longer facing away, her expression finally, fully unguarded — not resolved into any single clean emotion, but visibly holding several at once: relief, grief, old fear, something that might, eventually, become something warmer, though it isn't there yet, not fully. Nick stands nearby, giving her space without retreating from it. Palette: warming gold breaking through the last of the violet-grey, the city below slowly waking up around them, indifferent to the enormity of what just happened on this one rooftop. Mood: complicated, unresolved, hopeful without being simple — exactly the tone the story has been building toward since Chapter 5."
+        "text": "Same rooftop, the sky now noticeably lighter, the first true gold of sunrise beginning to touch the tallest rooftops of the city below. Lia has moved to sit on the low parapet wall, no longer facing away, her expression finally, fully unguarded — not resolved into any single clean emotion, but visibly holding several at once: relief, grief, old fear, something that might, eventually, become something warmer, though it isn't there yet, not fully. Nick stands nearby, giving her space without retreating from it. Palette: warming gold breaking through the last of the violet-grey, the city below slowly waking up around them, indifferent to the enormity of what just happened on this one rooftop. Mood: complicated, unresolved, hopeful without being simple — exactly the tone the story has been building toward since Chapter 5."
       }
     ],
     "choices": [
@@ -4043,7 +4043,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "- Fixed outcomes regardless of choices: Nick's memory fully returns, including the previously-missing piece — the memory-wipe procedure itself, Beni's cold justification for ordering it, and Vivienne's deliberate act of hiding rather than destroying his memory; Nick recounts the full truth to Adry directly, in his own words, without excuse or self-pity; Adry's reaction is written to remain genuinely complex — gratitude, grief over Adin, old fear, and the beginning of something warmer, all coexisting rather than resolving cleanly; the chapter ends with shared resolve to act against Beni rather than a romantic or platonic \"final answer\" to their relationship."
+        "text": "- Fixed outcomes regardless of choices: Nick's memory fully returns, including the previously-missing piece — the memory-wipe procedure itself, Beni's cold justification for ordering it, and Vivienne's deliberate act of hiding rather than destroying his memory; Nick recounts the full truth to Lia directly, in his own words, without excuse or self-pity; Lia's reaction is written to remain genuinely complex — gratitude, grief over Adin, old fear, and the beginning of something warmer, all coexisting rather than resolving cleanly; the chapter ends with shared resolve to act against Beni rather than a romantic or platonic \"final answer\" to their relationship."
       },
       {
         "type": "narration",
@@ -4055,7 +4055,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "- Adry: this chapter is designed so that NONE of the choice branches resolve her relationship with Nick into a fixed romantic or purely platonic state. All three Scene 3 options (CH8_S3_N01 A/B/C) preserve ambiguity while still delivering real emotional intimacy — per the Story Bible's explicit instruction to leave room for player-shaped epilogue outcomes in Chapters 9-10."
+        "text": "- Lia: this chapter is designed so that NONE of the choice branches resolve her relationship with Nick into a fixed romantic or purely platonic state. All three Scene 3 options (CH8_S3_N01 A/B/C) preserve ambiguity while still delivering real emotional intimacy — per the Story Bible's explicit instruction to leave room for player-shaped epilogue outcomes in Chapters 9-10."
       },
       {
         "type": "narration",
@@ -4071,7 +4071,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "- New lead carried into Chapter 9: the shift from personal revelation to collective action — Adry's closing line about wanting \"to take something back from her\" is the direct emotional bridge into Chapter 9's tactical planning and alliance-building."
+        "text": "- New lead carried into Chapter 9: the shift from personal revelation to collective action — Lia's closing line about wanting \"to take something back from her\" is the direct emotional bridge into Chapter 9's tactical planning and alliance-building."
       },
       {
         "type": "narration",
@@ -4208,7 +4208,7 @@ export const storyNodes: StoryNode[] = [
       {
         "type": "dialogue",
         "speaker": "ERICA",
-        "text": "[Expression: Guarded Seriousness] \"I need you to vouch for me. Publicly, if it comes to that — to Adry, to anyone else you're building this little coalition with. I need someone the Conductor's enemies actually trust to say, out loud, that I'm not still one of her assets.\""
+        "text": "[Expression: Guarded Seriousness] \"I need you to vouch for me. Publicly, if it comes to that — to Lia, to anyone else you're building this little coalition with. I need someone the Conductor's enemies actually trust to say, out loud, that I'm not still one of her assets.\""
       }
     ],
     "choices": [
@@ -4398,7 +4398,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "Exterior, late afternoon, the same garden pavilion from Chapter 2, though the season has visibly turned — leaves beginning to color at the edges, a slight chill in the air. Anton sits at his usual chess table, a different problem set up this time, though he still isn't playing anyone. Nick and Adry approach together. Anton looks up before they're fully within earshot — he always seems to know before anyone announces themselves. Palette: warm autumn tones replacing the earlier scene's muted spring green, the pavilion's peeling paint slightly more weathered. Mood: the quiet competence of someone who has been preparing for this exact conversation for longer than either visitor realizes."
+        "text": "Exterior, late afternoon, the same garden pavilion from Chapter 2, though the season has visibly turned — leaves beginning to color at the edges, a slight chill in the air. Anton sits at his usual chess table, a different problem set up this time, though he still isn't playing anyone. Nick and Lia approach together. Anton looks up before they're fully within earshot — he always seems to know before anyone announces themselves. Palette: warm autumn tones replacing the earlier scene's muted spring green, the pavilion's peeling paint slightly more weathered. Mood: the quiet competence of someone who has been preparing for this exact conversation for longer than either visitor realizes."
       }
     ],
     "choices": [],
@@ -4656,7 +4656,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "- New leads carried into Chapter 10: Beni's private hill-district residence is now the confirmed location for the climax, replacing the Guildhall vault as the primary objective; the coalition now includes Nick, Adry, Erica, Marcus Doyle, and remote support from Gaspar and Anton, with Kurt and Hiller providing off-screen institutional and medical support."
+        "text": "- New leads carried into Chapter 10: Beni's private hill-district residence is now the confirmed location for the climax, replacing the Guildhall vault as the primary objective; the coalition now includes Nick, Lia, Erica, Marcus Doyle, and remote support from Gaspar and Anton, with Kurt and Hiller providing off-screen institutional and medical support."
       },
       {
         "type": "narration",
@@ -4705,7 +4705,7 @@ export const storyNodes: StoryNode[] = [
     "choices": [
       {
         "id": "CH10_S1_N01-A",
-        "label": "Take a moment before moving — check in with Adry directly, privately, before it starts.",
+        "label": "Take a moment before moving — check in with Lia directly, privately, before it starts.",
         "target": "CH10_S1_N02A"
       },
       {
@@ -4734,7 +4734,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "[FIXED — Doyle peels off toward the front gate to create a documented, deniable disturbance that will pull the outer guards' attention for the ten minutes that matter most. Erica leads Nick and Adry to the side entrance, her three years of hard-won knowledge of this house proving, finally, worth every secret it cost her.]"
+        "text": "[FIXED — Doyle peels off toward the front gate to create a documented, deniable disturbance that will pull the outer guards' attention for the ten minutes that matter most. Erica leads Nick and Lia to the side entrance, her three years of hard-won knowledge of this house proving, finally, worth every secret it cost her.]"
       },
       {
         "type": "dialogue",
@@ -4773,7 +4773,7 @@ export const storyNodes: StoryNode[] = [
       {
         "type": "dialogue",
         "speaker": "BENI",
-        "text": "(finally setting the book down, meeting his eyes with total, unhurried calm) [Expression: Calm Composure] \"I know most things that happen inside my own city, Nick. That's rather the point of the work I do.\" Her gaze shifts to Adry, something almost fond in it, in a way that's more unsettling than open hostility would be. [Expression: Cold Amusement] \"Hello, Adry. You've gotten better at surviving me. I'm almost proud.\""
+        "text": "(finally setting the book down, meeting his eyes with total, unhurried calm) [Expression: Calm Composure] \"I know most things that happen inside my own city, Nick. That's rather the point of the work I do.\" Her gaze shifts to Lia, something almost fond in it, in a way that's more unsettling than open hostility would be. [Expression: Cold Amusement] \"Hello, Lia. You've gotten better at surviving me. I'm almost proud.\""
       }
     ],
     "choices": [
@@ -4789,7 +4789,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "id": "CH10_S2_N01-C",
-        "label": "Let Adry respond first — this is, in many ways, more her confrontation than his.",
+        "label": "Let Lia respond first — this is, in many ways, more her confrontation than his.",
         "target": "CH10_S2_N02C"
       }
     ],
@@ -4809,7 +4809,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "\"You think I'm a monster who enjoys what she's built. I'm not. I am a woman who looked at a city that would have devoured itself thirty years ago without someone willing to make the choices no council, no magistrate, no honest officer would ever have the stomach to make. I have spent every year since balancing a ledger that has no clean entries in it, only necessary ones. Nick — I ordered your mind taken apart because a compromised asset with real feelings is a hole in a wall that eventually lets the whole structure fall. Adry — I let you be sacrificed because the alternative, at the time, would have exposed operations that protect considerably more people than it would have saved. I don't ask you to forgive any of it. I ask you to understand that I would very likely make the same choices again, and sleep exactly as well as I do now.\""
+        "text": "\"You think I'm a monster who enjoys what she's built. I'm not. I am a woman who looked at a city that would have devoured itself thirty years ago without someone willing to make the choices no council, no magistrate, no honest officer would ever have the stomach to make. I have spent every year since balancing a ledger that has no clean entries in it, only necessary ones. Nick — I ordered your mind taken apart because a compromised asset with real feelings is a hole in a wall that eventually lets the whole structure fall. Lia — I let you be sacrificed because the alternative, at the time, would have exposed operations that protect considerably more people than it would have saved. I don't ask you to forgive any of it. I ask you to understand that I would very likely make the same choices again, and sleep exactly as well as I do now.\""
       }
     ],
     "choices": [
@@ -4857,7 +4857,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "Exterior, moments later, a narrow stone terrace at the rear of the residence, built out over the hill's steep drop toward the harbor cliffs far below — decorative, elegant, and never designed to survive a fight. Beni is already a retreating shape near the terrace's far stair; Nick and Adry pursue as far as the threshold, Erica and Doyle close behind with the evidence satchels. A last, desperate move from one of Beni's remaining guards — a shot, a blade, a shoved section of old balustrade — turns the terrace into the most dangerous ground of the entire night. Thick fog rolls up from the cliffs below, swallowing the drop into total, featureless white-grey nothing, so that no one on the terrace can see how far down \"down\" actually is. Palette: cold moon-silver fading immediately into opaque fog-white at the terrace edge — the drop itself should be rendered as a visual void, not a visible landing point, reinforcing the uncertainty of what happens to anyone who goes over it. Mood: the single most dangerous, chaotic moment in the entire story — controlled tension breaking into real, irreversible catastrophe."
+        "text": "Exterior, moments later, a narrow stone terrace at the rear of the residence, built out over the hill's steep drop toward the harbor cliffs far below — decorative, elegant, and never designed to survive a fight. Beni is already a retreating shape near the terrace's far stair; Nick and Lia pursue as far as the threshold, Erica and Doyle close behind with the evidence satchels. A last, desperate move from one of Beni's remaining guards — a shot, a blade, a shoved section of old balustrade — turns the terrace into the most dangerous ground of the entire night. Thick fog rolls up from the cliffs below, swallowing the drop into total, featureless white-grey nothing, so that no one on the terrace can see how far down \"down\" actually is. Palette: cold moon-silver fading immediately into opaque fog-white at the terrace edge — the drop itself should be rendered as a visual void, not a visible landing point, reinforcing the uncertainty of what happens to anyone who goes over it. Mood: the single most dangerous, chaotic moment in the entire story — controlled tension breaking into real, irreversible catastrophe."
       }
     ],
     "choices": [],
@@ -4872,7 +4872,7 @@ export const storyNodes: StoryNode[] = [
     "blocks": [
       {
         "type": "narration",
-        "text": "It happens too fast for either of them to fully process in the moment. A guard Nick hasn't accounted for lunges from the terrace shadows, blade first, aimed at his exposed side — and Adry is already moving, already between them, before the thought finishes forming in either of their minds. [Adry: Resolve, fast]"
+        "text": "It happens too fast for either of them to fully process in the moment. A guard Nick hasn't accounted for lunges from the terrace shadows, blade first, aimed at his exposed side — and Lia is already moving, already between them, before the thought finishes forming in either of their minds. [Lia: Resolve, fast]"
       },
       {
         "type": "narration",
@@ -4982,7 +4982,7 @@ export const storyNodes: StoryNode[] = [
       {
         "type": "dialogue",
         "speaker": "NICK",
-        "text": "(barely a whisper, more hope than certainty, more question than statement) [Expression: Vulnerable / Open, fragile] \"...Adry?\""
+        "text": "(barely a whisper, more hope than certainty, more question than statement) [Expression: Vulnerable / Open, fragile] \"...Lia?\""
       },
       {
         "type": "narration",
@@ -4998,11 +4998,11 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "- Fixed outcomes regardless of choices: The coalition successfully infiltrates Beni's residence; the confrontation delivers Beni's full ideological monologue, written to remain coherent and unsettlingly persuasive rather than cartoonish, per her core design; during the escape, Adry is wounded protecting Nick and falls from the terrace into fog-covered cliffs and water far below; no body is recovered, and every character in the story genuinely believes, based on the physical circumstances, that she could not have survived — while the epilogue leaves one small, deliberately ambiguous visual thread suggesting otherwise, to be confirmed or resolved in a future installment; Beni escapes and remains at large; the coalition still secures enough evidence to dismantle this specific operation, so the mission itself is not a total loss even though it costs Nick the person he cares most about."
+        "text": "- Fixed outcomes regardless of choices: The coalition successfully infiltrates Beni's residence; the confrontation delivers Beni's full ideological monologue, written to remain coherent and unsettlingly persuasive rather than cartoonish, per her core design; during the escape, Lia is wounded protecting Nick and falls from the terrace into fog-covered cliffs and water far below; no body is recovered, and every character in the story genuinely believes, based on the physical circumstances, that she could not have survived — while the epilogue leaves one small, deliberately ambiguous visual thread suggesting otherwise, to be confirmed or resolved in a future installment; Beni escapes and remains at large; the coalition still secures enough evidence to dismantle this specific operation, so the mission itself is not a total loss even though it costs Nick the person he cares most about."
       },
       {
         "type": "narration",
-        "text": "- This chapter no longer uses the three-branch relationship epilogue. The player-choice branches in Scenes 1-3 now affect only the emotional texture of how Nick reacts in the moment — all converge on the same fixed, devastating outcome. The accumulated Nick-Adry warmth built across Chapters 1-9 now pays off not as a choice of ending, but as the emotional weight of exactly how much the fall costs Nick to witness, regardless of path taken."
+        "text": "- This chapter no longer uses the three-branch relationship epilogue. The player-choice branches in Scenes 1-3 now affect only the emotional texture of how Nick reacts in the moment — all converge on the same fixed, devastating outcome. The accumulated Nick-Lia warmth built across Chapters 1-9 now pays off not as a choice of ending, but as the emotional weight of exactly how much the fall costs Nick to witness, regardless of path taken."
       },
       {
         "type": "narration",
@@ -5014,11 +5014,11 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "- Relationship flags paying off this chapter: Every accumulated Nick-Adry warmth flag from Chapters 1-9 now directly intensifies the grief in Scene 4 rather than selecting an ending variant. Erica, Doyle, Gaspar, and Kurt each get a small, quiet grief-adjacent beat in the epilogue's closing narration, honoring their Chapter 9 closing beats without needing full additional scenes."
+        "text": "- Relationship flags paying off this chapter: Every accumulated Nick-Lia warmth flag from Chapters 1-9 now directly intensifies the grief in Scene 4 rather than selecting an ending variant. Erica, Doyle, Gaspar, and Kurt each get a small, quiet grief-adjacent beat in the epilogue's closing narration, honoring their Chapter 9 closing beats without needing full additional scenes."
       },
       {
         "type": "narration",
-        "text": "- Deliberately unresolved threads, per the Story Bible's design, now include: Beni's survival and continued threat; the wider Rookery organization, wounded but intact; Vivienne's motive, whereabouts, and future role; and, newly, Adry's true fate — the central hook for the next installment."
+        "text": "- Deliberately unresolved threads, per the Story Bible's design, now include: Beni's survival and continued threat; the wider Rookery organization, wounded but intact; Vivienne's motive, whereabouts, and future role; and, newly, Lia's true fate — the central hook for the next installment."
       },
       {
         "type": "narration",
@@ -5026,7 +5026,7 @@ export const storyNodes: StoryNode[] = [
       },
       {
         "type": "narration",
-        "text": "- Expression tags reference the standalone Character Expression Reference Sheet. Note that Nick's \"Fear\" tag in Scene 3 (reaching for Adry) is a rare, one-time use of an expression not otherwise catalogued for him on the sheet — his profile is dominated by controlled emotion, making this specific instant of raw fear a deliberate, notable exception worth calling out to an artist."
+        "text": "- Expression tags reference the standalone Character Expression Reference Sheet. Note that Nick's \"Fear\" tag in Scene 3 (reaching for Lia) is a rare, one-time use of an expression not otherwise catalogued for him on the sheet — his profile is dominated by controlled emotion, making this specific instant of raw fear a deliberate, notable exception worth calling out to an artist."
       }
     ],
     "choices": [],

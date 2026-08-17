@@ -15,4 +15,11 @@ describe("approved story runtime data", () => {
       if (index < storyNodes.length - 1) expect(ids.has(node.nextId ?? "")).toBe(true);
     });
   });
+
+  it("uses Lia as the character's canonical display name", () => {
+    const serializedStory = JSON.stringify(storyNodes);
+    expect(serializedStory).toContain("Lia");
+    expect(serializedStory).not.toContain("Adry");
+    expect(serializedStory).not.toContain("آدری");
+  });
 });
