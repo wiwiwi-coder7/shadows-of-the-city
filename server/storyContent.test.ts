@@ -19,7 +19,7 @@ describe("approved story runtime data", () => {
   it("uses Lia as the character's canonical display name", () => {
     const serializedStory = JSON.stringify(storyNodes);
     expect(serializedStory).toContain("Lia");
-    expect(serializedStory).not.toContain("Adry");
+    expect(serializedStory).not.toMatch(/adry/gi);
     expect(serializedStory).not.toContain("آدری");
   });
 });

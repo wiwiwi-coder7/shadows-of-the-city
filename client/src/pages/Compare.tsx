@@ -3,8 +3,11 @@ import { useLocation } from "wouter";
 import { GameHeader } from "@/components/GameHeader";
 import { storyNodes, type StoryNode } from "@/data/story.generated";
 import { readSave, type LocalSave } from "@/lib/gameState";
+import { badgeDefinitions, unlockedBadgeIds } from "@/lib/badges";
 import { useLocale } from "@/contexts/LocaleContext";
-import { ArrowLeft, GitCompare, GitBranch, CheckCircle2, Circle, MapPin, Compass } from "lucide-react";
+import { ArrowLeft, Award, CheckCircle2, Circle, Eye, GitBranch, LockKeyhole, Map as MapIcon, Moon, Stamp } from "lucide-react";
+
+const badgeIcon = { map: MapIcon, branch: GitBranch, eye: Eye, seal: Stamp, moon: Moon };
 
 export default function ComparePage() {
   const [, setLocation] = useLocation();
@@ -19,7 +22,7 @@ export default function ComparePage() {
   const selectedSet = useMemo(() => new Set(save?.selectedChoiceIds ?? []), [save]);
 
   // Group nodes by chapter
-  const chapters = useMemo(() => {
+  const chapters = useMemo<Array<{ chapter: number; nodes: StoryNode[] }>>(() => {
     const map = new Map<number, StoryNode[]>();
     storyNodes.forEach(node => {
       const list = map.get(node.chapter) ?? [];
@@ -32,6 +35,8 @@ export default function ComparePage() {
   const totalVisited = save?.visitedNodeIds.length ?? 0;
   const totalNodes = storyNodes.length;
   const percentTraced = Math.min(100, Math.round((totalVisited / totalNodes) * 100));
+  const finalNodeIds = useMemo(() => storyNodes.filter(node => !node.nextId).map(node => node.id), []);
+  const badgeIds = new Set(save ? unlockedBadgeIds(save, finalNodeIds) : []);
 
   return (
     <main className="library-page" dir={locale === "fa" ? "rtl" : "ltr"}>
@@ -50,12 +55,25 @@ export default function ComparePage() {
       </section>
 
       <section className="library-content max-w-5xl mx-auto px-4 py-8 space-y-8">
+        <div className="rounded-2xl border border-[#c7f35b]/20 bg-[#c7f35b]/[0.035] p-6">
+          <div className="flex flex-wrap items-start justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#c7f35b]/10 text-[#c7f35b]"><Award size={20} /></div>
+              <div><p className="eyebrow">{locale === "fa" ? "نشان‌های افتخار" : "UNLOCKABLE DISTINCTIONS"}</p><h2 className="text-lg font-semibold text-white">{locale === "fa" ? "نشان‌های پرونده" : "Case Badges"}</h2></div>
+            </div>
+            <span className="rounded-full border border-[#c7f35b]/25 bg-[#c7f35b]/10 px-3 py-1 text-xs font-medium text-[#d9ff83]">{badgeIds.size} / {badgeDefinitions.length} {locale === "fa" ? "بازشده" : "unlocked"}</span>
+          </div>
+          <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {badgeDefinitions.map(badge => {
+              const isUnlocked = badgeIds.has(badge.id);
+              const Icon = badgeIcon[badge.icon];
+              return <article key={badge.id} className={`rounded-xl border p-4 ${isUnlocked ? "border-[#c7f35b]/30 bg-black/20" : "border-white/8 bg-black/10 opacity-60"}`}>
+                <div className="flex items-start gap-3"><div className={`grid h-9 w-9 shrink-0 place-items-center rounded-lg ${isUnlocked ? "bg-[#c7f35b]/15 text-[#c7f35b]" : "bg-white/5 text-white/30"}`}>{isUnlocked ? <Icon size={18} /> : <LockKeyhole size={17} />}</div><div><h3 className="text-sm font-semibold text-white">{badge.title[locale]}</h3><p className="mt-1 text-xs leading-5 text-white/55">{badge.description[locale]}</p></div></div>
+              </article>;
+            })}
+          </div>
+        </div>
         {chapters.map(({ chapter, nodes }) => {
-          const chapterNodes = nodes.filter(n => visitedSet.has(n.id) || n.choices.some(c => selectedSet.has(c.id)));
-          if (chapterNodes.length === 0 && (save?.currentNodeId ? nodes.some(n => n.id === save.currentNodeId) : chapter === 1)) {
-            // ensure at least active or chapter 1 is visible
-          }
-
           return (
             <div key={chapter} className="rounded-2xl border border-white/10 bg-white/[.03] p-6 backdrop-blur">
               <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
@@ -73,12 +91,12 @@ export default function ComparePage() {
                   </div>
                 </div>
                 <span className="rounded-full bg-white/5 px-3 py-1 text-xs text-white/70 border border-white/10">
-                  {nodes.filter(n => visitedSet.has(n.id)).length} / {nodes.length} {locale === "fa" ? "گره بازدیدشده" : "nodes visited"}
+                  {nodes.filter((node: StoryNode) => visitedSet.has(node.id)).length} / {nodes.length} {locale === "fa" ? "گره بازدیدشده" : "nodes visited"}
                 </span>
               </div>
 
               <div className="space-y-4">
-                {nodes.map(node => {
+                {nodes.map((node: StoryNode) => {
                   const isVisited = visitedSet.has(node.id);
                   if (!isVisited && node.choices.length === 0) return null; // skip unvisited filler nodes
 
@@ -95,7 +113,7 @@ export default function ComparePage() {
 
                       {node.choices.length > 0 && (
                         <div className="mt-4 grid gap-2.5 sm:grid-cols-2">
-                          {node.choices.map(choice => {
+                          {node.choices.map((choice: StoryNode["choices"][number]) => {
                             const isChosen = selectedSet.has(choice.id);
                             return (
                               <div

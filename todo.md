@@ -101,3 +101,5 @@
 - [x] Use the active Barato Supabase project for Barato and a strictly isolated `gic` schema plus Edge Function namespace for GIC because the account’s two-active-project limit prevents a third concurrent project; keep all browser access behind dedicated owner-authorized APIs.
 - [x] تغییر نام شخصیت Audrey/آدری به Lia/لیا در تمام محتوای بازی، ترجمه‌ها، رابط کاربری و داده‌های اجرایی
 - [x] افزودن قابلیت مقایسهٔ مسیرهای انتخاب‌شده در پایان بازی (Path Comparison & Divergence Review) با امکان مرور انتخاب‌های کاربر در مقایسه با سایر شاخه‌های ممکن در انتهای بازی
+- [x] افزودن نشان‌های افتخار بازشدنی برای مسیرها و انتخاب‌های کلیدی، با نمایش در آلبوم/مرور پرونده و ذخیره‌سازی محلی
+- [x] رفع ارجاع‌های باقی‌ماندهٔ نام Adry/آدری در داده‌های نمایشی و bundle استاتیک بازی
