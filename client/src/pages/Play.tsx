@@ -111,7 +111,7 @@ export default function Play() {
     }
     if ((event.key === "Enter" || event.key === " ") && node.choices.length === 0) {
       event.preventDefault();
-      if (isFinalNode) { trackEvent("game_complete"); setLocation("/"); } else advance();
+      if (isFinalNode) { trackEvent("game_complete"); setLocation("/compare"); } else advance();
     }
   };
 

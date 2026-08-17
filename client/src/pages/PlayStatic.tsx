@@ -105,7 +105,7 @@ export default function PlayStatic() {
 
   const closeCase = () => {
     if (shouldTrackGameplay(settings) && node) void trackAnonymousEvent({ installationId: getInstallationId(), eventType: "game_complete", chapter: node.chapter, nodeId: node.id, locale });
-    setLocation("/");
+    setLocation("/compare");
   };
 
   useEffect(() => {

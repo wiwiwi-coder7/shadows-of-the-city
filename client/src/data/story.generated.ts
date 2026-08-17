@@ -4,7 +4,7 @@ export type StoryBlock = { type: 'narration' | 'dialogue'; text: string; speaker
 export type StoryChoice = { id: string; label: string; target: string };
 export type StoryNode = { id: string; chapter: number; scene: number; sceneTitle: string; imageUrl: string; blocks: StoryBlock[]; choices: StoryChoice[]; nextId: string | null };
 
-export const storyNodes: StoryNode[] = [
+const rawStoryNodes: StoryNode[] = [
   {
     "id": "CH1_S1_N01",
     "chapter": 1,
@@ -5033,6 +5033,20 @@ export const storyNodes: StoryNode[] = [
     "nextId": null
   }
 ];
+
+function displayLia(value: string) {
+  return value
+    .replace(/\bAdry's\b/gi, "Lia's")
+    .replace(/\bAdry\b/gi, "Lia")
+    .replace(/آدری/g, "لیا");
+}
+
+export const storyNodes: StoryNode[] = rawStoryNodes.map(node => ({
+  ...node,
+  sceneTitle: displayLia(node.sceneTitle),
+  blocks: node.blocks.map(block => ({ ...block, speaker: block.speaker ? displayLia(block.speaker) : undefined, text: displayLia(block.text) })),
+  choices: node.choices.map(choice => ({ ...choice, label: displayLia(choice.label) })),
+}));
 export const storyStartId = storyNodes[0]?.id ?? '';
 export const storyNodeById = Object.fromEntries(storyNodes.map(node => [node.id, node]));
 export const storyChapterCount = 10;
