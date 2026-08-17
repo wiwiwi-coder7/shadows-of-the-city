@@ -100,3 +100,4 @@
 - [x] Preserve all operational GIC capabilities in the independent migration, including authenticated dashboard workflows, provider-key management, Telegram/webhook integration, notifications, approval flows, and scheduled digests with secrets held only server-side.
 - [x] Use the active Barato Supabase project for Barato and a strictly isolated `gic` schema plus Edge Function namespace for GIC because the account’s two-active-project limit prevents a third concurrent project; keep all browser access behind dedicated owner-authorized APIs.
 - [x] تغییر نام شخصیت Audrey/آدری به Lia/لیا در تمام محتوای بازی، ترجمه‌ها، رابط کاربری و داده‌های اجرایی
+- [ ] افزودن قابلیت مقایسهٔ مسیرهای انتخاب‌شده در پایان بازی (Path Comparison & Divergence Review) با امکان مرور انتخاب‌های کاربر در مقایسه با سایر شاخه‌های ممکن در انتهای بازی

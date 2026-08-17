@@ -5,12 +5,13 @@ import { GameHeader } from "@/components/GameHeader";
 import { emptySave, readSave, writeSave, type LocalSave } from "@/lib/gameState";
 import { storyNodes, storyStartId } from "@/data/story.generated";
 import { useLocale } from "@/contexts/LocaleContext";
+import { GitCompare } from "lucide-react";
 
 export default function Home() {
   const [, setLocation] = useLocation();
   const [save, setSave] = useState<LocalSave | null>(null);
   const [confirmNew, setConfirmNew] = useState(false);
-  const { t } = useLocale();
+  const { locale, t } = useLocale();
   const homeCopy = { caseFile: "CASE FILE / 001", interactiveNoir: "AN INTERACTIVE NOIR NOVEL", homeDek: "The city forgets what it needs to survive. You were never meant to remember.", newGame: "NEW GAME", continue: "CONTINUE", codexLink: "THE CODEX", albumLink: "CHARACTER ALBUM", playerSettings: "PLAYER SETTINGS", localSave: "Your progress stays in this browser.", replaceCase: "REPLACE CASE FILE", beginInvestigation: "Begin a new investigation?", replaceWarning: "This will replace your current browser save.", beginAgain: "BEGIN AGAIN", keepSave: "KEEP SAVE" };
 
   useEffect(() => setSave(readSave()), []);
@@ -37,6 +38,7 @@ export default function Home() {
       <div className="hero-links">
         <button onClick={() => setLocation("/codex")}><BookOpen size={15} /> {homeCopy.codexLink}</button>
         <button onClick={() => setLocation("/album")}><Compass size={15} /> {homeCopy.albumLink}</button>
+        <button onClick={() => setLocation("/compare")}><GitCompare size={15} /> {locale === "fa" ? "مقایسه مسیرها" : "PATH COMPARISON"}</button>
         <button onClick={() => setLocation("/settings")}><Settings2 size={15} /> {homeCopy.playerSettings}</button>
       </div>
     </section>
