@@ -2,7 +2,7 @@ import { Activity, CheckCircle2, FilePenLine, LayoutDashboard, LockKeyhole, LogO
 import { FormEvent, useCallback, useEffect, useMemo, useState } from "react";
 import { useLocation } from "wouter";
 import { persianStoryNodes } from "@/data/story.fa";
-import { OwnerApiError, type OwnerDashboard, type PersianOverride, checkOwnerSession, clearOwnerToken, deletePersianOverride, getOwnerDashboard, getPersianOverrides, loginOwner, logoutOwner, notifyPersianOverridesChanged, savePersianOverride } from "@/lib/ownerApi";
+import { OWNER_PIN_LENGTH, OwnerApiError, type OwnerDashboard, type PersianOverride, checkOwnerSession, clearOwnerToken, deletePersianOverride, getOwnerDashboard, getPersianOverrides, loginOwner, logoutOwner, notifyPersianOverridesChanged, savePersianOverride } from "@/lib/ownerApi";
 import "./admin.css";
 
 type AdminTab = "overview" | "persian";
@@ -37,15 +37,15 @@ export default function AdminStatic() {
 }
 
 function OwnerLogin({ onAuthenticated, onLeave }: { onAuthenticated: () => void; onLeave: () => void }) {
-  const [identifier, setIdentifier] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [pending, setPending] = useState(false);
   const [error, setError] = useState("");
   const submit = async (event: FormEvent) => {
     event.preventDefault(); setError(""); setPending(true);
-    try { await loginOwner(identifier, password); onAuthenticated(); } catch (cause) { clearOwnerToken(); setError(errorText(cause)); } finally { setPending(false); }
+    try { await loginOwner(email, password); onAuthenticated(); } catch (cause) { clearOwnerToken(); setError(errorText(cause)); } finally { setPending(false); }
   };
-  return <main className="owner-login"><form onSubmit={submit}><div className="owner-login__mark"><LockKeyhole size={25} /></div><p className="eyebrow">Restricted archive</p><h1>Owner console</h1><p>Enter the private credentials issued at handoff. Player progress and local saves are never visible here.</p><label>Owner identifier<input autoComplete="username" value={identifier} onChange={event => setIdentifier(event.target.value)} placeholder="SOTC-XXXXXXXX" /></label><label>Passphrase<input type="password" autoComplete="current-password" value={password} onChange={event => setPassword(event.target.value)} placeholder="••••••••••••" /></label>{error && <div className="form-error">{error}</div>}<button className="button-primary" disabled={pending}>{pending ? "Verifying…" : "Unlock console"}</button><button type="button" className="button-secondary" onClick={onLeave}>Return to game</button></form></main>;
+  return <main className="owner-login"><form onSubmit={submit}><div className="owner-login__mark"><LockKeyhole size={25} /></div><p className="eyebrow">Restricted archive</p><h1>Owner console</h1><p>Enter the authorized email and six-digit access PIN. Player progress and local saves are never visible here.</p><label>Authorized email<input type="email" autoComplete="username" required value={email} onChange={event => setEmail(event.target.value)} placeholder="adry.201088@gmail.com" /></label><label>Six-digit access PIN<input type="password" inputMode="numeric" pattern={`\\d{${OWNER_PIN_LENGTH}}`} maxLength={OWNER_PIN_LENGTH} autoComplete="one-time-code" required value={password} onChange={event => setPassword(event.target.value.replace(/\D/g, "").slice(0, OWNER_PIN_LENGTH))} placeholder="••••••" /></label>{error && <div className="form-error">{error}</div>}<button className="button-primary" disabled={pending}>{pending ? "Verifying…" : "Unlock console"}</button><button type="button" className="button-secondary" onClick={onLeave}>Return to game</button></form></main>;
 }
 
 function Overview({ onUnauthorized }: { onUnauthorized: () => void }) {

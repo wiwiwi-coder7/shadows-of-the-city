@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight, BookOpen, Check, ChevronRight, GalleryVerticalEnd, Pause, Settings2, SkipForward } from "lucide-react";
+import { ArrowLeft, ArrowRight, BookOpen, Check, ChevronRight, Eye, EyeOff, GalleryVerticalEnd, Settings2, SkipForward } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useLocation } from "wouter";
 import { GameHeader } from "@/components/GameHeader";
@@ -7,6 +7,7 @@ import { localizeStoryNode } from "@/data/story.fa";
 import { emptySave, getInstallationId, readSave, readSettings, shouldTrackGameplay, writeSave, type GameSettings, type LocalSave } from "@/lib/gameState";
 import { getPersianOverrides, trackAnonymousEvent, type PersianOverride } from "@/lib/ownerApi";
 import { publicAssetFallbackUrl, publicAssetUrl } from "@/lib/publicAssets";
+import { choiceFeedbackDelay } from "@/lib/playerExperience";
 import { unlockForChapter } from "@/lib/unlocks";
 import { useLocale } from "@/contexts/LocaleContext";
 
@@ -20,6 +21,7 @@ export default function PlayStatic() {
   const [sceneLoaded, setSceneLoaded] = useState(false);
   const [usingFallback, setUsingFallback] = useState(false);
   const [sceneUnavailable, setSceneUnavailable] = useState(false);
+  const [pendingChoiceId, setPendingChoiceId] = useState<string | null>(null);
   const primaryAction = useRef<HTMLButtonElement | null>(null);
   const lastRequestedSceneUrl = useRef("");
   const { locale, t } = useLocale();
@@ -103,6 +105,12 @@ export default function PlayStatic() {
     }
   };
 
+  const choose = (choiceId: string, target: string) => {
+    if (pendingChoiceId) return;
+    setPendingChoiceId(choiceId);
+    window.setTimeout(() => { setPendingChoiceId(null); advance(choiceId, target); }, choiceFeedbackDelay(settings.reducedMotion));
+  };
+
   const closeCase = () => {
     if (shouldTrackGameplay(settings) && node) void trackAnonymousEvent({ installationId: getInstallationId(), eventType: "game_complete", chapter: node.chapter, nodeId: node.id, locale });
     setLocation("/compare");
@@ -116,6 +124,7 @@ export default function PlayStatic() {
 
   if (!node || !save) return <div className="loading-screen">{t("loading")}</div>;
   const isFinalNode = !node.nextId;
+  const tracePercent = Math.min(100, Math.round((save.visitedNodeIds.length / storyNodes.length) * 100));
   const playerClass = `story-player text-${settings.textScale} ${settings.highContrast ? "is-high-contrast" : ""} ${settings.reducedMotion ? "is-reduced-motion" : ""}`;
   const onStoryKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
     if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) return;
@@ -123,7 +132,7 @@ export default function PlayStatic() {
     if (number >= 1 && number <= node.choices.length) {
       event.preventDefault();
       const choice = node.choices[number - 1];
-      advance(choice.id, choice.target);
+      choose(choice.id, choice.target);
     }
     if ((event.key === "Enter" || event.key === " ") && node.choices.length === 0) {
       event.preventDefault();
@@ -134,8 +143,8 @@ export default function PlayStatic() {
   return <main className={playerClass} dir={locale === "fa" ? "rtl" : "ltr"} onKeyDown={onStoryKeyDown}>
     <div className={`story-image ${sceneLoaded ? "is-loaded" : "is-loading"} ${sceneUnavailable ? "is-unavailable" : ""}`}><img src={activeSceneUrl} alt="" onLoad={() => setSceneLoaded(true)} onError={recoverScene} /></div>
     <div className={`story-grain ${settings.sceneEffects ? "" : "is-hidden"}`} /><div className="story-vignette" />
-    {showHud && <div className="story-topbar"><button className="story-back" onClick={() => setLocation("/")}><ArrowLeft size={16} /> {t("archive")}</button><div className="chapter-status">{locale !== "fa" && <><span>{t("chapterShort")} {String(node.chapter).padStart(2, "0")}</span><i /></>}<span>{node.sceneTitle.replace(/\(.+\)/, "").trim()}</span></div><div className="story-tools"><button onClick={() => setLocation("/codex")} aria-label={t("openCodex")}><BookOpen size={16} /></button><button onClick={() => setLocation("/album")} aria-label={t("openAlbum")}><GalleryVerticalEnd size={16} /></button><button onClick={() => setLocation("/settings")} aria-label={t("openSettings")}><Settings2 size={16} /></button></div></div>}
-    <button className="screen-toggle" onClick={() => setShowHud(!showHud)} aria-label={t("controls")}><Pause size={12} /></button>
-    <section className="story-copy" aria-live="polite"><div className="story-copy__meta">{locale !== "fa" && <span>{t("scene", { scene: node.scene })}</span>}<span>{t("traced", { percent: Math.min(100, Math.round((save.visitedNodeIds.length / storyNodes.length) * 100)) })}</span></div>{!sceneLoaded && !sceneUnavailable && <p className="scene-loading">Developing the scene…</p>}{sceneUnavailable && <p className="scene-loading is-error">The scene art could not be reached. The story remains available.</p>}<div className="story-blocks">{node.blocks.map((block, index) => block.type === "dialogue" ? <div className="dialogue-line" key={`${node.id}-${index}`}><span>{block.speaker}</span><p>“{block.text}”</p></div> : <p className="narration" key={`${node.id}-${index}`}>{block.text}</p>)}</div>{node.choices.length > 0 ? <div className="choice-list"><p className="eyebrow">{t("yourMove")}</p>{node.choices.map((choice, index) => <button ref={index === 0 ? primaryAction : undefined} key={choice.id} onClick={() => advance(choice.id, choice.target)}><span>0{index + 1}</span><strong>{choice.label}</strong><ChevronRight size={17} /></button>)}</div> : <div className="continue-row">{isFinalNode ? <button ref={primaryAction} className="button-primary" onClick={closeCase}><Check size={16} /> {t("closeCase")}</button> : <button ref={primaryAction} className="button-primary" onClick={() => advance()}><SkipForward size={16} /> {t("continue")} <ArrowRight size={15} /></button>}</div>}</section>
+    {showHud && <div className="story-topbar"><button className="story-back" onClick={() => setLocation("/")}><ArrowLeft size={16} /> {t("archive")}</button><div className="chapter-status"><div className="chapter-status__title">{locale !== "fa" && <><span>{t("chapterShort")} {String(node.chapter).padStart(2, "0")}</span><i /></>}<span>{node.sceneTitle.replace(/\(.+\)/, "").trim()}</span></div><div className="story-progress"><i><b style={{ width: `${tracePercent}%` }} /></i><span>{t("traced", { percent: tracePercent })}</span><small>{locale === "fa" ? "در همین مرورگر ذخیره شد" : "SAVED LOCALLY"}</small></div></div><div className="story-tools"><button onClick={() => setLocation("/codex")} aria-label={t("openCodex")}><BookOpen size={16} /></button><button onClick={() => setLocation("/album")} aria-label={t("openAlbum")}><GalleryVerticalEnd size={16} /></button><button onClick={() => setLocation("/settings")} aria-label={t("openSettings")}><Settings2 size={16} /></button></div></div>}
+    <button className="screen-toggle" onClick={() => setShowHud(!showHud)} aria-label={t("controls")}>{showHud ? <EyeOff size={13} /> : <Eye size={13} />}</button>
+    <section className="story-copy" aria-live="polite"><div className="story-copy__meta">{locale !== "fa" && <span>{t("scene", { scene: node.scene })}</span>}<span>{t("traced", { percent: tracePercent })}</span></div>{!sceneLoaded && !sceneUnavailable && <p className="scene-loading">Preparing the scene…</p>}{sceneUnavailable && <p className="scene-loading is-error">The scene art could not be reached. The story remains available.</p>}<div className="story-blocks">{node.blocks.map((block, index) => block.type === "dialogue" ? <div className="dialogue-line" key={`${node.id}-${index}`}><span>{block.speaker}</span><p>“{block.text}”</p></div> : <p className="narration" key={`${node.id}-${index}`}>{block.text}</p>)}</div>{node.choices.length > 0 ? <div className="choice-list"><p className="eyebrow">{t("yourMove")}</p>{node.choices.map((choice, index) => <button ref={index === 0 ? primaryAction : undefined} className={pendingChoiceId === choice.id ? "is-selected" : ""} disabled={Boolean(pendingChoiceId)} key={choice.id} onClick={() => choose(choice.id, choice.target)}><span>0{index + 1}</span><strong>{choice.label}</strong><ChevronRight size={17} /></button>)}</div> : <div className="continue-row">{isFinalNode ? <button ref={primaryAction} className="button-primary" onClick={closeCase}><Check size={16} /> {t("closeCase")}</button> : <button ref={primaryAction} className="button-primary" onClick={() => advance()}><SkipForward size={16} /> {t("continue")} <ArrowRight size={15} /></button>}</div>}</section>
   </main>;
 }

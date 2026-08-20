@@ -25,6 +25,20 @@ export type OwnerDashboard = {
 
 type ApiErrorBody = { error?: string };
 
+export const OWNER_PIN_LENGTH = 6;
+
+export function normalizeOwnerEmail(value: string) {
+  return value.trim().toLowerCase();
+}
+
+export function isOwnerPin(value: string) {
+  return new RegExp(`^\\d{${OWNER_PIN_LENGTH}}$`).test(value);
+}
+
+export function ownerLoginPayload(email: string, password: string) {
+  return { email: normalizeOwnerEmail(email), password };
+}
+
 export class OwnerApiError extends Error {
   readonly status: number;
 
@@ -68,8 +82,8 @@ export async function checkOwnerSession() {
   return request<{ authenticated: boolean }>("session");
 }
 
-export async function loginOwner(identifier: string, password: string) {
-  const result = await request<{ token: string; expiresAt: string }>("login", { method: "POST", body: JSON.stringify({ identifier, password }) });
+export async function loginOwner(email: string, password: string) {
+  const result = await request<{ token: string; expiresAt: string }>("login", { method: "POST", body: JSON.stringify(ownerLoginPayload(email, password)) });
   window.localStorage.setItem(OWNER_TOKEN_KEY, result.token);
   return result;
 }
