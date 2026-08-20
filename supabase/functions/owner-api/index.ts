@@ -22,6 +22,16 @@ async function validPassword(password: string, salt: string, expected: string) {
   return candidate.length === trusted.length && timingSafeEqual(candidate, trusted);
 }
 
+function normalizeOwnerEmail(value: unknown) {
+  if (typeof value !== "string") return null;
+  const email = value.trim().toLowerCase();
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && email.length <= 254 ? email : null;
+}
+
+function validOwnerPin(value: unknown) {
+  return typeof value === "string" && /^\d{6}$/.test(value) ? value : null;
+}
+
 async function ownerToken(request: Request) {
   const token = request.headers.get("x-owner-token") ?? "";
   if (!token) return null;
@@ -44,10 +54,12 @@ Deno.serve(async request => {
 
     if (action === "login" && request.method === "POST") {
       const body = await request.json();
-      if (typeof body.identifier !== "string" || typeof body.password !== "string") return response({ error: "INVALID_INPUT" }, 400);
-      const { data: credential, error } = await database.from("owner_credentials").select("id, password_salt, password_hash, is_active").eq("identifier", body.identifier).maybeSingle();
+      const email = normalizeOwnerEmail(body.email);
+      const pin = validOwnerPin(body.password);
+      if (!email || !pin) return response({ error: "INVALID_CREDENTIALS" }, 401);
+      const { data: credential, error } = await database.from("owner_credentials").select("id, password_salt, password_hash, is_active").eq("identifier", email).maybeSingle();
       if (error) throw new Error(error.message);
-      if (!credential?.is_active || !(await validPassword(body.password, credential.password_salt, credential.password_hash))) return response({ error: "INVALID_CREDENTIALS" }, 401);
+      if (!credential?.is_active || !(await validPassword(pin, credential.password_salt, credential.password_hash))) return response({ error: "INVALID_CREDENTIALS" }, 401);
       const token = randomToken();
       const expiresAt = new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toISOString();
       const { error: sessionError } = await database.from("admin_sessions").insert({ id: crypto.randomUUID(), credential_id: credential.id, token_hash: await digest(token), expires_at: expiresAt });

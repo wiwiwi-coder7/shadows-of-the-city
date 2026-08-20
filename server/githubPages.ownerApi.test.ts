@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { persianStoryNodes, localizeStoryNode } from "../client/src/data/story.fa";
 import { storyNodes } from "../client/src/data/story.generated";
-import { OWNER_API_URL, ownerDashboardSearch } from "../client/src/lib/ownerApi";
+import { OWNER_API_URL, OWNER_PIN_LENGTH, isOwnerPin, normalizeOwnerEmail, ownerDashboardSearch, ownerLoginPayload } from "../client/src/lib/ownerApi";
 import { publicAssetFallbackUrl, publicAssetUrl } from "../client/src/lib/publicAssets";
 
 describe("GitHub Pages Supabase runtime", () => {
@@ -35,5 +35,14 @@ describe("GitHub Pages Supabase runtime", () => {
     expect(ownerDashboardSearch(10)).toEqual({ chapter: "10" });
     expect(() => ownerDashboardSearch(0)).toThrow("between 1 and 10");
     expect(() => ownerDashboardSearch(11)).toThrow("between 1 and 10");
+  });
+
+  it("normalizes the owner email and preserves an exact six-digit PIN payload", () => {
+    expect(OWNER_PIN_LENGTH).toBe(6);
+    expect(normalizeOwnerEmail(" AdRy.201088@GMAIL.com ")).toBe("adry.201088@gmail.com");
+    expect(isOwnerPin("004921")).toBe(true);
+    expect(isOwnerPin("4921")).toBe(false);
+    expect(isOwnerPin("12ab56")).toBe(false);
+    expect(ownerLoginPayload(" AdRy.201088@GMAIL.com ", "004921")).toEqual({ email: "adry.201088@gmail.com", password: "004921" });
   });
 });

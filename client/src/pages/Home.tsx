@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "wouter";
 import { GameHeader } from "@/components/GameHeader";
 import { emptySave, readSave, writeSave, type LocalSave } from "@/lib/gameState";
+import { primaryCaseAction } from "@/lib/playerExperience";
 import { storyNodes, storyStartId } from "@/data/story.generated";
 import { useLocale } from "@/contexts/LocaleContext";
 import { GitCompare } from "lucide-react";
@@ -12,7 +13,7 @@ export default function Home() {
   const [save, setSave] = useState<LocalSave | null>(null);
   const [confirmNew, setConfirmNew] = useState(false);
   const { locale, t } = useLocale();
-  const homeCopy = { caseFile: "CASE FILE / 001", interactiveNoir: "AN INTERACTIVE NOIR NOVEL", homeDek: "The city forgets what it needs to survive. You were never meant to remember.", newGame: "NEW GAME", continue: "CONTINUE", codexLink: "THE CODEX", albumLink: "CHARACTER ALBUM", playerSettings: "PLAYER SETTINGS", localSave: "Your progress stays in this browser.", replaceCase: "REPLACE CASE FILE", beginInvestigation: "Begin a new investigation?", replaceWarning: "This will replace your current browser save.", beginAgain: "BEGIN AGAIN", keepSave: "KEEP SAVE" };
+  const homeCopy = { caseFile: "CASE FILE / 001", interactiveNoir: "AN INTERACTIVE NOIR NOVEL", homeDek: "The city forgets what it needs to survive. You were never meant to remember.", newGame: "START A NEW CASE", continue: "RESUME CASE", codexLink: "THE CODEX", albumLink: "CHARACTER ALBUM", playerSettings: "PLAYER SETTINGS", localSave: "Your progress stays in this browser.", replaceCase: "REPLACE CASE FILE", beginInvestigation: "Begin a new investigation?", replaceWarning: "This will replace your current browser save.", beginAgain: "BEGIN AGAIN", keepSave: "KEEP SAVE", lastTrace: "LAST TRACE", newCase: "START OVER" };
 
   useEffect(() => setSave(readSave()), []);
   const hasSave = Boolean(save);
@@ -31,10 +32,10 @@ export default function Home() {
       <h1><span>SHADOWS</span><em>of the city</em></h1>
       <p className="home-hero__dek">{homeCopy.homeDek}</p>
       <div className="home-actions">
-        <button className="button-primary" onClick={() => hasSave ? setConfirmNew(true) : begin()}><CirclePlay size={17} /> {homeCopy.newGame} <ArrowRight size={16} /></button>
-        <button className={`button-secondary ${hasSave ? "" : "is-disabled"}`} disabled={!hasSave} onClick={continueGame}><RotateCcw size={16} /> {homeCopy.continue}</button>
+        {primaryCaseAction(hasSave) === "resume" ? <button className="button-primary" onClick={continueGame}><RotateCcw size={17} /> {homeCopy.continue} <ArrowRight size={16} /></button> : <button className="button-primary" onClick={begin}><CirclePlay size={17} /> {homeCopy.newGame} <ArrowRight size={16} /></button>}
+        {hasSave && <button className="button-secondary" onClick={() => setConfirmNew(true)}>{homeCopy.newCase}</button>}
       </div>
-      {save && <div className="save-resume-card" aria-live="polite"><div><span>LOCAL SAVE FOUND</span><strong>{lastNode?.sceneTitle.replace(/\(.+\)/, "").trim() ?? "THE CASE"}</strong><small>Last played {lastPlayed} · {traced}% traced</small></div><button onClick={continueGame}>RESUME <ArrowRight size={14} /></button></div>}
+      {save && <div className="save-resume-card" aria-live="polite"><div><span>{homeCopy.lastTrace}</span><strong>{lastNode?.sceneTitle.replace(/\(.+\)/, "").trim() ?? "THE CASE"}</strong><small>Last played {lastPlayed} · {traced}% traced</small><i aria-hidden="true"><b style={{ width: `${traced}%` }} /></i></div></div>}
       <div className="hero-links">
         <button onClick={() => setLocation("/codex")}><BookOpen size={15} /> {homeCopy.codexLink}</button>
         <button onClick={() => setLocation("/album")}><Compass size={15} /> {homeCopy.albumLink}</button>
