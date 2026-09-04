@@ -39,10 +39,10 @@ describe("GitHub Pages Supabase runtime", () => {
 
   it("normalizes the owner email and preserves an exact six-digit PIN payload", () => {
     expect(OWNER_PIN_LENGTH).toBe(6);
-    expect(normalizeOwnerEmail(" AdRy.201088@GMAIL.com ")).toBe("adry.201088@gmail.com");
+    expect(normalizeOwnerEmail(" OWNER@EXAMPLE.COM ")).toBe("owner@example.com");
     expect(isOwnerPin("004921")).toBe(true);
     expect(isOwnerPin("4921")).toBe(false);
     expect(isOwnerPin("12ab56")).toBe(false);
-    expect(ownerLoginPayload(" AdRy.201088@GMAIL.com ", "004921")).toEqual({ email: "adry.201088@gmail.com", password: "004921" });
+    expect(ownerLoginPayload(" OWNER@EXAMPLE.COM ", "004921")).toEqual({ email: "owner@example.com", password: "004921" });
   });
 });
