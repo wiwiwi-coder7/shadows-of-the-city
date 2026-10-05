@@ -46,7 +46,7 @@ describe("Persian story localization", () => {
   it("provides an authored Persian overlay for the Chapter 1 opening including every choice", () => {
     const translation = chapter1Farsi.CH1_S1_N01;
     expect(translation.sceneTitle).toBe("آپارتمان نیک");
-    expect(translation.blocks[0].text).toContain("پاشو");
+    expect(translation.blocks[0].text).toContain("بلند شو");
     expect(translation.choices).toHaveLength(3);
     expect(translation.choices[0].label).toContain("آستر");
   });
@@ -56,7 +56,7 @@ describe("Persian story localization", () => {
     const chapterTwo = storyNodes.find(node => node.chapter === 2)!;
     const localizedOpening = localizeStoryNode(opening, "fa");
     const localizedChapterTwo = localizeStoryNode(chapterTwo, "fa");
-    expect(localizedOpening.blocks[0].text).toContain("پاشو");
+    expect(localizedOpening.blocks[0].text).toContain("بلند شو");
     expect(localizedOpening.choices[0].target).toBe(opening.choices[0].target);
     expect(localizedChapterTwo.blocks.length).toBeGreaterThan(0);
     expect(localizedChapterTwo.nextId).toBe(chapterTwo.nextId);
@@ -66,8 +66,8 @@ describe("Persian story localization", () => {
     const serializedStory = JSON.stringify(persianStoryNodes);
     expect(serializedStory).not.toContain("ادین");
     expect(serializedStory).not.toContain("پاک‌سازی می‌کنند");
-    expect(persianStoryNodes.CH2_S4_N03.blocks[0].text).toContain("اتاق پشتی را می‌گردند");
+    expect(persianStoryNodes.CH2_S4_N03.blocks[0].text).toContain("اتاقِ پشتی");
     expect(persianStoryNodes.CH5_S2_N02.blocks[1].text).toContain("آدین هنوز نفس می‌کشد");
-    expect(persianStoryNodes.CH10_S1_N01.blocks[0].text).toContain("فرصت ورود");
+    expect(persianStoryNodes.CH10_S1_N01.blocks[0].text).toContain("چهار دقیقهٔ دیگر");
   });
 });
