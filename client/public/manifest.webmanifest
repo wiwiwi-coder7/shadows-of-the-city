@@ -1,0 +1,10 @@
+{
+  "name": "Shadows of the City",
+  "short_name": "Shadows",
+  "description": "A dark cinematic interactive fiction game.",
+  "start_url": "/shadows-of-the-city/",
+  "display": "standalone",
+  "background_color": "#090b0e",
+  "theme_color": "#0b0d10",
+  "icons": [{ "src": "/shadows-of-the-city/shadows-mark.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

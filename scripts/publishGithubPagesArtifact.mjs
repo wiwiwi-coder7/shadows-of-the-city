@@ -5,7 +5,7 @@ import path from "node:path";
 const repository = "wiwiwi-coder7/shadows-of-the-city";
 const root = "/home/ubuntu/shadows-of-the-city/dist/github-pages";
 const assetFiles = (await readdir(path.join(root, "assets"))).filter(name => /\.(?:css|js)$/.test(name)).sort().map(name => `assets/${name}`);
-const files = ["index.html", ...assetFiles];
+const files = ["index.html", "manifest.webmanifest", "shadows-mark.svg", ...assetFiles];
 
 if (!assetFiles.length) throw new Error("No Vite assets found. Run build:github-pages before publishing.");
 

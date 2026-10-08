@@ -41,6 +41,7 @@ export default function Home() {
         <button onClick={() => setLocation("/album")}><Compass size={15} /> {homeCopy.albumLink}</button>
         <button onClick={() => setLocation("/compare")}><GitCompare size={15} /> {locale === "fa" ? "مقایسه مسیرها" : "PATH COMPARISON"}</button>
         <button onClick={() => setLocation("/settings")}><Settings2 size={15} /> {homeCopy.playerSettings}</button>
+        <button onClick={() => setLocation("/credits")}>CREDITS / LICENSES</button>
       </div>
     </section>
     <aside className="home-note"><LockKeyhole size={14} /><span>{homeCopy.localSave}</span></aside>

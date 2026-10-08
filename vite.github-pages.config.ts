@@ -21,7 +21,7 @@ export default defineConfig({
     },
   },
   root: path.resolve(import.meta.dirname, "client"),
-  publicDir: false,
+  publicDir: path.resolve(import.meta.dirname, "client", "public"),
   preview: {
     host: true,
     allowedHosts: ["4173-ism9jhcvmk1rkssvmqlvj-04f68d10.us2.manus.computer", ".manus.computer", ".manuspre.computer", "localhost", "127.0.0.1"],

@@ -39,18 +39,18 @@ export const codexEntries: CodexEntry[] = [
 ];
 
 export const characterEntries: CharacterEntry[] = [
-  { id: "character:nick", name: "Nick", role: "Detective", imageUrl: "/manus-storage/nick_expression_sheet_ff7ab402.png", unlockChapter: 1 },
-  { id: "character:adry", name: "Lia", role: "The woman in the depot", imageUrl: "/manus-storage/adry_expression_sheet_fe98de3a.png", unlockChapter: 1 },
-  { id: "character:kurt", name: "Kurt", role: "Police officer", imageUrl: "/manus-storage/kurt_expression_sheet_5ca03a49.png", unlockChapter: 1 },
-  { id: "character:gaspar", name: "Gaspar", role: "Café owner", imageUrl: "/manus-storage/gaspar_expression_sheet_563293c2.png", unlockChapter: 1 },
-  { id: "character:hiller", name: "Hiller", role: "Forensic examiner", imageUrl: "/manus-storage/hiller_expression_sheet_7be0518d.png", unlockChapter: 1 },
-  { id: "character:ozzie", name: "Ozzie", role: "Carriage driver", imageUrl: "/manus-storage/ozzie_expression_sheet_8877aafb.png", unlockChapter: 1 },
-  { id: "character:anton", name: "Anton", role: "Informant", imageUrl: "/manus-storage/anton_expression_sheet_78c1bb27.png", unlockChapter: 2 },
-  { id: "character:adin", name: "Adin", role: "Old connection", imageUrl: "/manus-storage/adin_expression_sheet_4cf82657.png", unlockChapter: 2 },
-  { id: "character:marcus", name: "Marcus Doyle", role: "Rival investigator", imageUrl: "/manus-storage/marcus_doyle_expression_sheet_a06b43fb.png", unlockChapter: 3 },
-  { id: "character:erica", name: "Erica", role: "Printer", imageUrl: "/manus-storage/erica_expression_sheet_80a332b6.png", unlockChapter: 3 },
-  { id: "character:vivienne", name: "Vivienne", role: "Woman in grey", imageUrl: "/manus-storage/vivienne_expression_sheet_681ae408.png", unlockChapter: 7 },
-  { id: "character:beni", name: "Beni", role: "The Conductor", imageUrl: "/manus-storage/beni_expression_sheet_5bf6ae2e.png", unlockChapter: 7 },
+  { id: "character:nick", name: "Nick", role: "Detective", imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663941034191/olujKuoSSbGsoNMP.jpg", unlockChapter: 1 },
+  { id: "character:adry", name: "Lia", role: "The woman in the depot", imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663941034191/qVEFTkwVkVJerxAq.jpg", unlockChapter: 1 },
+  { id: "character:kurt", name: "Kurt", role: "Police officer", imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663941034191/aBJPKKsjhLQRtICc.jpg", unlockChapter: 1 },
+  { id: "character:gaspar", name: "Gaspar", role: "Café owner", imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663941034191/iXUYeEqcHerjrYSx.jpg", unlockChapter: 1 },
+  { id: "character:hiller", name: "Hiller", role: "Forensic examiner", imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663941034191/pwDuJdGmBTTmsLrZ.jpg", unlockChapter: 1 },
+  { id: "character:ozzie", name: "Ozzie", role: "Carriage driver", imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663941034191/DdcbRuEzHocaBKgr.jpg", unlockChapter: 1 },
+  { id: "character:anton", name: "Anton", role: "Informant", imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663941034191/YyjwIHtQgosCJKAA.jpg", unlockChapter: 2 },
+  { id: "character:adin", name: "Adin", role: "Old connection", imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663941034191/UuZfyAkRQEtiwwlI.jpg", unlockChapter: 2 },
+  { id: "character:marcus", name: "Marcus Doyle", role: "Rival investigator", imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663941034191/GCBDpNnUqqWMGvbG.jpg", unlockChapter: 3 },
+  { id: "character:erica", name: "Erica", role: "Printer", imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663941034191/IaMIFFVZPyZxRHCS.jpg", unlockChapter: 3 },
+  { id: "character:vivienne", name: "Vivienne", role: "Woman in grey", imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663941034191/NOCVjnuNmDHUcduu.jpg", unlockChapter: 7 },
+  { id: "character:beni", name: "Beni", role: "The Conductor", imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663941034191/lHdTFoOHfDWNUxEB.jpg", unlockChapter: 7 },
 ];
 
 export const interfaceCopy = {
